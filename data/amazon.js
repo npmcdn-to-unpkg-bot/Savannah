@@ -7,14 +7,15 @@ var client = amazon.createClient({
 });
 
 var products = {};
-products.apple = new Promise((fulfill, reject) => {
+products.hardware = new Promise((fulfill, reject) => {
   client.itemSearch({
-    brand: 'Apple',
-    searchIndex: 'PCHardware'
+    keywords: encodeURIComponent('hard drive').replace('%20', '+'),
+    searchIndex: 'Electronics',
+    responseGroup: 'Large'
   }, (err, results, response) => {
     if (err) reject(err);
     fulfill(results);
   });
-});
+}).then();
 
 module.exports = products;
