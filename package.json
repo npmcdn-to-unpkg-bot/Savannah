@@ -15,6 +15,11 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "browser-sync": "^2.12.3",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-watch": "^4.3.5"
   }
 }

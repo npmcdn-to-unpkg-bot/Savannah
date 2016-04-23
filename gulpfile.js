@@ -1,10 +1,37 @@
 var gulp = require('gulp');
-var exec = require('child_process').exec;
+var sass = require('gulp-sass');
+var watch = require('gulp-watch');
+var sourcemaps = require('gulp-sourcemaps');
+var nodemon = require('gulp-nodemon');
+var browserSync = require('browser-sync').create();
 
-gulp.task('default', function () {
+gulp.task('serve', ['sass', 'sass:watch'], function () {
   // Serve the app with Nodemon
-  exec('nodemon ./bin/www');
+  nodemon();
 
   // Run Browser-Sync
-  exec('browser-sync start --config=bs-config.js');
+  browserSync.init([
+    "views/***",
+    "public/stylesheets/***"
+  ], {
+    proxy: 'localhost:9001',
+    injectChanges: true,
+    open: true,
+    browser: "Google Chrome Canary"
+  });
 });
+
+gulp.task('sass', function() {
+  return gulp.src("public/sass/*.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest("public/stylesheets/"))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('public/sass/*.scss', ['sass']);
+});
+
+gulp.task('default', ['serve']);
