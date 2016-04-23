@@ -1,5 +1,12 @@
-extends layout
+extends shared/layout
+
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/products.css")
 
 block content
-  h1= title
-  p Welcome to #{title}
+  //- Navigation Bar
+  include shared/nav-cta
+
+  //- Categories
+  aside
+    include shared/categories/hardware
