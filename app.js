@@ -10,6 +10,25 @@ var users = require('./routes/users');
 
 var app = express();
 
+var amazon = require('amazon-product-api');
+
+var client = amazon.createClient({
+  awsId: process.env.AWS_ID,
+  awsSecret: process.env.AWS_SECRET
+});
+
+client.itemSearch({
+  brand: 'Apple',
+  searchIndex: 'PCHardware'
+}, function (err, results, response) {
+  if (err) {
+    console.log(JSON.stringify(err));
+  } else {
+    console.log('Results: ', JSON.stringify(results));
+    console.log('Response: ', JSON.stringify(response));
+  }
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
