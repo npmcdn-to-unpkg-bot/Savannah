@@ -6,16 +6,25 @@ var client = amazon.createClient({
   awsSecret: process.env.AWS_SECRET
 });
 
-var products = {};
-products.hardware = new Promise((fulfill, reject) => {
-  client.itemSearch({
-    keywords: encodeURIComponent('hard drive').replace('%20', '+'),
-    searchIndex: 'Electronics',
-    responseGroup: 'Large'
-  }, (err, results, response) => {
-    if (err) reject(err);
-    fulfill(results);
-  });
-}).then();
-
-module.exports = products;
+module.exports = {
+  hardware: new Promise((fulfill, reject) => {
+    client.itemSearch({
+      keywords: encodeURIComponent('hard drive').replace('%20', '+'),
+      searchIndex: 'Electronics',
+      responseGroup: 'Large'
+    }, (err, results, response) => {
+      if (err) reject(err);
+      fulfill(results);
+    });
+  }),
+  with_asin: (asin) => {
+    return new Promise((fulfill, reject) => {
+      client.itemLookup({
+        itemId: asin
+      }, (err, results, response) => {
+        if (err) reject(err);
+        fulfill(results);
+      });
+    })
+  }
+};
