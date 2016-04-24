@@ -20,7 +20,8 @@ module.exports = {
   with_asin: (asin) => {
     return new Promise((fulfill, reject) => {
       client.itemLookup({
-        itemId: asin
+        itemId: asin,
+        responseGroup: 'Large'
       }, (err, results, response) => {
         if (err) reject(err);
         fulfill(results);

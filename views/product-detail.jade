@@ -1,0 +1,36 @@
+extends shared/layout
+
+block content
+  //- Navigation Bar
+  include shared/nav-cta
+
+  main
+    //- Preview Images
+    section(class="preview-images")
+      div(class="previews")
+      each image in productImages
+        img(src=image.LargeImage[0].URL, alt="Product image")
+      img(src=productImages[0].LargeImage[0].URL, alt="Product Image", class="large-image")
+    
+    //- Description
+    section(class="description")
+      h1= productInfo.Brand + " " + productInfo.Model
+      p= productInfo.Title
+      ul
+      each feature in productInfo.Feature
+        li= feature
+      a(href="#")
+        button Add to Cart
+      p= productInfo.ListPrice[0].FormattedPrice
+
+    //- Half-Width Images
+    section(class="half-width-images")
+      each image in productImages
+        img(src=image.LargeImage[0].URL, alt="Product image")
+      - var i = 0
+      while i < 5
+        - i++
+        p!= productComments[0].text
+        img(src="/images/users/" + productComments[0].author.imageFilename, alt="Photo of the author")
+        h1= productComments[0].author.name
+        p= productComments[0].time
