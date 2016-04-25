@@ -28,21 +28,20 @@ block content
   //- Checkout Form
   form(action="/open-in-new-tabs-with-amazon/", method="POST")
     //- Full Name
-    input(type="text", name="first_name")
-    input(type="text", name="last_name")
+    input(type="text", name="first_name", placeholder="First Name")
+    input(type="text", name="last_name", placeholder="Last Name")
     //- Shipping Address
-    input(type="text", name="shipping_address_line_1")
-    input(type="text", name="shipping_address_line_2")
-    input(type="text", name="city")
-    input(type="text", name="state")
-    input(type="text", name="ZIP")
+    input(type="text", name="shipping_address_line_1", placeholder="Street Address")
+    input(type="text", name="shipping_address_line_2", placeholder="Second Address Line")
+    input(type="text", name="city", placeholder="City")
+    input(type="text", name="state", placeholder="State")
+    input(type="text", name="ZIP", placeholder="ZIP")
     //- Payment Info
-    input(type="text", name="card_number")
-    input(type="text", name="name_on_the_card")
-    input(type="text", name="month")
-    input(type="text", name="day")
-    input(type="text", name="year")
-    input(type="text", name="CVV")
+    input(type="text", name="card_number", placeholder="Card Number")
+    input(type="text", name="name_on_the_card", placeholder="Name on the Card")
+    input(type="text", name="month", placeholder="Month")
+    input(type="text", name="year", placeholder="Year")
+    input(type="text", name="CVV", placeholder="CVV")
     //- Options
     input#should_bill_shipping_address(
       type="checkbox",
