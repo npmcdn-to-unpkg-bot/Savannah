@@ -1,0 +1,25 @@
+extends shared/layout
+
+block content
+  //- CTA
+  include shared/ctas/seminar
+
+  //- Filters
+  aside
+    h1 Filtersseminars
+    ul(class="sidebar-list")
+    each filter in filters
+      li= filter
+
+  //- Seminars
+  main
+    - var i = 0
+    while i < 15
+      section(class="seminar")
+        h1= seminars[0].title
+        p= seminars[0].description
+        a(href="/seminars/book/" + seminars[0].id)
+          button Book
+        a(href="/seminars/star/" + seminars[0].id)
+          button Star
+      - i++

@@ -15,7 +15,6 @@ block content
     h1 Clearance
     - var i = 0
     while i < 5
-      - i++
       div
         img(src=products[i].LargeImage[0].URL[0])
         h1= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
@@ -29,6 +28,7 @@ block content
       p
         span Total:
         span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
+      - i++
 
   aside
     //- Price
