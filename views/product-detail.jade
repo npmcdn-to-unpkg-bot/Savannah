@@ -8,7 +8,7 @@ block content
     //- Preview Images
     section(class="preview-images")
       div(class="previews")
-      each image in productImages
+      each image in productImages.slice(0, 4)
         img(src=image.LargeImage[0].URL, alt="Product image")
       img(src=productImages[0].LargeImage[0].URL, alt="Product Image", class="large-image")
     
@@ -19,7 +19,7 @@ block content
       ul
       each feature in productInfo.Feature
         li= feature
-      a(href="#")
+      a(href="/cart/add/" + productAsin)
         button Add to Cart
       p= productInfo.ListPrice[0].FormattedPrice
 

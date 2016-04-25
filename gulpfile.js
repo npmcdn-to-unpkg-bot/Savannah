@@ -4,6 +4,7 @@ var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 var nodemon = require('gulp-nodemon');
 var browserSync = require('browser-sync').create();
+var exec = require('child_process').exec;
 
 gulp.task('serve', ['sass', 'sass:watch'], function () {
   // Serve the app with Nodemon

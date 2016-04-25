@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var products = require('../data/amazon')
+var products = require('../data/amazon');
 
 router.get('/', (req, res, next) => {
   let viewData = {
@@ -16,6 +16,7 @@ router.get('/products/:asin', (req, res, next) => {
   products.with_asin(req.params.asin).then((result) => {
     let viewData = {
       title: 'Product Details',
+      productAsin: result[0].ASIN[0],
       productInfo: result[0].ItemAttributes[0],
       productImages: result[0].ImageSets[0].ImageSet,
       productComments: [{
