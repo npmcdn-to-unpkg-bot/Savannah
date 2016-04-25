@@ -1,3 +1,25 @@
 // Main.scss
 // Alexander Rhett Crammer
 // Friday, 22 April, 2016
+
+// Structure
+nav {
+  background-color: aqua;
+}
+
+main {
+  background: magenta;
+  float: left;
+  width: 632.867px / 1024px * 100%;
+}
+
+aside {
+  background: orange;
+  float: left;
+  width: 391.133px / 1024px * 100%;
+}
+
+footer {
+  background: aqua;
+  clear: both;
+}

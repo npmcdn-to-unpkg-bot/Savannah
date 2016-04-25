@@ -3,54 +3,67 @@ extend shared/layout
 block content
   //- Navigation
   include shared/nav-cta.jade
-  
-  //- Search Bar
-  div(class="search-bar")
-    p Sort &#9662;
-    input(type="text", name="search-query")
-  
-  //- Carted Products
-  section(class="hardware")
-  h1 Clearance
-  - var i = 0
-  while i < 5
-    - i++
-    div
-      h1= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
-      img(src=products[i].LargeImage[0].URL[0])
-      p= products[i].ItemAttributes[0].Title
-      ul
-      each feature in products[i].ItemAttributes[0].Feature
-        li= feature
-    p= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
-    a(href="/products/" + products[i].ASIN[0]) More &raquo;
 
-  //- Checkout Form
-  form(action="/open-in-new-tabs-with-amazon/", method="POST")
-    //- Full Name
-    input(type="text", name="first_name", placeholder="First Name")
-    input(type="text", name="last_name", placeholder="Last Name")
-    //- Shipping Address
-    input(type="text", name="shipping_address_line_1", placeholder="Street Address")
-    input(type="text", name="shipping_address_line_2", placeholder="Second Address Line")
-    input(type="text", name="city", placeholder="City")
-    input(type="text", name="state", placeholder="State")
-    input(type="text", name="ZIP", placeholder="ZIP")
-    //- Payment Info
-    input(type="text", name="card_number", placeholder="Card Number")
-    input(type="text", name="name_on_the_card", placeholder="Name on the Card")
-    input(type="text", name="month", placeholder="Month")
-    input(type="text", name="year", placeholder="Year")
-    input(type="text", name="CVV", placeholder="CVV")
-    //- Options
-    input#should_bill_shipping_address(
-      type="checkbox",
-      name="should_bill_shipping_address"
-    )
-    label(for="should_bill_shipping_address") Bill my Shipping Address
+  main
+    //- Search Bar
+    div(class="search-bar")
+      p Sort &#9662;
+      input(type="text", name="search-query")
     
-    input#agrees_to_terms_and_conditions(
-      type="checkbox",
-      name="agrees_to_terms_and_conditions"
-    )
-    label(for="agrees_to_terms_and_conditions") I agree to the Terms and Conditions
+    //- Carted Products
+    section(class="hardware")
+    h1 Clearance
+    - var i = 0
+    while i < 5
+      - i++
+      div
+        h1= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
+        img(src=products[i].LargeImage[0].URL[0])
+        p= products[i].ItemAttributes[0].Title
+        ul
+        each feature in products[i].ItemAttributes[0].Feature
+          li= feature
+      p= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
+      a(href="/products/" + products[i].ASIN[0]) More &raquo;
+
+  aside
+    //- Price
+    p
+      span Subtotal:
+      span $1,000
+    p
+      span Tax:
+      span $100
+    p
+      span Total:
+      span  $1,100
+
+    //- Checkout Form
+    form(action="/open-in-new-tabs-with-amazon/", method="POST")
+      //- Full Name
+      input(type="text", name="first_name", placeholder="First Name")
+      input(type="text", name="last_name", placeholder="Last Name")
+      //- Shipping Address
+      input(type="text", name="shipping_address_line_1", placeholder="Street Address")
+      input(type="text", name="shipping_address_line_2", placeholder="Second Address Line")
+      input(type="text", name="city", placeholder="City")
+      input(type="text", name="state", placeholder="State")
+      input(type="text", name="ZIP", placeholder="ZIP")
+      //- Payment Info
+      input(type="text", name="card_number", placeholder="Card Number")
+      input(type="text", name="name_on_the_card", placeholder="Name on the Card")
+      input(type="text", name="month", placeholder="Month")
+      input(type="text", name="year", placeholder="Year")
+      input(type="text", name="CVV", placeholder="CVV")
+      //- Options
+      input#should_bill_shipping_address(
+        type="checkbox",
+        name="should_bill_shipping_address"
+      )
+      label(for="should_bill_shipping_address") Bill my Shipping Address
+      
+      input#agrees_to_terms_and_conditions(
+        type="checkbox",
+        name="agrees_to_terms_and_conditions"
+      )
+      label(for="agrees_to_terms_and_conditions") I agree to the Terms and Conditions
