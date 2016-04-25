@@ -2,8 +2,8 @@ extend shared/layout
 
 block content
   //- Navigation
-  include shared/nav-cta.jade
-
+  include shared/nav-list.jade
+  
   main
     //- Search Bar
     div(class="search-bar")
@@ -17,14 +17,18 @@ block content
     while i < 5
       - i++
       div
-        h1= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
         img(src=products[i].LargeImage[0].URL[0])
+        h1= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
         p= products[i].ItemAttributes[0].Title
-        ul
-        each feature in products[i].ItemAttributes[0].Feature
-          li= feature
-      p= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
-      a(href="/products/" + products[i].ASIN[0]) More &raquo;
+      p
+        span Subtotal:
+        span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
+      p
+        span Tax:
+        span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
+      p
+        span Total:
+        span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
 
   aside
     //- Price
@@ -67,3 +71,5 @@ block content
         name="agrees_to_terms_and_conditions"
       )
       label(for="agrees_to_terms_and_conditions") I agree to the Terms and Conditions
+      //- Checkout Button
+      input(type="submit", value="Checkout")
