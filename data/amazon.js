@@ -7,9 +7,29 @@ var client = amazon.createClient({
 });
 
 module.exports = {
+  electronics: new Promise((fulfill, reject) => {
+    client.itemSearch({
+      keywords: encodeURIComponent('laptop').replace('%20', '+'),
+      searchIndex: 'Electronics',
+      responseGroup: 'Large'
+    }, (err, results, response) => {
+      if (err) reject(err);
+      fulfill(results);
+    });
+  }),
+  software: new Promise((fulfill, reject) => {
+    client.itemSearch({
+      keywords: encodeURIComponent('Adobe').replace('%20', '+'),
+      searchIndex: 'Software',
+      responseGroup: 'Large'
+    }, (err, results, response) => {
+      if (err) reject(err);
+      fulfill(results);
+    });
+  }),
   hardware: new Promise((fulfill, reject) => {
     client.itemSearch({
-      keywords: encodeURIComponent('hard drive').replace('%20', '+'),
+      keywords: encodeURIComponent('tower').replace('%20', '+'),
       searchIndex: 'Electronics',
       responseGroup: 'Large'
     }, (err, results, response) => {

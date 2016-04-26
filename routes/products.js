@@ -12,6 +12,30 @@ router.get('/', (req, res, next) => {
   res.render('products', viewData);
 });
 
+router.get('/electronics', (req, res, next) => {
+  let viewData = {
+    title: "Electronics",
+    products: products.electronics._result
+  };
+  res.render('products', viewData);
+});
+
+router.get('/software', (req, res, next) => {
+  let viewData = {
+    title: "Software",
+    products: products.software._result
+  };
+  res.render('products', viewData);
+});
+
+router.get('/hardware', (req, res, next) => {
+  let viewData = {
+    title: "Hardware",
+    products: products.hardware._result
+  };
+  res.render('products', viewData);
+});
+
 router.get('/products/:asin', (req, res, next) => {
   products.with_asin(req.params.asin).then((result) => {
     let viewData = {
