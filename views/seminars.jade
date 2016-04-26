@@ -18,8 +18,8 @@ block content
       section(class="seminar")
         h1= seminars[0].title
         p= seminars[0].description
-        a(href="/seminars/book/" + seminars[0].id)
+        a(href="/seminars/" + seminars[0].idHash)
           button Book
-        a(href="/seminars/star/" + seminars[0].id)
+        a(href="/seminars/star/" + seminars[0].idHash)
           button Star
       - i++
