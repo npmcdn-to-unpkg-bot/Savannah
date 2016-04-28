@@ -30,7 +30,9 @@ block content
         ul
         each feature in product.ItemAttributes[0].Feature
           li= feature
-      p= product.ItemAttributes[0].ListPrice[0].FormattedPrice
+      - if (product.ItemAttributes[0].ListPrice)
+        - // We have the price, show it
+        p= product.ItemAttributes[0].ListPrice[0].FormattedPrice[0]
       a(href="/products/" + product.ASIN[0]) More &raquo;
       if i == 6
         h1 Featured

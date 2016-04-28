@@ -13,27 +13,33 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/electronics', (req, res, next) => {
-  let viewData = {
-    title: "Electronics",
-    products: products.electronics._result
-  };
-  res.render('products', viewData);
+  products.electronics.then((electronics) => {
+    var viewData = {
+      title: "Electronics",
+      products: electronics
+    };
+    res.render('products', viewData);
+  });
 });
 
 router.get('/software', (req, res, next) => {
-  let viewData = {
-    title: "Software",
-    products: products.software._result
-  };
-  res.render('products', viewData);
+  products.software.then((software) => {
+    let viewData = {
+      title: "Software",
+      products: software
+    };
+    res.render('products', viewData);
+  });
 });
 
 router.get('/hardware', (req, res, next) => {
-  let viewData = {
-    title: "Hardware",
-    products: products.hardware._result
-  };
-  res.render('products', viewData);
+  products.hardware.then((hardware) => {
+    let viewData = {
+      title: "Hardware",
+      products: hardware
+    };
+    res.render('products', viewData);
+  });
 });
 
 router.get('/products/:asin', (req, res, next) => {
