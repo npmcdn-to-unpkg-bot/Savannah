@@ -8,14 +8,15 @@ block content
   include shared/nav-list
   
   //- CTA-style Description
-  section(class="cta")
+  section.cta
     img(src="/images/cta-headers/laravel-5.jpg", alt="Featured post background image")
-    h1= seminar.title
-    p= seminar.description
-    a(href="/seminars/book/" + seminar.idHash)
-      button Book
-    a(href="/seminars/star/" + seminar.idHash)
-      button Star
+    section
+      h1= seminar.title
+      p= seminar.description
+      a(href="/seminars/book/" + seminar.idHash)
+        button Book
+      a(href="/seminars/star/" + seminar.idHash)
+        button Star
   
   //- Reviews
   main

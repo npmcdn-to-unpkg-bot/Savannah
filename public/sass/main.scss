@@ -95,6 +95,16 @@ nav, footer {
       color: darken($white, 25%);
     }
   }
+
+  button {
+    &:hover a {
+      @extend a:hover;
+    }
+
+    &:active a {
+      @extend a:active;
+    }
+  }
 }
 
 // CTAs
@@ -123,27 +133,27 @@ nav, footer {
     p {
       color: white;
       letter-spacing: 0.035rem;
-      position: relative;
-      top: 0.25rem;
     }
 
-    a {
-      color: darken($white, 12.5%);
-      font: {
-        family: "Source Sans Pro Regular";
-        size: 1.15rem;
-      }
-      position: relative;
-      top: 0.75rem;
-      text-decoration: none;
-      transition: color 225ms;
+    button {
+      margin: 1rem auto;
 
-      &:hover {
+      a {
+        color: $white;
+        font: {
+          family: "Source Sans Pro Regular";
+          size: 1rem;
+        }
+        text-decoration: none;
+        transition: color 225ms;
+      }
+
+      &:hover a {
         color: $white;
       }
 
-      &:active {
-        color: darken($white, 35%);
+      &:active a {
+        color: darken($white, 17.5%);
       }
     }
   }
@@ -234,7 +244,7 @@ button {
   letter-spacing: 0.035rem;
   margin: 0 10px;
   outline: none;
-  padding: 12.5px 27.5px;
+  padding: 10px 35px;
   transition: all 225ms;
 
   &.lite {
