@@ -80,8 +80,7 @@ nav, footer {
   background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
 
-  height: 135px;
-  position: relative;
+overflow: auto;  position: relative;
 
   a {
     transition: color 225ms;
@@ -114,44 +113,61 @@ footer {
       weight: bold;
     }
     letter-spacing: 0.045rem;
+    margin-left: 7.5%;
   }
 
   p, li {
     font-size: 0.95rem;
+    margin-left: 7.5%;
   }
 
   .left, .right {
-    background: mediumseagreen;
     float: left;
     padding: 5% 2.5%;
-    width: 45%;
   }
 
-  ul {
-    background-color: mediumslateblue;
-  }
+  .left {
+    width: 30%;
 
-  .outro {
-    background: mediumseagreen;
-    font-size: 0.75rem;
-    line-height: 500%;
-  }
-
-  .about {
-    p {
-      float: left;
-      width: 75%;
+    ul {
+      margin: 5% 0;
     }
 
-    img {
-      float: right;
-      width: 17.5%;
+    .outro p {
+      position: relative;
+      top: 1.25rem;
+      font-size: 0.85rem;
+      line-height: 225%;
     }
   }
 
-  .social-links {
-    background: magenta;
-    clear: both;
+  .right {
+    width: 60%;
+
+    &.about {
+      p {
+        float: left;
+        width: 75%;
+      }
+
+      .logo {
+        float: right;
+        width: 17.5%;
+      }
+    }
+
+    .social-links {
+      clear: both;
+      margin: auto;
+      padding-top: 5%;
+      width: 360px;
+
+      a {
+        display: inline-block;
+        margin: 10px;
+        width: 57.5px / 460px * 100%;
+      }
+    }
   }
 }
 
