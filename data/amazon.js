@@ -34,7 +34,6 @@ module.exports = {
       responseGroup: 'Large'
     }, (err, results, response) => {
       if (err) reject(err);
-      console.log(JSON.stringify(results));
       fulfill(results);
     });
   }),

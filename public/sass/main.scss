@@ -3,10 +3,6 @@
 // Friday, 22 April, 2016
 
 // Structure
-nav {
-  background-color: aqua;
-}
-
 main {
   background: magenta;
   float: left;
@@ -22,4 +18,33 @@ aside {
 footer {
   background: aqua;
   clear: both;
+}
+
+// Navigation
+nav {
+  /* Edit and Share: http://colorzilla.com/gradient-editor/#db5178+0,df8b88+100 */
+  background: #db5178;
+  background: -moz-linear-gradient(45deg, #db5178 0%, #df8b88 100%);
+  background: -webkit-linear-gradient(45deg, #db5178 0%,#df8b88 100%);
+  background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
+
+  height: 100px;
+  position: relative;
+
+  .escape-hatch {
+    background: {
+      image: url('/icons/logo.png');
+      position: left center;
+      repeat: no-repeat;
+      size: 75px, contain;
+    }
+    position: absolute;
+    top: 0;
+    left: 3.5%;
+    bottom: 0;
+    line-height: 100px; // Center 'Savannah' text vertically
+    text-align: right; // Move 'Savannah' text to the right
+    width: 15%; // 7.5% for the logo; 7.5% for 'Savannah' text
+  }
 }
