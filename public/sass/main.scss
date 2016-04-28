@@ -3,7 +3,7 @@
 // Friday, 22 April, 2016
 
 // Preferences
-$nav-and-footer-link-color: #efefef;
+$white: #eaeaea;
 $neutral-button-color: #b29586;
 $neutral-button-border-color: #3a332d;
 
@@ -27,13 +27,6 @@ footer {
 
 // Navigation
 nav {
-  /* Edit and Share: http://colorzilla.com/gradient-editor/#db5178+0,df8b88+100 */
-  background: #db5178;
-  background: -moz-linear-gradient(45deg, #db5178 0%, #df8b88 100%);
-  background: -webkit-linear-gradient(45deg, #db5178 0%,#df8b88 100%);
-  background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
-
   height: 135px;
   position: relative;
 
@@ -80,21 +73,85 @@ nav {
 
 // Navigation and Footer
 nav, footer {
+  /* Edit and Share: http://colorzilla.com/gradient-editor/#db5178+0,df8b88+100 */
+  background: #db5178;
+  background: -moz-linear-gradient(45deg, #db5178 0%, #df8b88 100%);
+  background: -webkit-linear-gradient(45deg, #db5178 0%,#df8b88 100%);
+  background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
+
+  height: 135px;
+  position: relative;
+
   a {
     transition: color 225ms;
     text-decoration: none;
 
     &:link, &:visited {
-      color: $nav-and-footer-link-color;
+      color: $white;
     }
 
     &:hover {
-      color: lighten($nav-and-footer-link-color, 100%);
+      color: lighten($white, 100%);
     }
 
     &:active {
-      color: darken($nav-and-footer-link-color, 25%);
+      color: darken($white, 25%);
     }
+  }
+}
+
+// Footer
+footer {
+  color: $white;
+  font-family: "Georgia";
+  line-height: 150%;
+  letter-spacing: 0.025rem;
+
+  h1 {
+    font: {
+      style: italic;
+      weight: bold;
+    }
+    letter-spacing: 0.045rem;
+  }
+
+  p, li {
+    font-size: 0.95rem;
+  }
+
+  .left, .right {
+    background: mediumseagreen;
+    float: left;
+    padding: 5% 2.5%;
+    width: 45%;
+  }
+
+  ul {
+    background-color: mediumslateblue;
+  }
+
+  .outro {
+    background: mediumseagreen;
+    font-size: 0.75rem;
+    line-height: 500%;
+  }
+
+  .about {
+    p {
+      float: left;
+      width: 75%;
+    }
+
+    img {
+      float: right;
+      width: 17.5%;
+    }
+  }
+
+  .social-links {
+    background: magenta;
+    clear: both;
   }
 }
 
@@ -103,12 +160,15 @@ button {
   background-color: $neutral-button-color;
   border: 2px solid #3a332d;
   border-radius: 5rem;
+  color: $white;
+  cursor: pointer;
   font: {
     family: "Source Sans Pro";
     size: 0.85rem;
   }
   letter-spacing: 0.035rem;
   margin: 0 10px;
+  outline: none;
   padding: 12.5px 27.5px;
   transition: all 225ms;
 

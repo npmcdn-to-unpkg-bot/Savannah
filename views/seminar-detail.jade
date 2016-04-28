@@ -1,12 +1,15 @@
 extends shared/layout
 
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/products.css")
+
 block content
   //- Navigation Bar
   include shared/nav-list
   
   //- CTA-style Description
   section(class="cta")
-    img(src="", alt="Featured post background image")
+    img(src="/images/cta-headers/laravel-5.jpg", alt="Featured post background image")
     h1= seminar.title
     p= seminar.description
     a(href="/seminars/book/" + seminar.idHash)
