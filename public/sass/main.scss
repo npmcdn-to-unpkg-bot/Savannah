@@ -2,6 +2,11 @@
 // Alexander Rhett Crammer
 // Friday, 22 April, 2016
 
+// Preferences
+$nav-and-footer-link-color: #efefef;
+$neutral-button-color: #b29586;
+$neutral-button-border-color: #3a332d;
+
 // Structure
 main {
   background: magenta;
@@ -29,7 +34,7 @@ nav {
   background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
 
-  height: 100px;
+  height: 135px;
   position: relative;
 
   .escape-hatch {
@@ -39,12 +44,107 @@ nav {
       repeat: no-repeat;
       size: 75px, contain;
     }
+    font: {
+      family: "Jaapokki";
+      size: 1.35rem;
+    }
     position: absolute;
     top: 0;
     left: 3.5%;
     bottom: 0;
-    line-height: 100px; // Center 'Savannah' text vertically
+    line-height: 135px; // Center 'Savannah' text vertically
     text-align: right; // Move 'Savannah' text to the right
-    width: 15%; // 7.5% for the logo; 7.5% for 'Savannah' text
+    width: 185px; // 7.5% for the logo; 7.5% for 'Savannah' text; A little extra for the font size
   }
+
+  ul {
+    position: absolute;
+    top: 0;
+    right: 3.5%;
+    bottom: 0;
+    text-align: right;
+    width: 739px;
+
+    li {
+      display: inline-block;
+      font: {
+        family: "Source Sans Pro";
+      }
+      letter-spacing: 0.035rem;
+      line-height: 135px;
+      padding: 0 0.85rem;
+      text-align: center;
+    }
+  }
+}
+
+// Navigation and Footer
+nav, footer {
+  a {
+    transition: color 225ms;
+    text-decoration: none;
+
+    &:link, &:visited {
+      color: $nav-and-footer-link-color;
+    }
+
+    &:hover {
+      color: lighten($nav-and-footer-link-color, 100%);
+    }
+
+    &:active {
+      color: darken($nav-and-footer-link-color, 25%);
+    }
+  }
+}
+
+// Buttons
+button {
+  background-color: $neutral-button-color;
+  border: 2px solid #3a332d;
+  border-radius: 5rem;
+  font: {
+    family: "Source Sans Pro";
+    size: 0.85rem;
+  }
+  letter-spacing: 0.035rem;
+  margin: 0 10px;
+  padding: 12.5px 27.5px;
+  transition: all 225ms;
+
+  &.lite {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:hover {
+    background-color: lighten($neutral-button-color, 5%);
+    border-color: lighten($neutral-button-border-color, 5%);
+  }
+
+  &:active {
+    background-color: darken($neutral-button-color, 5%);
+    border-color: darken($neutral-button-border-color, 5%);
+  }
+}
+
+// Fonts
+@font-face {
+  font-family: 'Jaapokki';
+  src: url('/fonts/Jaapokki-Regular.eot');
+  src: url('/fonts/Jaapokki-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Jaapokki-Regular.woff2') format('woff2'),
+    url('/fonts/Jaapokki-Regular.woff') format('woff'),
+    url('/fonts/Jaapokki-Regular.ttf') format('truetype'),
+    url('/fonts/Jaapokki-Regular.svg#jaapokkiregular') format('svg');
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('/fonts/SourceSansPro-Regular.eot');
+  src: url('/fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/SourceSansPro-Regular.woff2') format('woff2'),
+    url('/fonts/SourceSansPro-Regular.woff') format('woff'),
+    url('/fonts/SourceSansPro-Regular.ttf') format('truetype'),
+    url('/fonts/SourceSansPro-Regular.svg#jaapokkiregular') format('svg');
 }
