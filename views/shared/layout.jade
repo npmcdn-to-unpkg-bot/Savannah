@@ -9,8 +9,8 @@ html
     block extra_styles    
   body
     block content
-  footer
-    div(class="left")
+  footer.pink-to-orange
+    div.left
       ul
         h1 Shop
         each title in ['Featured', 'Clearance', 'View All']
@@ -21,14 +21,14 @@ html
         each title in ['Your Reviews and Comments', 'View All']
           li
             a(href="#")= title
-      section(class="outro")
+      section.outro
         p Made with love by Alexander
         p &copy; 2016 All Rights Reserved
-    div(class="right about")
+    div.right.about
       h1 About Savannah
       p Savannah is a retailer of consumer electronics, computer hardware, video games, and software. Geeks and novices alike from around the world come to Savannah in order to buy tech and tech-related products and attend seminars. Savannah makes extensive use of the Internet to bring its’ users together. The site should allow a simple interface to browse and purchase products with major credit card companies.
       img(src="/icons/logo.png", alt="Savannah logo", class="logo")
-      div(class="social-links")
+      div.social-links
         a(href="#", class="facebook")
           img(src="/icons/facebook.png", alt="Facebook icon")
         a(href="#", class="twitter")
