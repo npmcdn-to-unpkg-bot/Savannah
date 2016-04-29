@@ -166,6 +166,86 @@ nav, footer {
   }
 }
 
+// Search Bar
+.search-bar {
+  /* Edit and Share: http://colorzilla.com/gradient-editor/#efefef+0,dedede+100 */
+  background: #efefef;
+  background: -moz-linear-gradient(45deg, #efefef 0%, #dedede 100%);
+  background: -webkit-linear-gradient(45deg, #efefef 0%,#dedede 100%);
+  background: linear-gradient(45deg, #efefef 0%,#dedede 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#dedede',GradientType=1);
+
+  color: #383838;
+  font-family: "Georgia";
+  padding: 1.5% 5%;
+
+  a:link, a:visited {
+    color: #383838;
+    float: left;
+    line-height: 200%;
+    text-decoration: none;
+  }
+
+  a:hover .sorting-options {
+    display: block;
+    line-height: 200%;
+  }
+
+  .sorting-options {
+    background: #cecece;
+    display: none;
+    border: 3px solid #bfbfbf;
+    border-radius: 0.35rem;
+    color: #252525;
+    font-family: "Source Sans Pro";
+    letter-spacing: 0.0125rem;
+    line-height: 150%;
+    position: absolute;
+    padding: 0.85rem 1.75rem;
+    width: 17.5%;
+    z-index: 2;
+
+    li {
+      transition: color 125ms;
+    }
+
+    li:hover {
+      color: white;
+    }
+
+    li:active {
+      color: #222;
+    }
+  }
+
+  input {
+    background: {
+      color: #dbdbdb;
+      image: url('/icons/magnifying-glass.png');
+      position: 92.5%, center right;
+      repeat: no-repeat;
+      size: 11.5%;
+    }
+    border: 0;
+    border-radius: 100rem;
+    float: right;
+    font: {
+      family: "Georgia";
+      size: 0.85rem;
+      style: italic;
+    }
+    letter-spacing: 0.025rem;
+    outline: none;
+    padding: 0.75rem 1.75rem;
+  }
+
+  &::after {
+    content: '';
+    clear: both;
+    display: block;
+  }
+}
+
 // CTAs
 .cta {
   position: relative;

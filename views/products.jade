@@ -13,8 +13,14 @@ block content
 
   main
     //- Search Bar
-    p Sort &#9662;
-    input(type="text", name="search-query")
+    section.search-bar
+      a.sort(href="#") Sort &#9662;
+        ul.sorting-options
+          li Newest
+          li Most Popular
+          li Greatest Expense
+          li Least Expense
+      input(type="text", name="search-query", placeholder="Search...")
     
     //- Hardware
     section(class="hardware")
