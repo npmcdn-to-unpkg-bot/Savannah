@@ -4,6 +4,7 @@
 
 // Preferences
 $white: #eaeaea;
+$peach: #df8b88;
 $neutral-button-color: #cc607c;
 $neutral-button-border-color: #b25672;
 
@@ -15,9 +16,60 @@ main {
 }
 
 aside {
-  background: orange;
+  /* Edit and Share: http://colorzilla.com/gradient-editor/#efefef+0,dedede+100 */
+  background: #efefef;
+  background: -moz-linear-gradient(45deg, #efefef 0%, #dedede 100%);
+  background: -webkit-linear-gradient(45deg, #efefef 0%,#dedede 100%);
+  background: linear-gradient(45deg, #efefef 0%,#dedede 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#dedede',GradientType=1);
+
   float: left;
+  font-family: "Georgia";
   width: 391.133px / 1024px * 100%;
+
+  h1 {
+    color: $peach;
+    font-style: italic;
+    letter-spacing: 0.225rem;
+    margin: 6.5% auto;
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+
+    &::before, &::after {
+      background-color: #bababa;
+      content: '';
+      display: inline-block;
+      height: 0.125rem;
+      margin: 0 5%;
+      vertical-align: middle;
+      width: 5rem;
+    }
+  }
+
+  ul {
+    color: #333;
+    margin: auto;
+    padding-bottom: 7.5%;
+    width: 80%;
+
+    &:last-of-type {
+      padding-bottom: 17.5%;
+    }
+  }
+
+  li {
+    line-height: 185%;
+
+    &:not(.indent) {
+      margin: 5% auto 2.5%;
+    }
+
+    &.indent {
+      text-indent: .75rem;
+    }
+  }
 }
 
 footer {
