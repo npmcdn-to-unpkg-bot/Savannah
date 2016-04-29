@@ -1,3 +1,55 @@
 // Seminars.scss
 // Alexander Rhett Crammer
 // Friday, 29 April, 2016
+
+// Seminar List
+main section {
+  position: relative;
+
+  &::after {
+    /* Edit and Share: http://colorzilla.com/gradient-editor/#57461b+0,4d4142+100&0.75+0,0.75+100 */
+    background: -moz-linear-gradient(45deg, rgba(87, 70, 27, 0.75) 0%, rgba(77, 65, 66, 0.75) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(87, 70, 27, 0.75) 0%,rgba(77, 65, 66, 0.75) 100%);
+    background: linear-gradient(45deg, rgba(87,70,27,0.75) 0%,rgba(77, 65, 66, 0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f257461b', endColorstr='#f24d4142',GradientType=1);
+
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  border: {
+    top: 0.125rem solid #40392e;
+    bottom: 0.125rem solid #40392e;
+  }
+  color: #dbdbdb;
+  background: {
+    position: center center;
+  }
+  font-family: "Fira Sans";
+  line-height: 150%;
+  padding: 4.5% 3.5%;
+  z-index: 0;
+
+  h1, p {
+    margin: auto 1.5%;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+    line-height: 175%;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 3.5%;
+  }
+}

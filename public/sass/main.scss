@@ -14,7 +14,13 @@ body {
 }
 
 main {
-  background: magenta;
+  /* Edit and Share: http://colorzilla.com/gradient-editor/#f7f7f7+0,f0f0f0+100 */
+  background: #f7f7f7;
+  background: -moz-linear-gradient(45deg, #f7f7f7 0%, #f0f0f0 100%);
+  background: -webkit-linear-gradient(45deg, #f7f7f7 0%,#f0f0f0 100%);
+  background: linear-gradient(45deg,  #f7f7f7 0%,#f0f0f0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f0f0f0',GradientType=1);
+
   float: left;
   width: 632.867px / 1024px * 100%;
 }

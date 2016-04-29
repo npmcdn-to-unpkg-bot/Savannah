@@ -21,11 +21,11 @@ block content
   main
     - var i = 0
     while i < 15
-      section(class="seminar")
-        h1= seminars[0].title
-        p= seminars[0].description
-        a(href="/seminars/" + seminars[0].idHash)
+      section(class="seminar", style="background-image: url('/images/cta-headers/#{seminars[1].headerImageFilename}')")
+        h1= seminars[1].title
+        p= seminars[1].description
+        a(href="/seminars/" + seminars[1].idHash)
           button Book
-        a(href="/seminars/star/" + seminars[0].idHash)
+        a(href="/seminars/star/" + seminars[1].idHash)
           button.yellow Star
       - i++
