@@ -1,5 +1,8 @@
 extends shared/layout
 
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/seminars.css")
+
 block content
   //- Navigation Bar
   include shared/nav-list
@@ -11,8 +14,8 @@ block content
   aside
     h1 Filters
     ul(class="sidebar-list")
-    each filter in filters
-      li= filter
+      each filter in filters
+        li= filter
 
   //- Seminars
   main

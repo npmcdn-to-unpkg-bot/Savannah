@@ -9,6 +9,10 @@ $neutral-button-color: #cc607c;
 $neutral-button-border-color: #b25672;
 
 // Structure
+body {
+  background: #ededed;
+}
+
 main {
   background: magenta;
   float: left;
@@ -51,12 +55,7 @@ aside {
   ul {
     color: #333;
     margin: auto;
-    padding-bottom: 7.5%;
     width: 80%;
-
-    &:last-of-type {
-      padding-bottom: 17.5%;
-    }
   }
 
   li {
