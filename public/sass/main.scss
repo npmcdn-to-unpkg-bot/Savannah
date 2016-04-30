@@ -336,14 +336,24 @@ footer {
 
   .left {
     width: 30%;
+    display: table;
+    height: 300px;
 
-    ul {
-      margin: 5% 0;
+    > span {
+      display: table-row;
+
+      &:first-child, &:last-child {
+        height: 100px;
+      }
+
+      > ul {
+        display: table-cell;
+        margin: 7.5% auto;
+        vertical-align: middle;
+      }
     }
 
     .outro p {
-      position: relative;
-      top: 1.25rem;
       font-size: 0.85rem;
       line-height: 225%;
     }
@@ -355,11 +365,13 @@ footer {
     &.about {
       p {
         float: left;
-        width: 75%;
+        width: 62.5%;
       }
 
       .logo {
         float: right;
+        position: relative;
+        right: 10%;
         width: 17.5%;
       }
     }
