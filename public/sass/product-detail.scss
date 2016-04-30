@@ -3,12 +3,59 @@
 // Saturday, 30 April, 2016
 
 // Structure
-main {
+body, main {
   background: white;
 }
 
 main, aside {
   width: 50%;
+}
+
+// Description
+.description {
+  overflow: scroll;
+  padding: 2.5rem;
+  position: relative;
+
+  h1 {
+    color: #353535;
+    font: {
+      family: "Fira Sans Medium";
+      size: 1.25rem;
+    }
+  }
+
+  p, li {
+    font-family: "Fira Sans";
+    font-size: 0.935rem;
+    line-height: 150%;
+    margin: 2.5% 0 !important;
+    width: 80%;
+  }
+
+  .price {
+    font: {
+      family: "Source Sans Pro Light";
+      size: 1.75rem;
+    }
+    position: absolute;
+    top: 7.5%;
+    right: 7.5%;
+    text-align: right;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a:link, a:visited {
+    display: block;
+    margin: 5% 0 0;
+
+    button {
+      margin: 0;
+    }
+  }
 }
 
 // Preview Images

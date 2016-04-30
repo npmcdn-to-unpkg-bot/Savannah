@@ -67,15 +67,6 @@ aside {
       overflow: hidden;
       position: relative;
       width: 100%;
-
-      // Sort of vertically center the images
-      img {
-        position: absolute;
-        bottom: 5%;
-        left: 0;
-        right: 0;
-        top: 5%;
-      }
     }
 
     p {

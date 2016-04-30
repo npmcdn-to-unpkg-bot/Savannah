@@ -25,16 +25,18 @@ block content
   aside
     //- Description
     section(class="description")
-      h1= productInfo.Brand + " " + productInfo.Model
-      p= productInfo.Title
-      ul
-      each feature in productInfo.Feature
-        li= feature
-      a(href="/cart/add/" + productAsin)
-        button Add to Cart
       - if (productListPrice)
         //- We have the price, show it
         p.price= productListPrice
+      h1= productInfo.Brand + " " + productInfo.Model
+      p= productInfo.Title
+      ul
+        - var feature_i = 0
+        while feature_i < 3
+          li= productInfo.Feature[feature_i]
+          - feature_i++
+      a(href="#")
+        button Add to Cart
 
   //- Half-Width Images
   section.half-width-images
