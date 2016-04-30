@@ -30,7 +30,8 @@ block content
       h1.peachy.dark.section-title Clearance
       each product, i in products
         section
-          h1= product.ItemAttributes[0].Brand + " " + product.ItemAttributes[0].Model
+          h1
+            a(href="/products/" + product.ASIN[0])= product.ItemAttributes[0].Brand + " " + product.ItemAttributes[0].Model
           div.image-mask
             img(src=product.LargeImage[0].URL[0])
           p= product.ItemAttributes[0].Title

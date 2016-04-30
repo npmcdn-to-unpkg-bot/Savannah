@@ -42,11 +42,22 @@ aside {
       clear: none;
     }
 
-    h1 {
+    h1 a:link, h1 a:visited {
       color: $rust;
       clear: both;
-      margin: 8.5% auto;
+      font-style: normal;
+      line-height: 150%;
+      margin: 2.5% auto;
+      transition: color 225ms;
       text-align: center;
+
+      &:hover {
+        color: lighten($rust, 15%);
+      }
+
+      &:active {
+        color: darken($rust, 15%);
+      }
     }
 
     // Trim images to a square
@@ -86,6 +97,7 @@ aside {
       display: block;
       font-style: italic;
       text-decoration: none;
+      transition: color 225ms;
       padding: 0.25rem 1rem;
     }
   }
