@@ -193,12 +193,15 @@ nav, footer {
   }
 
   .sorting-options {
-    background: #cecece;
+    background: #fff7f9;
     display: none;
-    border: 3px solid #bfbfbf;
+    border: 0.175rem solid #cec4c6;
     border-radius: 0.35rem;
-    color: #252525;
-    font-family: "Source Sans Pro";
+    color: #504547;
+    font: {
+      family: "Fira Sans";
+      size: 0.9rem;
+    }
     letter-spacing: 0.0125rem;
     line-height: 150%;
     position: absolute;
@@ -208,15 +211,15 @@ nav, footer {
 
     li {
       cursor: pointer;
-      transition: color 125ms;
+      transition: color 225ms;
     }
 
     li:hover {
-      color: white;
+      color: $peach;
     }
 
     li:active {
-      color: #222;
+      color: darken($peach, 35%);
     }
   }
 
@@ -270,6 +273,7 @@ nav, footer {
     top: 35%;
     right: 17.5%;
     width: 42.5%;
+    max-width: 500px;
 
     h1 {
       font: {
@@ -281,6 +285,7 @@ nav, footer {
     p {
       color: white;
       letter-spacing: 0.035rem;
+      margin: 2.5% auto;
     }
 
     button {
