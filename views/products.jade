@@ -1,5 +1,8 @@
 extends shared/layout
 
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/products.css")
+
 block content
   //- Navigation Bar
   include shared/nav-list
@@ -23,8 +26,8 @@ block content
       input(type="text", name="search-query", placeholder="Search...")
     
     //- Hardware
-    section(class="hardware")
-    h1 Clearance
+    section.products
+    h1.peachy Clearance
     each product, i in products
       div
         h1= product.ItemAttributes[0].Brand + " " + product.ItemAttributes[0].Model
@@ -38,4 +41,4 @@ block content
         p= product.ItemAttributes[0].ListPrice[0].FormattedPrice[0]
       a(href="/products/" + product.ASIN[0]) More &raquo;
       if i == 6
-        h1 Featured
+        h1.peachy Featured

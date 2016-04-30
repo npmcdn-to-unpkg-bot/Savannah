@@ -37,27 +37,6 @@ aside {
   font-family: "Georgia";
   width: 391.133px / 1024px * 100%;
 
-  h1 {
-    color: $peach;
-    font-style: italic;
-    letter-spacing: 0.225rem;
-    margin: 6.5% auto;
-    text: {
-      align: center;
-      transform: uppercase;
-    }
-
-    &::before, &::after {
-      background-color: #bababa;
-      content: '';
-      display: inline-block;
-      height: 0.125rem;
-      margin: 0 5%;
-      vertical-align: middle;
-      width: 5rem;
-    }
-  }
-
   ul {
     color: #333;
     margin: auto;
@@ -74,6 +53,27 @@ aside {
     &.indent {
       text-indent: .75rem;
     }
+  }
+}
+
+h1.peachy {
+  color: $peach;
+  font-style: italic;
+  letter-spacing: 0.225rem;
+  margin: 6.5% auto;
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+
+  &::before, &::after {
+    background-color: #bababa;
+    content: '';
+    display: inline-block;
+    height: 0.125rem;
+    margin: 0 5%;
+    vertical-align: middle;
+    width: 5rem;
   }
 }
 
