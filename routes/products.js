@@ -49,6 +49,7 @@ router.get('/products/:asin', (req, res, next) => {
       productAsin: result[0].ASIN[0],
       productInfo: result[0].ItemAttributes[0],
       productImages: result[0].ImageSets[0].ImageSet,
+      productListPrice: result[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice,
       productComments: [{
         author: {
           name: 'Otis Bryant',

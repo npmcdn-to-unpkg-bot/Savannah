@@ -1,5 +1,8 @@
 extends shared/layout
 
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/product-detail.css")
+
 block content
   //- Navigation Bar
   include shared/nav-list
@@ -11,8 +14,8 @@ block content
     //- Preview Images
     section(class="preview-images")
       div(class="previews")
-      each image in productImages.slice(0, 4)
-        img(src=image.LargeImage[0].URL, alt="Product image")
+        each image in productImages.slice(0, 4)
+          img(src=image.LargeImage[0].URL, alt="Product image")
       img(src=productImages[0].LargeImage[0].URL, alt="Product Image", class="large-image")
     
   aside
@@ -25,16 +28,24 @@ block content
         li= feature
       a(href="/cart/add/" + productAsin)
         button Add to Cart
-      p= productInfo.ListPrice[0].FormattedPrice
+      - if (productListPrice)
+        //- We have the price, show it
+        p.price= productListPrice
 
   //- Half-Width Images
-  section(class="half-width-images")
+  section.half-width-images
     each image in productImages
-      img(src=image.LargeImage[0].URL, alt="Product image")
+      div.mask
+        span.helper
+        img(src=image.LargeImage[0].URL, alt="Product image")
     - var i = 0
     while i < 5
-      p!= productComments[0].text
-      img(src="/images/users/" + productComments[0].author.imageFilename, alt="Photo of the author")
-      h1= productComments[0].author.name
-      p= productComments[0].time
-      - i++
+      section.reviews
+        p!= productComments[0].text
+        img(src="/images/users/" + productComments[0].author.imageFilename, alt="Photo of the author")
+        h1= productComments[0].author.name
+        p= productComments[0].time
+        - i++
+
+block extra_scripts
+  script(src="/scripts/product-detail.js")

@@ -1,0 +1,47 @@
+// product-detail.scss
+// Alexander Rhett Crammer
+// Saturday, 30 April, 2016
+
+// Structure
+main, aside {
+  width: 50%;
+}
+
+// Preview Images
+.preview-images {
+  .previews {
+    background: lavender;
+    float: left;
+    width: 15%;
+  }
+
+  .large-image {
+    float: left;
+    width: 85%;
+  }
+}
+
+// Half-Width Images
+.half-width-images {
+  .mask {
+    height: 500px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 50%;
+
+    .helper {
+      height: 100%;
+    }
+
+    img, .helper {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Reviews
+.reviews {
+  clear: both;
+}
