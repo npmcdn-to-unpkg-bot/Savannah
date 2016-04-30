@@ -3,41 +3,59 @@
 // Saturday, 30 April, 2016
 
 // Structure
+main {
+  background: white;
+}
+
 main, aside {
   width: 50%;
 }
 
 // Preview Images
 .preview-images {
-  .previews {
-    background: lavender;
-    float: left;
-    width: 15%;
+  background: magenta;
+  overflow: auto;
+
+  .mask {
+    width: 85%;
   }
 
-  .large-image {
+  .previews {
     float: left;
-    width: 85%;
+    height: 500px;
+    width: 15%;
+  }
+}
+
+// Clipping Masks
+.mask {
+  background: white;
+  height: 500px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+
+  img {
+    width: 50%;
+  }
+
+  .helper {
+    height: 100%;
+  }
+
+  img, .helper {
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 
 // Half-Width Images
 .half-width-images {
+  clear: both;
+
   .mask {
-    height: 500px;
-    float: left;
-    overflow: hidden;
-    position: relative;
     width: 50%;
-
-    .helper {
-      height: 100%;
-    }
-
-    img, .helper {
-      display: inline-block;
-      vertical-align: middle;
-    }
   }
 }
 
