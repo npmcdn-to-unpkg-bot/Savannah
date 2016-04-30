@@ -2,8 +2,6 @@
 // Alexander Rhett Crammer
 // Saturday, 23 April, 2016
 
-$peach: #df8b88;
-
 // Sidebar
 aside {
   .indent {
@@ -12,3 +10,16 @@ aside {
 }
 
 // Products
+.products {
+  h1 {
+    margin: 4.5% auto;
+  }
+
+  section {
+
+    // of 635.328px
+    background: mediumslateblue;
+    float: left;
+    width: 211.776px;
+  }
+}

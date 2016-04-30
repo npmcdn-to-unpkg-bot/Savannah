@@ -5,6 +5,7 @@
 // Preferences
 $white: #eaeaea;
 $peach: #df8b88;
+$grey: #494949;
 $neutral-button-color: #cc607c;
 $neutral-button-border-color: #b25672;
 
@@ -74,6 +75,10 @@ h1.peachy {
     margin: 0 5%;
     vertical-align: middle;
     width: 5rem;
+  }
+
+  &.dark {
+    color: $grey;
   }
 }
 
@@ -175,6 +180,7 @@ nav, footer {
   background: linear-gradient(45deg, #efefef 0%,#dedede 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#dedede',GradientType=1);
 
+  border-bottom: 0.15rem solid lighten($grey, 50%);
   color: #383838;
   font-family: "Georgia";
   padding: 1.5% 5%;
@@ -206,6 +212,7 @@ nav, footer {
     z-index: 2;
 
     li {
+      cursor: pointer;
       transition: color 125ms;
     }
 
