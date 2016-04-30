@@ -2,6 +2,9 @@
 // Alexander Rhett Crammer
 // Saturday, 23 April, 2016
 
+// Preferences
+$rust: #c26139;
+
 // Sidebar
 aside {
   .indent {
@@ -11,15 +14,55 @@ aside {
 
 // Products
 .products {
-  h1 {
-    margin: 4.5% auto;
+  h1.section-title {
+    clear: both;
+    margin: 0;
+    padding: 4.5% 0;
   }
 
   section {
-
     // of 635.328px
-    background: mediumslateblue;
+    background: #dad4ff;
     float: left;
+    font-family: "Fira Sans";
     width: 211.776px;
+
+    &:nth-of-type(3n+1) {
+      clear: both;
+    }
+
+    h1 {
+      color: $rust;
+      clear: both;
+      margin: 8.5% auto;
+      text-align: center;
+    }
+
+    // Trim images to a square
+    .image-mask {
+      background: white;
+      height: 175px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      // Sort of vertically center the images
+      img {
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        right: 0;
+        top: 5%;
+      }
+    }
+
+    p {
+      font: {
+        family: "Fira Sans";
+        size: 0.925rem;
+      }
+      padding: 1rem;
+      line-height: 145%;
+    }
   }
 }
