@@ -36,7 +36,7 @@ block content
           p= product.ItemAttributes[0].Title
           - if (product.ItemAttributes[0].ListPrice)
             //- We have the price, show it
-            p= product.ItemAttributes[0].ListPrice[0].FormattedPrice[0]
+            p.price= product.ItemAttributes[0].ListPrice[0].FormattedPrice[0]
           a(href="/products/" + product.ASIN[0]) More &raquo;
         if i == 6
           h1.peachy.dark.section-title Featured
