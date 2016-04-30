@@ -13,9 +13,11 @@ block content
   main
     //- Preview Images
     section.preview-images
-      div.previews
+      ul.previews
         each image in productImages.slice(0, 4)
-          img(src=image.LargeImage[0].URL, alt="Product image")
+          li
+            span
+              img(src=image.LargeImage[0].URL, alt="Product image")
       div.mask
         span.helper
         img(src=productImages[0].LargeImage[0].URL, alt="Product Image", class="large-image")

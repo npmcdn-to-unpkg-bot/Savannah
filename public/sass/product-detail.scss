@@ -13,7 +13,6 @@ main, aside {
 
 // Preview Images
 .preview-images {
-  background: magenta;
   overflow: auto;
 
   .mask {
@@ -21,9 +20,28 @@ main, aside {
   }
 
   .previews {
+    display: table;
     float: left;
     height: 500px;
     width: 15%;
+
+    li {
+      display: table-row;
+
+      &:first-child, &:last-child {
+        height: 125px;
+      }
+    }
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    img {
+      display: block;
+      max-height: 125px;
+    }
   }
 }
 
