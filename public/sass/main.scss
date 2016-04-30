@@ -183,7 +183,7 @@ nav, footer {
   a:link, a:visited {
     color: #383838;
     float: left;
-    line-height: 200%;
+    line-height: 250%;
     text-decoration: none;
   }
 
@@ -250,7 +250,14 @@ nav, footer {
 
 // CTAs
 .cta {
+  background: {
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
   position: relative;
+  height: 500px;
+  overflow: hidden;
 
   section {
     color: $white;
