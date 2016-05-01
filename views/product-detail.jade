@@ -44,10 +44,14 @@ block content
       div.mask
         span.helper
         img(src=image.LargeImage[0].URL, alt="Product image")
-    - var i = 0
-    while i < 5
-      section.reviews
+  
+  //- Reviews
+  - var i = 0
+  while i < 5
+    section.review
+      div.left
         p!= productComments[0].text
+      div.right
         img(src="/images/users/" + productComments[0].author.imageFilename, alt="Photo of the author")
         h1= productComments[0].author.name
         p= productComments[0].time
