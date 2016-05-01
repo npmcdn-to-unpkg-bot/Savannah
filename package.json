@@ -15,6 +15,7 @@
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
+    "amazon-product-api": "^0.3.10",
     "browser-sync": "^2.12.3",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.0.6",
