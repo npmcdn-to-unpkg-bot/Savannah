@@ -1,6 +1,5 @@
 # OS X
 .DS_Store*
-# Icon?
 ._*
 
 # Windows
@@ -16,4 +15,3 @@ Desktop.ini
 node_modules
 *.log
 *.gz
-
