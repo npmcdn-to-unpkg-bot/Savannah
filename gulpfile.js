@@ -13,7 +13,8 @@ gulp.task('serve', ['sass', 'sass:watch'], function () {
   // Run Browser-Sync
   browserSync.init([
     "views/***",
-    "public/stylesheets/***"
+    "public/stylesheets/***",
+    "public/scripts/***"
   ], {
     proxy: 'localhost:9001',
     injectChanges: true,

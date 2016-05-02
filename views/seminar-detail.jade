@@ -46,23 +46,35 @@ block content
             p= seminar.reviews[0].author.createdAt
         //- Comments
         if review_i == 0
-          div.review_comment
+          div.review_comments
             - var comment_i = 0
             while comment_i < 3
-              p= seminar.reviews[0].comments[0].body
-              img(src='/images/users/' + seminar.reviews[0].comments[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].comments[0].author.name)
-              h1= seminar.reviews[0].comments[0].author.name
-              h2= seminar.reviews[0].comments[0].author.location
-              h2= seminar.reviews[0].comments[0].createdAt
+              div.review_comment
+                p= seminar.reviews[0].comments[0].body
+                div.right
+                  img(src='/images/users/' + seminar.reviews[0].comments[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].comments[0].author.name)
+                  div.author_details
+                    p= seminar.reviews[0].comments[0].author.name
+                    p= seminar.reviews[0].comments[0].author.location
+                    p= seminar.reviews[0].comments[0].createdAt
               - comment_i++
       - review_i++
     
   //- Review
   aside
-  h1 Share a Review
-  form(action="/seminars/review", method="POST")
-    input(type="text", name="full_name", placeholder="Full Name")
-    input(type="text", name="email_address", placeholder="Email Address")
-    textarea(name="review_body" rows="20", placeholder="Review")
-    span * * * * *
-    input(type="submit", value="Post")
+    h1.peachy.dark.section-title Share a Review
+    form(action="/seminars/review", method="POST")
+      label You:
+      input(type="text", name="full_name", placeholder="Full Name")
+      input(type="text", name="email_address", placeholder="Email Address")
+      textarea(name="review_body" rows="20", placeholder="Review")
+      div.stars
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+      button Post
+
+block extra_scripts
+  script(src="/scripts/seminar-detail.js")

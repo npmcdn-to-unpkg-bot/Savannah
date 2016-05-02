@@ -82,7 +82,7 @@ router.get('/:id', (req, res, next) => {
             location: "Seattle, WA",
             imageFilename: "alicia_choi.jpg"
           },
-          body: "I learned some new stuff, too! I also highly recommend this seminar.",
+          body: "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its\' greater potential. 10 out of 10. I highly recommend it!",
           createdAt: "Tuesday, 12 April 2016"
         }]
       }],
