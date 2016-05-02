@@ -13,8 +13,8 @@ block content
     include shared/search-bar
     
     //- Carted Products
+    h1.peachy.dark.section-title Cart
     section.products
-      h1.peachy.dark.section-title Cart
       - var i = 0
       while i < 5
         section
@@ -79,3 +79,5 @@ block content
 
 block extra_scripts
   script(src="/scripts/cart.js")
+  script(src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js")
+  script(src="/scripts/product-view.js")

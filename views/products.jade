@@ -20,8 +20,8 @@ block content
     include shared/search-bar
     
     //- Products
+    h1.peachy.dark.section-title Clearance
     section.products
-      h1.peachy.dark.section-title Clearance
       each product, i in products
         section
           h1
@@ -33,5 +33,7 @@ block content
             //- We have the price, show it
             p.price= product.ItemAttributes[0].ListPrice[0].FormattedPrice[0]
           a(href="/products/" + product.ASIN[0]) More &raquo;
-        if i == 6
-          h1.peachy.dark.section-title Featured
+
+block extra_scripts
+  script(src="https://npmcdn.com/masonry-layout@4.1/dist/masonry.pkgd.min.js")
+  script(src="/scripts/product-view.js")

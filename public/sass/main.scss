@@ -29,7 +29,10 @@ aside {
   background: linear-gradient(45deg, #efefef 0%,#dedede 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#dedede',GradientType=1);
 
-  border-left: 0.125rem solid #d2d2d2;
+  border: {
+    left: 0.125rem solid #d2d2d2;
+    bottom: 0.125rem solid #d2d2d2;
+  }
   box-sizing: border-box;
   float: left;
   font-family: "Georgia";
@@ -76,7 +79,7 @@ h1.peachy {
   color: $peach;
   font-style: italic;
   letter-spacing: 0.125rem;
-  margin: 6.5% auto;
+  margin: 5% auto 2.5%;
   text: {
     align: center;
     transform: uppercase;
