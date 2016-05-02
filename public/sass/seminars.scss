@@ -2,6 +2,8 @@
 // Alexander Rhett Crammer
 // Friday, 29 April, 2016
 
+@import 'prefs';
+
 // Seminar List
 .seminar {
   position: relative;
@@ -57,7 +59,68 @@
 
 // Reviews
 .review {
-  .star {
-    width: 7.5%;
+  padding: 2.5% 0;
+
+  .left {
+    float: left;
+    margin-left: 5%;
+    width: 60%;
+
+    .stars img {
+      float: left;
+      width: 7.5%;
+    }
+
+    p {
+      color: #353535;
+      clear: both;
+      line-height: 150%;
+      margin: 10% 0;
+    }
+
+    a:link, a:visited {
+      color: $grey;
+      font: {
+        family: "Source Sans Pro";
+        style: italic;
+      }
+      text-decoration: none;
+      transition: all 225ms;
+    }
+
+    a:hover {
+      color: lighten($grey, 25%);
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: darken($grey, 75%);
+    }
+  }
+
+  .right {
+    float: right;
+    margin-right: 5%;
+    text-align: center;
+    line-height: 150%;
+    letter-spacing: 0.025rem;
+    width: 25%;
+
+    p {
+      font-family: "Source Sans Pro Light";
+    }
+
+    img {
+      border: 0.235rem solid #e0e0e0;
+      border-radius: 100rem;
+      width: 80%;
+    }
+  }
+
+  // Comments
+  .review_comment {
+    background: yellow;
+    clear: both;
+    padding: 3.5% 0;
   }
 }

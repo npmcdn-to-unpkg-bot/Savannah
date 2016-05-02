@@ -24,33 +24,37 @@ block content
     - var review_i = 0
     while review_i < 15
       section.review
-        div.stars
-          - var star_i = 0
-          while star_i < seminar.reviews[0].stars
-            img(src="/icons/star.png", alt="Star", class="star")
-            - star_i++
-          if seminar.reviews[0].stars < 5
-            - var unstar_i = 0
-            - var amount_unstarred = 5 - seminar.reviews[0].stars
-            while unstar_i < amount_unstarred
-              img(src="/icons/unstar.png", alt="Hollow Star", class="star")
-              - unstar_i++
-        p= seminar.reviews[0].body
-        div.author
-          img(src="/images/users/" + seminar.reviews[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].author.name)
-          p= seminar.reviews[0].author.location
-          p= seminar.reviews[0].author.createdAt
-        a(href='#')= seminar.reviews[0].comments.length + " Comments"
+        div.left
+          div.stars
+            - var star_i = 0
+            while star_i < seminar.reviews[0].stars
+              img(src="/icons/star.png", alt="Star")
+              - star_i++
+            if seminar.reviews[0].stars < 5
+              - var unstar_i = 0
+              - var amount_unstarred = 5 - seminar.reviews[0].stars
+              while unstar_i < amount_unstarred
+                img(src="/icons/unstar.png", alt="Hollow Star")
+                - unstar_i++
+          p= seminar.reviews[0].body
+          - var comments_word = (seminar.reviews[0].comments.length > 1) ? "Comments" : "Comment"
+          a(href='#')= seminar.reviews[0].comments.length + " " + comments_word
+        div.right
+          div.author
+            img(src="/images/users/" + seminar.reviews[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].author.name)
+            p= seminar.reviews[0].author.location
+            p= seminar.reviews[0].author.createdAt
         //- Comments
         if review_i == 0
-          - var comment_i = 0
-          while comment_i < 3
-            p= seminar.reviews[0].comments[0].body
-            img(src='/images/users/' + seminar.reviews[0].comments[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].comments[0].author.name)
-            h1= seminar.reviews[0].comments[0].author.name
-            h2= seminar.reviews[0].comments[0].author.location
-            h2= seminar.reviews[0].comments[0].createdAt
-            - comment_i++
+          div.review_comment
+            - var comment_i = 0
+            while comment_i < 3
+              p= seminar.reviews[0].comments[0].body
+              img(src='/images/users/' + seminar.reviews[0].comments[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].comments[0].author.name)
+              h1= seminar.reviews[0].comments[0].author.name
+              h2= seminar.reviews[0].comments[0].author.location
+              h2= seminar.reviews[0].comments[0].createdAt
+              - comment_i++
       - review_i++
     
   //- Review

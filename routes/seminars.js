@@ -68,7 +68,7 @@ router.get('/:id', (req, res, next) => {
       description: "Authentication scaffolding, implicit model binding, rate limiting, array validation, and more! We’ll be talking about all the differences between Laravel 5.1 and 5.2 this week!",
       headerImageFilename: "laravel-5.jpg",
       reviews: [{
-        stars: 2,
+        stars: 4,
         body: "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
         author: {
           name: 'Otis Bryant',
