@@ -6,6 +6,7 @@ var products = require('../data/amazon');
 
 router.get('/', (req, res, next) => {
   let viewData = {
+    title: 'Cart',
     products: products.hardware._result
   };
   res.render('cart', viewData);

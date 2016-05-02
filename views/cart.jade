@@ -1,35 +1,34 @@
 extend shared/layout
 
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/product-view.css")
+
 block content
   //- Navigation
-  include shared/nav-list.jade
+  include shared/nav-list-with-background.jade
   
   main
     //- Search Bar
-    div(class="search-bar")
-      p Sort &#9662;
-      input(type="text", name="search-query")
+    include shared/search-bar
     
     //- Carted Products
-    section(class="hardware")
-    h1 Clearance
-    - var i = 0
-    while i < 5
-      div
-        img(src=products[i].LargeImage[0].URL[0])
-        h1= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
-        p= products[i].ItemAttributes[0].Title
-      p
-        span Subtotal:
-        span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
-      p
-        span Tax:
-        span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
-      p
-        span Total:
-        span= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice
-      - i++
-
+    section.products
+      h1.peachy.dark.section-title Cart
+      - var i = 0
+      while i < 5
+        section
+          h1
+            a(href="/products/" + products[i].ASIN[0])= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
+          div.image-mask
+            img(src=products[i].LargeImage[0].URL[0])
+          p= products[i].ItemAttributes[0].Title
+          - if (products[i].ItemAttributes[0].ListPrice)
+            //- We have the price, show it
+            p.price= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice[0]
+          a(href="/products/" + products[i].ASIN[0]) More &raquo;
+        if i == 6
+          h1.peachy.dark.section-title Featured
+        - i++
   aside
     //- Price
     p

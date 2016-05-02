@@ -2,6 +2,7 @@ extends shared/layout
 
 block extra_styles
   link(rel="stylesheet", href="/stylesheets/products.css")
+  link(rel="stylesheet", href="/stylesheets/product-view.css")
 
 block content
   //- Navigation Bar
@@ -16,16 +17,9 @@ block content
 
   main
     //- Search Bar
-    section.search-bar
-      a.sort(href="#") Sort &#9662;
-        ul.sorting-options
-          li Newest
-          li Most Popular
-          li Greatest Expense
-          li Least Expense
-      input(type="text", name="search-query", placeholder="Search...")
+    include shared/search-bar
     
-    //- Hardware
+    //- Products
     section.products
       h1.peachy.dark.section-title Clearance
       each product, i in products

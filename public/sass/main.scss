@@ -84,6 +84,54 @@ p {
   }
 }
 
+form {
+  padding: 7.5%;
+
+  label {
+    display: block;
+    font: {
+      family: "Source Sans Pro Light";
+      size: 0.925rem;
+    }
+    letter-spacing: 0.0275rem;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  input, textarea {
+    /* Edit and Share: http://colorzilla.com/gradient-editor/#dbdbdb+0,c7c7c7+100 */
+    background: rgb(219,219,219); /* Old browsers */
+    background: -moz-linear-gradient(45deg,  rgba(219,219,219,1) 0%, rgba(199,199,199,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  rgba(219,219,219,1) 0%,rgba(199,199,199,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  rgba(219,219,219,1) 0%,rgba(199,199,199,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', endColorstr='#c7c7c7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    border: 0;
+    border-radius: 0.175rem;
+    color: $grey;
+    font: {
+      family: "Georgia";
+      size: 0.875rem;
+      style: italic;
+    }
+    letter-spacing: 0.0275rem;
+    padding: 2.5% 7.5%;
+    margin: 3.5% 2.5%;
+    width: 30%;
+  }
+
+  textarea {
+    height: 275px;
+    line-height: 165%;
+    padding: 4.35% 7.5%;
+    width: 80%;
+  }
+
+  button {
+    display: block;
+    margin: auto;
+  }
+}
 
 footer {
   background: aqua;
@@ -93,10 +141,7 @@ footer {
 // Navigation
 nav {
   height: 135px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
+  position: relative;
   z-index: 1;
 
   .escape-hatch {
@@ -138,6 +183,13 @@ nav {
       text-align: center;
     }
   }
+}
+
+nav:not(.pink-to-orange) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 // Navigation and Footer

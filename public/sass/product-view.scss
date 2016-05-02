@@ -1,0 +1,84 @@
+// product-view.scss
+// Alexander Rhett Crammer
+// Monday, 2 May, 2016
+
+@import 'prefs';
+
+// Products
+.products {
+  margin-bottom: 0.75rem;
+  overflow: auto;
+
+  h1.section-title {
+    clear: both;
+    margin: 0;
+    padding: 4.5% 0;
+  }
+
+  section {
+    background: $white;
+    border: 0.15rem solid #c9c9c9;
+    border-radius: 0.325rem;
+    box-sizing: border-box;
+    float: left;
+    font-family: "Fira Sans";
+    margin: (15px / 635.328px * 100%) (7.5px / 635.328px * 100%);
+    padding: (5px / 635.328px * 100%) 0 (12.5px / 635.328px * 100%);
+    width: 196.776px / 635.328px * 100%;
+
+    &:nth-of-type(3n+1) {
+      clear: both;
+    }
+
+    // Quick and Dirty fix for that last one
+    &:nth-of-type(10) {
+      clear: none;
+    }
+
+    h1 a:link, h1 a:visited {
+      color: $rust;
+      clear: both;
+      font-style: normal;
+      line-height: 150%;
+      margin: 2.5% auto;
+      transition: color 225ms;
+      text-align: center;
+
+      &:hover {
+        color: lighten($rust, 15%);
+      }
+
+      &:active {
+        color: darken($rust, 15%);
+      }
+    }
+
+    // Trim images to a square
+    .image-mask {
+      background: white;
+      height: 175px;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+    }
+
+    p {
+      padding: 1rem;
+      line-height: 145%;
+    }
+
+    .price {
+      line-height: 100%;
+      padding: 0.5rem 1rem;
+    }
+
+    a:link, a:visited {
+      color: $grey;
+      display: block;
+      font-style: italic;
+      text-decoration: none;
+      transition: color 225ms;
+      padding: 0.25rem 1rem;
+    }
+  }
+}
