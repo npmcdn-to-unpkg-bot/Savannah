@@ -16,11 +16,11 @@ block content
       a(href="#" + seminar.idHash)
         button Book
       a(href="#" + seminar.idHash)
-        button Star
+        button.yellow Star
   
   //- Reviews
   main
-    h1.peachy.dark.section-title Reviews
+    h1.peachy.dark.section-title.grey-to-silver Reviews
     - var review_i = 0
     while review_i < 15
       section.review
@@ -64,7 +64,7 @@ block content
   aside
     h1.peachy.dark.section-title Share a Review
     form(action="/seminars/review", method="POST")
-      label You:
+      h2 You:
       input(type="text", name="full_name", placeholder="Full Name")
       input(type="text", name="email_address", placeholder="Email Address")
       textarea(name="review_body" rows="20", placeholder="Review")

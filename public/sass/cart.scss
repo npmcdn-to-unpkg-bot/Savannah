@@ -1,0 +1,39 @@
+// cart.scss
+// Alexander Rhett Crammer
+// Monday, 2 May, 2016
+
+@import 'prefs';
+
+// Forms
+form {
+  label {
+    color: $grey;
+    cursor: pointer;
+    display: block;
+
+    &:first-of-type {
+      margin-top: 7.5%;
+    }
+  }
+
+  p {
+    padding: 5% 10%;
+  }
+
+  span {
+    float: left;
+    width: 50%;
+  }
+
+  span:nth-of-type(2n) {
+    text-align: right;
+  }
+
+  &:last-of-type {
+    font-weight: bold;
+  }
+
+  button {
+    margin-top: 10%;
+  }
+}

@@ -29,9 +29,29 @@ aside {
   background: linear-gradient(45deg, #efefef 0%,#dedede 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#dedede',GradientType=1);
 
+  border-left: 0.125rem solid #d2d2d2;
+  box-sizing: border-box;
   float: left;
   font-family: "Georgia";
+  padding-top: 2.5%;
   width: 391.133px / 1024px * 100%;
+
+  p {
+    font-family: "Fira Sans";
+  }
+
+  label {
+    font: {
+      family: "Fira Sans";
+      size: 0.915rem;
+    }
+    margin-left: 10%;
+  }
+
+  input[type="checkbox"] {
+    vertical-align: 20%;
+    width: inherit;
+  }
 
   ul {
     color: #333;
@@ -55,7 +75,7 @@ aside {
 h1.peachy {
   color: $peach;
   font-style: italic;
-  letter-spacing: 0.225rem;
+  letter-spacing: 0.125rem;
   margin: 6.5% auto;
   text: {
     align: center;
@@ -75,6 +95,11 @@ h1.peachy {
   &.dark {
     color: $grey;
   }
+
+  &.grey-to-silver {
+    margin: 0;
+    padding: 3.5% 0;
+  }
 }
 
 p {
@@ -87,15 +112,17 @@ p {
 form {
   padding: 7.5%;
 
-  label {
+  h2 {
+    color: #494949;
     display: block;
     font: {
-      family: "Source Sans Pro Light";
+      family: "Fira Sans Light";
       size: 0.925rem;
     }
     letter-spacing: 0.0275rem;
     text-transform: uppercase;
-    width: 100%;
+    margin: auto;
+    width: 95%;
   }
 
   input, textarea {
@@ -483,6 +510,11 @@ button {
     }
   }
 
+  &:disabled {
+    background-color: desaturate($neutral-button-color, 80%);
+    border-color: desaturate($neutral-button-color, 65%);
+  }
+
   // Button Flavors
   &.tan {
     background-color: #b29586;
@@ -542,6 +574,15 @@ button {
   background: -webkit-linear-gradient(45deg, #db5178 0%,#df8b88 100%);
   background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
+}
+
+.grey-to-silver {
+  /* Edit and Share: http://colorzilla.com/gradient-editor/#dedede+0,efefef+100 */
+  background: #efefef;
+  background: -moz-linear-gradient(45deg, #dedede 0%, #efefef 100%);
+  background: -webkit-linear-gradient(45deg, #dedede 0%,#efefef 100%);
+  background: linear-gradient(45deg, #dedede 0%,#efefef 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#efefef',GradientType=1);
 }
 
 // Fonts
