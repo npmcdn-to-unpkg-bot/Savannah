@@ -7,6 +7,9 @@ var browserSync = require('browser-sync').create();
 var exec = require('child_process').exec;
 
 gulp.task('serve', ['sass', 'sass:watch'], function () {
+  // Start Mongo
+  exec('mongod');
+
   // Serve the app with Nodemon
   nodemon();
 
