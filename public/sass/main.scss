@@ -17,7 +17,7 @@ main {
   background: linear-gradient(45deg,  #f7f7f7 0%,#f0f0f0 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f0f0f0',GradientType=1);
 
-  float: left;
+  float: right;
   width: 632.867px / 1024px * 100%;
 }
 
@@ -586,6 +586,41 @@ button {
   background: -webkit-linear-gradient(45deg, #dedede 0%,#efefef 100%);
   background: linear-gradient(45deg, #dedede 0%,#efefef 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dedede', endColorstr='#efefef',GradientType=1);
+}
+
+// Responsiveness
+@media only screen and (max-width: 950px) {
+  // Structure
+  h1.peachy {
+    &::before, &::after {
+      content: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  // CTAs
+  .cta {
+    section {
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  // Structure
+  main, aside {
+    width: 100%;
+  }
+
+  aside {
+    clear: both;
+    padding-bottom: 5%;
+  }
 }
 
 // Fonts

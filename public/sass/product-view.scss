@@ -56,7 +56,7 @@
     // Trim images to a square
     .image-mask {
       background: white;
-      height: 175px;
+      height: 100%;
       overflow: hidden;
       position: relative;
       width: 100%;
@@ -79,6 +79,29 @@
       text-decoration: none;
       transition: color 225ms;
       padding: 0.25rem 1rem;
+    }
+  }
+}
+
+// Responsiveness
+@media only screen and (max-width: 950px) {
+  // Products
+  .products section {
+    width: 271px / 568.578px * 100%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  // Products
+  .products section {
+    width: 97.5%;
+
+    .image-mask{
+      text-align: center;
+
+      img {
+        width: 50%;
+      }
     }
   }
 }

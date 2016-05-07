@@ -5,10 +5,15 @@
 // Structure
 body, main {
   background: white;
+  float: left;
 }
 
 main, aside {
   width: 50%;
+}
+
+aside li:not(.indent) {
+  margin: 2.5% 0;
 }
 
 // Description
@@ -23,13 +28,14 @@ main, aside {
       family: "Fira Sans Medium";
       size: 1.25rem;
     }
+    line-height: 135%;
   }
 
   p, li {
     font-family: "Fira Sans";
     font-size: 0.935rem;
     line-height: 150%;
-    margin: 2.5% 0 !important;
+    margin: 2.5% 0;
     width: 70%;
   }
 
@@ -67,6 +73,7 @@ main, aside {
   }
 
   .previews {
+    cursor: pointer;
     display: table;
     float: left;
     height: 500px;
@@ -188,4 +195,59 @@ main, aside {
     left: 0;
     z-index: -1;
   }
+}
+
+@media only screen and (max-width: 950px) {
+  // Description
+  .description {
+    padding-top: 0;
+
+    p, ul {
+      text-align: justify;
+      width: 90%;
+    }
+
+    li {
+      width: 100%;
+    }
+
+    .price {
+      position: static;
+    }
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  // Structure
+  main, aside {
+    width: 100%;
+  }
+
+  // Description
+  .description {
+    text-align: center;
+
+    h1 {
+      text-align: left;
+      margin: 2.5% auto;
+    }
+
+    h1, p, ul {
+      width: 65%;
+    }
+
+    p, ul {
+      margin: auto;
+    }
+  }
+
+  // Footer
+  footer {
+    .left, .right {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
 }

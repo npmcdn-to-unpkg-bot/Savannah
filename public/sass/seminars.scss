@@ -218,3 +218,17 @@ aside {
     }
   }
 }
+
+// Responsiveness
+@media only screen and (max-width: 750px) {
+  // Seminar List
+  .seminar {
+    h1 {
+      line-height: 135%;
+    }
+
+    p {
+      text-align: justify;
+    }
+  }
+}
