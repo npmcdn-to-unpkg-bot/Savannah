@@ -1,8 +1,12 @@
 // Pancake Button
 var pancakes = $('.pancakes');
+var nav = $('nav');
 $(pancakes).click(function () {
   pancakes.children('span').toggleClass('crossed');
+  $('nav ul').toggle();
+  nav.toggleClass('static');
 });
+pancakes.click();
 
 // Prevent a(href="#") from jumping to the top
 $('a[href="#"]').click(function (e) {

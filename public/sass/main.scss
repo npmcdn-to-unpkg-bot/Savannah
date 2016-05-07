@@ -213,6 +213,10 @@ nav {
       text-align: center;
     }
   }
+
+  .pancakes {
+    display: none;
+  }
 }
 
 nav:not(.pink-to-orange) {
@@ -599,8 +603,20 @@ button {
 
   // Navigation
   nav {
+    &.static {
+      position: static;
+    }
+
     ul {
+      background-color: yellowgreen;
       display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
     }
 
     .pancakes {
@@ -616,6 +632,7 @@ button {
       right: 5%;
       bottom: 0;
       width: 10%;
+      z-index: 2;
 
       span {
         display: block;
