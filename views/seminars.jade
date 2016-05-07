@@ -10,13 +10,6 @@ block content
   //- CTA
   include shared/ctas/seminar
 
-  //- Filters
-  aside
-    h1.peachy Filters
-    ul(class="sidebar-list")
-      each filter in filters
-        li= filter
-
   //- Seminars
   main
     //- Search Bar
@@ -32,3 +25,10 @@ block content
         a(href="/seminars/star/" + seminars[1].idHash)
           button.yellow Star
       - i++
+
+  //- Filters
+  aside
+    h1.peachy Filters
+    ul(class="sidebar-list")
+      each filter in filters
+        li= filter

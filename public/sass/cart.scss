@@ -4,6 +4,18 @@
 
 @import 'prefs';
 
+// Structure
+aside p {
+  color: $grey;
+  line-height: 175%;
+  margin: auto;
+  width: 82.5%;
+
+  span:nth-child(2n) {
+    float: right;
+  }
+}
+
 // Forms
 form {
   label {
@@ -35,5 +47,28 @@ form {
 
   button {
     margin-top: 10%;
+  }
+}
+
+// Responsiveness
+@media only screen and (max-width: 750px) {
+  // Structure
+  main, aside {
+    width: 100%;
+  }
+
+  // Forms
+  form {
+    label {
+      margin: 0 !important;
+    }
+
+    input, textarea {
+      width: 80%;
+    }
+
+    button {
+      margin-top: 2.5%;
+    }
   }
 }

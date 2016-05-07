@@ -609,6 +609,13 @@ button {
       width: 80%;
     }
   }
+
+  // Footer
+  footer {
+    .left, .right {
+      width: 100%;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
