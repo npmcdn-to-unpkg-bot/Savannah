@@ -8,8 +8,7 @@ block content
   include shared/nav-list
   
   //- CTA-style Description
-  section.cta
-    img(src="/images/cta-headers/laravel-5.jpg", alt="Featured post background image")
+  section.cta(style="background-image: url('/images/cta-headers/laravel-5.jpg')")
     section
       h1= seminar.title
       p= seminar.description
@@ -19,7 +18,7 @@ block content
         button.yellow Star
   
   //- Reviews
-  main
+  main.left
     h1.peachy.dark.section-title.grey-to-silver Reviews
     - var review_i = 0
     while review_i < 15
@@ -61,7 +60,7 @@ block content
       - review_i++
     
   //- Review
-  aside
+  aside.right
     h1.peachy.dark.section-title Share a Review
     form(action="/seminars/review", method="POST")
       h2 You:

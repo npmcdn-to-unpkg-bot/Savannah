@@ -5,6 +5,10 @@
 @import 'prefs';
 
 // Structure
+main.left {
+  float: left;
+}
+
 main h1.peachy {
   margin: 3.5% auto;
 }
@@ -219,8 +223,30 @@ aside {
   }
 }
 
+aside.right {
+  float: right;
+}
+
 // Responsiveness
+@media only screen and (max-width: 950px) {
+  // Reviews
+  .review {
+    .left p {
+      text-align: justify;
+    }
+
+    .review_comment p {
+      line-height: 135%;
+    }
+  }
+}
+
 @media only screen and (max-width: 750px) {
+  // Structure
+  main, aside {
+    width: 100%;
+  }
+
   // Seminar List
   .seminar {
     h1 {

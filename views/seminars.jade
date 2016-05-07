@@ -17,7 +17,7 @@ block content
 
     - var i = 0
     while i < 15
-      section(class="seminar", style="background-image: url('/images/cta-headers/#{seminars[1].headerImageFilename}')")
+      section.seminar(style="background-image: url('/images/cta-headers/#{seminars[1].headerImageFilename}')")
         h1= seminars[1].title
         p= seminars[1].description
         a(href="/seminars/" + seminars[1].idHash)
