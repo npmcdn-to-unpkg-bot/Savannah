@@ -596,6 +596,62 @@ button {
       content: none;
     }
   }
+
+  // Navigation
+  nav {
+    ul {
+      display: none;
+    }
+
+    .pancakes {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+      display: block;
+      float: right;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      right: 5%;
+      bottom: 0;
+      width: 10%;
+
+      span {
+        display: block;
+        background-color: $white;
+        height: 0.25rem;
+        margin: 0.75rem auto;
+        transition: all 225ms;
+        width: 3.25rem;
+
+        &.crossed:first-of-type {
+          -ms-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+
+          -webkit-transform-origin: top right;
+          transform-origin: top right;
+          width: 2.875rem;
+        }
+
+        &.crossed:nth-child(2n) {
+          background-color: transparent;
+          transition: none;
+        }
+
+        &.crossed:last-of-type {
+          -ms-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+
+          -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+          width: 2.875rem;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 750px) {

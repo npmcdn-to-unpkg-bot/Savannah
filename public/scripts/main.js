@@ -1,3 +1,9 @@
+// Pancake Button
+var pancakes = $('.pancakes');
+$(pancakes).click(function () {
+  pancakes.children('span').toggleClass('crossed');
+});
+
 // Prevent a(href="#") from jumping to the top
 $('a[href="#"]').click(function (e) {
   e.preventDefault();
