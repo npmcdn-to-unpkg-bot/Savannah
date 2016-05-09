@@ -12,7 +12,9 @@ gulp.task('serve', ['sass', 'sass:watch'], function () {
 
   // Serve the app with Nodemon
   nodemon();
+});
 
+gulp.task('browserSync', function () {
   // Run Browser-Sync
   browserSync.init([
     "views/***",
@@ -39,4 +41,4 @@ gulp.task('sass:watch', function () {
   gulp.watch('public/sass/*.scss', ['sass']);
 });
 
-gulp.task('default', ['serve']);
+gulp.task('default', ['serve', 'browserSync']);
