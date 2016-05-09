@@ -2,11 +2,10 @@
 var pancakes = $('.pancakes');
 var nav = $('nav');
 $(pancakes).click(function () {
+  nav.addClass('pink-to-orange');
   pancakes.children('span').toggleClass('crossed');
-  $('nav ul').toggle();
-  nav.toggleClass('static');
+  nav.toggleClass('visible');
 });
-pancakes.click();
 
 // Prevent a(href="#") from jumping to the top
 $('a[href="#"]').click(function (e) {
