@@ -3,10 +3,20 @@ html
   head
     title!= "Savannah &raquo; " + title
     
+    //- Metadata
+    block extra_metadata
+    meta(name="keywords", content="Savannah, online, retailer, consumer, electronics, hardware, software, seminars, learn, technology, shop, deals")
+    
+    meta(property="og:title", content="Savannah — Ecommerce retailer of consumer electronics, hardware, software, and a place to learn how to use these things.")
+    meta(property="og:type", content="website")
+    meta(property="og:image", content="/icons/logo.png")
+    meta(property="og:link", content="http://savannah.ullmannite.ml/")
+    meta(property="og:locale", content="en_US")
+    
     //- Stylesheets
     link(rel='stylesheet', href='/stylesheets/reset.css')
     link(rel='stylesheet', href='/stylesheets/main.css')
-    block extra_styles    
+    block extra_styles
   body
     block content
   footer.pink-to-orange
