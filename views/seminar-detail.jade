@@ -44,7 +44,8 @@ block content
           div.author
             img(src="/images/users/" + seminar.reviews[0].author.imageFilename, alt="Photo of " + seminar.reviews[0].author.name)
             p= seminar.reviews[0].author.location
-            p= seminar.reviews[0].author.createdAt
+            - var date = new Date(seminar.reviews[0].author.createdAt)
+            p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
         //- Comments
         if review_i == 0
           div.review_comments
@@ -57,7 +58,8 @@ block content
                   div.author_details
                     p= seminar.reviews[0].comments[0].author.name
                     p= seminar.reviews[0].comments[0].author.location
-                    p= seminar.reviews[0].comments[0].createdAt
+                    - var date = new Date(seminar.reviews[0].comments[0].createdAt)
+                    p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
               - comment_i++
       - review_i++
     

@@ -41,6 +41,20 @@ router.get('/:id', (req, res, next) => {
       'watchOS Development',
       'WordPress',
       'WSGI'
+    ],
+    months: [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
     ]
   };
   Seminar.find({idHash: req.params.id}, (err, seminar) => {
