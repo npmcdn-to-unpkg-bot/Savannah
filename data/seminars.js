@@ -28,8 +28,10 @@ var seminarSchema = new mongoose.Schema({
       createdAt: Date
     }]
   }]
+}, {
+  collection : 'Seminars'
 });
 
 var Seminar = mongoose.model('Seminar', seminarSchema);
 
-console.log(Seminar.find({}));
+module.exports = Seminar;
