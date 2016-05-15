@@ -45,7 +45,7 @@ router.get('/hardware', (req, res, next) => {
 router.get('/products/:asin', (req, res, next) => {
   products.with_asin(req.params.asin).then((result) => {
     let viewData = {
-      title: 'Product Details',
+      title: result[0].ItemAttributes[0].Brand + " " + result[0].ItemAttributes[0].Model,
       productAsin: result[0].ASIN[0],
       productInfo: result[0].ItemAttributes[0],
       productImages: result[0].ImageSets[0].ImageSet,

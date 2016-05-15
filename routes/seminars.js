@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-var Seminar = require('../data/seminars');
+var Seminar = require('../models/Seminar');
 
 router.get('/:id', (req, res, next) => {
   let viewData = {
@@ -58,14 +58,15 @@ router.get('/:id', (req, res, next) => {
     ]
   };
   Seminar.find({idHash: req.params.id}, (err, seminar) => {
-    console.log(JSON.stringify(seminar));
     viewData.seminar = seminar[0];
+    viewData.title = viewData.seminar.title;
     res.render('seminar-detail', viewData);
   })
 });
 
 router.get('/', (req, res, next) => {
   let viewData = {
+    title: "Seminars",
     filters: [
       'Upcoming',
       'Android',

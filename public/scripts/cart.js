@@ -5,6 +5,5 @@
 // Prevent Form Submission
 $('form').submit(function (e) {
   e.preventDefault();
-  console.log(e.target);
   $(e.target).find('button').attr('disabled', 'disabled');
 });
