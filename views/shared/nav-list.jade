@@ -10,10 +10,14 @@ nav
     li
       a(href="/seminars") Seminars
     li
-      button.tan
-        a(href="#") Login
-      button.lite.tan
-        a(href="#") Sign up
+      if user
+        button.tan
+          a(href="/auth/logout") Logout
+      else
+        button.tan
+          a(href="/auth/login") Login
+        button.lite.tan
+          a(href="/auth/register") Sign up
   button.pancakes
     span
     span
