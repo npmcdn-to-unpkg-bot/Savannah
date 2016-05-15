@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/Savannah');
-
 var seminarSchema = new mongoose.Schema({
   id: String,
   idHash: String,

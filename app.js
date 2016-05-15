@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,8 +9,39 @@ var bodyParser = require('body-parser');
 var products = require('./routes/products');
 var cart = require('./routes/cart');
 var seminars = require('./routes/seminars');
+var auth = require('./routes/auth');
+
+var mongoose = require('mongoose');
+var passport = require('passport');
+
+// Import User model and Passport configuration
+require('./models/User');
+require('./auth/passport')(passport);
+
+// Connect Mongoose to Mongo
+mongoose.connect('mongodb://localhost/Savannah', (err, res) => {if (err) throw err;});
 
 var app = express();
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+// Use sessions so Passport can
+// put the user object in 'req'
+app.use(session({
+  secret: 'RzZDIPHHGtFwN7gzQcW7C1nMIJB7TL',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/', products);
+app.use('/cart', cart);
+app.use('/seminars', seminars);
+app.use('/auth', auth);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,14 +50,6 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', products);
-app.use('/cart', cart);
-app.use('/seminars', seminars);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
