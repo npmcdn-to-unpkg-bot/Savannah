@@ -39,6 +39,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Make authenticated user data available everywhere
+app.use((req, res, next) => {
+  app.locals.user = req.user;
+  next();
+});
+
 app.use('/', products);
 app.use('/cart', cart);
 app.use('/seminars', seminars);

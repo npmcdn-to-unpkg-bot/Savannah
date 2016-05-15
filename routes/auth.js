@@ -3,7 +3,7 @@ var passport = require('passport');
 var router = express.Router();
 
 router.get('/login', (req, res, next) => {
-  res.send('Get /login');
+  res.render('auth/login');
 });
 
 router.get('/register', (req, res, next) => {
@@ -16,9 +16,11 @@ router.post('/register', passport.authenticate('local', {
 }));
 
 router.get('/logout', (req, res, next) => {
-  console.log(req.user.name + ' logged out.');
-  req.logout();
-  req.session.destroy();
+  if (req.user) {
+    console.log(req.user.name + ' logged out.');
+    req.logout();
+    req.session.destroy();
+  }
   res.redirect('/');
 });
 
