@@ -15,34 +15,35 @@ module.exports = (passport) => {
 
   // Local strategy configuration
   passport.use(new LocalStrategy((username, password, done) => {
+    console.log(username, password);
     User.findOne({
       name: username
     }, (err, existingUser) => {
       if (err) throw err;
       if (!existingUser) {
-        console.log('Found the user');
         // There's no user with the username
         // provided so we'll create one
         var additionalUser = new User({
-          name: "Alexander",
-          password: "thisisthesupersecretpassword"
+          name: username,
+          password: password
         });
         additionalUser.save((err) => {
           if (err) throw err;
-          console.log('User should have saved.');
+          console.log(additionalUser.name + ' was created and added to the database.');
         });
+        console.log(JSON.stringify(additionalUser));
         return done(null, additionalUser);
       }
 
-      if (!existingUser.validPassword(password)) {
+      if (existingUser.validPassword(password) != true) {
         // An incorrect password was provided
-        console.log('Wrong password.');
+        console.log(existingUser.name + ' provided an incorrect password.');
         return done(null, false, {
           message: "Wrong password."
         });
      }
 
-     console.log('done.');
+     console.log('Successfully authenticated ' +  existingUser.name + '.');
      // The user was authenticated so
      // we'll return it to Passport
      return done(null, existingUser);

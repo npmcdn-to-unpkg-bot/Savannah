@@ -23,10 +23,11 @@ mongoose.connect('mongodb://localhost/Savannah', (err, res) => {if (err) throw e
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Use sessions so Passport can
 // put the user object in 'req'
 app.use(session({
