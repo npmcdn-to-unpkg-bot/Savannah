@@ -1,0 +1,30 @@
+// auth.scss
+// Alexander Rhett Crammer
+// Monday, 16 April, 2016
+
+@import 'prefs';
+
+// Forms
+.login-form, .registration-form {
+  margin: auto;
+  width: 35%;
+
+  .field {
+    padding: {
+      left: 0;
+      right: 0;
+    }
+    text-indent: 1.5rem;
+    width: 100%;
+  }
+
+  .submission-button {
+    background: rgb(88, 177, 80);
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: 2.5% auto;
+    padding: 3.5% 0;
+    width: 35%;
+  }
+}

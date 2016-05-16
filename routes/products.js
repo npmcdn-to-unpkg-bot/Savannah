@@ -5,11 +5,13 @@ var router = express.Router();
 var products = require('../data/amazon');
 
 router.get('/', (req, res, next) => {
-  let viewData = {
-    title: 'Products',
-    products: products.hardware._result
-  };
-  res.render('products', viewData);
+  products.hardware.then((hardware) => {
+    let viewData = {
+      title: 'Products',
+      products: hardware
+    };
+    res.render('products', viewData);
+  });
 });
 
 router.get('/electronics', (req, res, next) => {

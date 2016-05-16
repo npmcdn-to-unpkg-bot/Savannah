@@ -1,7 +1,13 @@
 extends ../shared/layout
 
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/auth.css")
+
 block content
-  form(method="POST")
-    input(type="text", name="username")
-    input(type="password", name="password")
-    input(type="submit", value="Login")
+  //- Navigation Bar
+  include ../shared/nav-list-with-background
+  
+  form(class="login-form", method="POST")
+    input(type="text", name="username", class="field")
+    input(type="password", name="password", class="field")
+    input(type="submit", value="Login", class="submission-button")
