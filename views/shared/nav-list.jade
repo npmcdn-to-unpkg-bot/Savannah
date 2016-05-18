@@ -1,14 +1,20 @@
-nav
+- var viewsUsingNoImage = ['/cart', '/auth/register', '/auth/login']
+nav(class="#{(viewsUsingNoImage.indexOf(currentUrlPath) != -1) ? 'pink-to-orange' : ''}")
   a(href="/", class="escape-hatch") Savannah
   ul
     li
-      a(href="/electronics") Electronics
+      a(href="/electronics", class="#{currentUrlPath == '/electronics' ? 'current' : ''}") Electronics
     li
-      a(href="/software") Software
+      a(href="/software", class="#{currentUrlPath == '/software' ? 'current' : ''}") Software
     li
-      a(href="/hardware") Hardware
+      a(href="/hardware", class="#{currentUrlPath == '/hardware' ? 'current' : ''}") Hardware
     li
-      a(href="/seminars") Seminars
+      a(href="/seminars", class="#{currentUrlPath == '/seminars' ? 'current' : ''}") Seminars
+    if user
+      li
+        a(href="/cart", class="#{currentUrlPath == '/cart' ? 'current' : ''}") Cart
+      li
+        a(href="#", class="#{currentUrlPath == '/starred' ? 'current' : ''}") Starred
     li
       if user
         button.tan

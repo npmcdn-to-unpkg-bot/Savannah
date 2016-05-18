@@ -42,6 +42,7 @@ app.use(passport.session());
 // Make authenticated user data available everywhere
 app.use((req, res, next) => {
   app.locals.user = req.user;
+  app.locals.currentUrlPath = req.path;
   next();
 });
 

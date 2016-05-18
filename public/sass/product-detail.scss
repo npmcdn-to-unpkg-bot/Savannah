@@ -12,6 +12,10 @@ main, aside {
   width: 50%;
 }
 
+aside.product-detail {
+  border-bottom: 0.125rem solid #d2d2d2;
+}
+
 aside li:not(.indent) {
   margin: 2.5% 0;
 }

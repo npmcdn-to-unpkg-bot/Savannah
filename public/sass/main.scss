@@ -244,6 +244,11 @@ nav, footer {
     &:active {
       color: darken($white, 50%);
     }
+
+    &.current {
+      color: white;
+      font-weight: 600;
+    }
   }
 
   button {
