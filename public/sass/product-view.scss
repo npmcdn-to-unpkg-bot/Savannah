@@ -84,6 +84,13 @@
 }
 
 // Responsiveness
+@media only screen and (max-width: 1024px) {
+  // Products
+  .products section {
+    width: 302.664px / 635.328px * 100%;
+  }
+}
+
 @media only screen and (max-width: 950px) {
   // Products
   .products section {
