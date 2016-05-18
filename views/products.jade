@@ -24,7 +24,11 @@ block content
       each product, i in products
         section
           h1
-            a(href="/products/" + product.ASIN[0])= product.ItemAttributes[0].Brand + " " + product.ItemAttributes[0].Model
+            //- Only show the brand and model names
+            //if we get them from the Amazon API
+            - var brandName = (product.ItemAttributes[0].Brand) ? product.ItemAttributes[0].Brand : ''
+            - var modelName = (product.ItemAttributes[0].Model) ? product.ItemAttributes[0].Model : ''
+            a(href="/products/" + product.ASIN[0])= brandName + " " + modelName
           div.image-mask
             img(src=product.LargeImage[0].URL[0])
           p= product.ItemAttributes[0].Title
