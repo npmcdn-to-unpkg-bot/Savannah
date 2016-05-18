@@ -11,20 +11,36 @@
 
   .field {
     padding: {
-      left: 0;
+      top: 5%;
       right: 0;
+      bottom: 5%;
+      left: 0;
     }
     text-indent: 1.5rem;
     width: 100%;
   }
 
   .submission-button {
-    background: rgb(88, 177, 80);
+    background: #58b150;
+    border: 0.215rem solid #D6D6D6;
+    border-radius: 0.45rem;
     color: white;
     cursor: pointer;
     display: block;
     margin: 2.5% auto;
-    padding: 3.5% 0;
+    padding: 4.25% 0;
+    transition: background 175ms, border-color 175ms, color 175ms;
     width: 35%;
+
+    &:hover {
+      background: #76CC6E;
+      border-color: #F9F9F9;
+    }
+
+    &:active {
+      background: #23661d;
+      border-color: #565656;
+      color: #cdcdcd;
+    }
   }
 }

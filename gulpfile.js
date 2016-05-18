@@ -11,11 +11,7 @@ gulp.task('serve', ['sass', 'sass:watch'], function () {
   exec('mongod');
 
   // Serve the app with Nodemon
-  nodemon({
-    env: {
-      'DEBUG': 'express:*'
-    }
-  });
+  nodemon();
 });
 
 gulp.task('browserSync', function () {

@@ -61,7 +61,7 @@ router.get('/:id', (req, res, next) => {
     viewData.seminar = seminar[0];
     viewData.title = viewData.seminar.title;
     res.render('seminar-detail', viewData);
-  })
+  });
 });
 
 router.get('/', (req, res, next) => {
