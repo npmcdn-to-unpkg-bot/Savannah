@@ -19,7 +19,7 @@ block content
     h1.peachy.dark.section-title Cart
     section.products
       - var i = 0
-      while i < 5
+      while i < products.length
         section
           h1
             a(href="/products/" + products[i].ASIN[0])= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
@@ -30,8 +30,6 @@ block content
             //- We have the price, show it
             p.price= products[i].ItemAttributes[0].ListPrice[0].FormattedPrice[0]
           a(href="/products/" + products[i].ASIN[0]) More &raquo;
-        if i == 6
-          h1.peachy.dark.section-title Featured
         - i++
   aside
     //- Price

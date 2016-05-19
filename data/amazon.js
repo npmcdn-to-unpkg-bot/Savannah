@@ -48,12 +48,12 @@ module.exports = {
       });
     })
   },
-  with_many_asins: () => {
+  with_many_asins: (asins) => {
     matchingProducts = [];
-    for (var i=0; i<arguments.length; i++) {
+    for (var i=0; i<asins.length; i++) {
       matchingProducts.push(new Promise((fulfill, reject) => {
         client.itemLookup({
-          itemId: arguments[i],
+          itemId: asins[i],
           responseGroup: 'Large'
         }, (err, results, response) => {
           if (err) reject(err);
@@ -61,6 +61,6 @@ module.exports = {
         });
       }));
     }
-    return matchingProducts;
+    return Promise.all(matchingProducts);
   }
 };
