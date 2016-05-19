@@ -5,6 +5,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var flash = require('connect-flash');
 
 var products = require('./routes/products');
 var cart = require('./routes/cart');
@@ -36,6 +37,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -43,9 +45,9 @@ app.use(passport.session());
 // and prepare some other variables for later use
 app.use((req, res, next) => {
   // Passport user object things
-  if (req.user) {
     app.locals.user = req.user;
-  }
+    console.log('req.user:', req.user);
+    console.log('app.locals.user:', app.locals.user);
 
   // Other stuff
   app.locals.currentUrlPath = req.path;

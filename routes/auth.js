@@ -1,14 +1,18 @@
 var express = require('express');
 var passport = require('passport');
+var flash = require('connect-flash');
 var router = express.Router();
 
 router.get('/login', (req, res, next) => {
-  res.render('auth/login');
+  res.render('auth/login', {
+    message: req.flash('error')
+  });
 });
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/login'
+  failureRedirect: '/auth/login',
+  failureFlash: true
 }));
 
 router.get('/register', (req, res, next) => {
@@ -17,7 +21,8 @@ router.get('/register', (req, res, next) => {
 
 router.post('/register', passport.authenticate('local', {
   successRedirect: '/',
-  failureRedirect: '/auth/login'
+  failureRedirect: '/auth/login',
+  failureFlash: true
 }));
 
 router.get('/logout', (req, res, next) => {
