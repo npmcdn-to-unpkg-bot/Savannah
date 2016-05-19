@@ -47,5 +47,20 @@ module.exports = {
         fulfill(results);
       });
     })
+  },
+  with_many_asins: () => {
+    matchingProducts = [];
+    for (var i=0; i<arguments.length; i++) {
+      matchingProducts.push(new Promise((fulfill, reject) => {
+        client.itemLookup({
+          itemId: arguments[i],
+          responseGroup: 'Large'
+        }, (err, results, response) => {
+          if (err) reject(err);
+          fulfill(results);
+        });
+      }));
+    }
+    return matchingProducts;
   }
 };

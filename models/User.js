@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var util = require('util');
 
 var userSchema = new Schema({
   name: String,
@@ -10,6 +9,7 @@ var userSchema = new Schema({
     unique: false
   },
   photo: String,
+  cart: Array,
   createdAt: {
     type: Date,
     default: Date.now
@@ -28,3 +28,5 @@ userSchema.methods.validPassword = function (password) {
 };
 
 var User = mongoose.model('User', userSchema, 'Users');
+
+module.exports = User;

@@ -40,8 +40,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Make authenticated user data available everywhere
+// and prepare some other variables for later use
 app.use((req, res, next) => {
-  app.locals.user = req.user;
+  // Passport user object things
+  if (req.user) {
+    app.locals.user = req.user;
+  }
+
+  // Other stuff
   app.locals.currentUrlPath = req.path;
   next();
 });

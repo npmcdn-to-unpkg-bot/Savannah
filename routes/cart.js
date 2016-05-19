@@ -3,8 +3,10 @@
 var express = require('express');
 var router = express.Router();
 var products = require('../data/amazon');
+var User = require('../models/User');
 
 router.get('/', (req, res, next) => {
+  
   let viewData = {
     title: 'Cart',
     products: products.hardware._result
@@ -13,9 +15,20 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/add/:asin', (req, res) => {
-  // TODO: Add the product to the
-  // users' cart then redirect them
-  res.redirect('/cart');
+  if (req.user) {
+    // Remember that the user wants to buy this item
+    User.findById(req.user._id, (err, user) => {
+      if (err) throw err;
+      user.cart.push(req.params.asin);
+      user.save((err) => {
+        if (err) throw err;
+        res.redirect('/cart');
+      });
+    });
+  } else {
+    // The user isn't logged in
+    res.redirect('/auth/login')
+  }
 });
 
 module.exports = router;
