@@ -5,18 +5,21 @@ var router = express.Router();
 
 router.get('/login', (req, res, next) => {
   res.render('auth/login', {
+    title: 'Login',
     message: req.flash('error')
   });
 });
 
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successReturnToOrRedirect: '/',
   failureRedirect: '/auth/login',
   failureFlash: true
 }));
 
 router.get('/register', (req, res, next) => {
-  res.render('auth/register');
+  res.render('auth/register', {
+    title: 'Sign up'
+  });
 });
 
 router.post('/register', passport.authenticate('local', {
@@ -29,7 +32,6 @@ router.get('/logout', (req, res, next) => {
   if (req.user) {
     console.log('"' + req.user.name + '" logged out.');
     req.logout();
-    req.session.destroy();
   }
   res.redirect('/');
 });

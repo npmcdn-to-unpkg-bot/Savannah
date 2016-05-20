@@ -45,9 +45,7 @@ app.use(passport.session());
 // and prepare some other variables for later use
 app.use((req, res, next) => {
   // Passport user object things
-    app.locals.user = req.user;
-    console.log('req.user:', req.user);
-    console.log('app.locals.user:', app.locals.user);
+  app.locals.user = req.user;
 
   // Other stuff
   app.locals.currentUrlPath = req.path;

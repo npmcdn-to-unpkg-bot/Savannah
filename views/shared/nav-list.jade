@@ -10,7 +10,6 @@ nav(class="#{(viewsUsingNoImage.indexOf(currentUrlPath) != -1) ? 'pink-to-orange
       a(href="/hardware", class="#{currentUrlPath == '/hardware' ? 'current' : ''}") Hardware
     li
       a(href="/seminars", class="#{currentUrlPath == '/seminars' ? 'current' : ''}") Seminars
-    - console.log(user)
     if user != undefined
       li
         a(href="/cart", class="#{currentUrlPath == '/cart' ? 'current' : ''}") Cart

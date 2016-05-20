@@ -8,6 +8,7 @@ block content
   include ../shared/nav-list
 
   form(class="registration-form", method="POST")
+    p.message= message
     input(type="text", name="username", class="field", placeholder="Username")
     input(type="password", name="password", class="field", placeholder="Password")
     input(type="submit", value="Sign up", class="submission-button")

@@ -17,6 +17,7 @@
   "devDependencies": {
     "amazon-product-api": "^0.3.10",
     "browser-sync": "^2.12.3",
+    "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",
     "cookie-session": "^2.0.0-alpha.1",
     "gulp": "^3.9.1",

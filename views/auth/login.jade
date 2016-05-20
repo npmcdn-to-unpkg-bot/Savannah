@@ -7,8 +7,8 @@ block content
   //- Navigation Bar
   include ../shared/nav-list
   
-  p= message
   form(class="login-form", method="POST")
+    p.message= message
     input(type="text", name="username", class="field", placeholder="Username")
     input(type="password", name="password", class="field", placeholder="Password")
     input(type="submit", value="Login", class="submission-button")
