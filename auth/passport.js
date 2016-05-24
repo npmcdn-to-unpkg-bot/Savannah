@@ -21,7 +21,8 @@ module.exports = (passport) => {
       name: username
     }, (err, existingUser) => {
       if (err) throw err;
-      if (!existingUser) {
+
+      if (req.path == "/register" && !existingUser) {
         // There's no user with the username
         // provided so we'll create one
         var additionalUser = new User({
@@ -38,7 +39,14 @@ module.exports = (passport) => {
         return done(null, additionalUser);
       }
 
-      if (existingUser.validPassword(password) != true) {
+      if (req.path == "/login" && !existingUser) {
+        // Tell them they haven't registered yet
+        return done(null, false, {
+          message: "There's no user with that username."
+        });
+      }
+
+      if (existingUser && existingUser.validPassword(password) != true) {
         // An incorrect password was provided
         console.log('"' + existingUser.name + '" provided an incorrect password.');
         return done(null, false, {
@@ -46,10 +54,12 @@ module.exports = (passport) => {
         });
      }
 
-     console.log('Successfully authenticated "' +  existingUser.name + '".');
-     // The user was authenticated so
-     // we'll return it to Passport
-     return done(null, existingUser);
+     if (existingUser && existingUser.validPassword(password)) {
+       console.log('Successfully authenticated "' +  existingUser.name + '".');
+       // The user was authenticated so
+       // we'll return it to Passport
+       return done(null, existingUser);
+     }
     });
   }));
 };
