@@ -6,7 +6,6 @@ var products = require('../data/amazon');
 var User = require('../models/User');
 
 router.get('/', (req, res, next) => {
-
   let viewData = {title: 'Cart'};
   if (req.user) {
     products.with_many_asins(req.user.cart).then((values) => {
@@ -30,17 +29,15 @@ router.get('/', (req, res, next) => {
 router.get('/add/:asin', (req, res) => {
   if (req.user) {
     // Remember that the user wants to buy this item
-    User.findById(req.user._id, (err, user) => {
+    User.findByIdAndUpdate(req.user._id, {$set: {
+      cart: (req.user.cart = req.user.cart || []).push(req.params.asin)
+    }}, (err, user) => {
       if (err) throw err;
-      user.cart.push(req.params.asin);
-      user.save((err) => {
-        if (err) throw err;
-        res.redirect('/cart');
-      });
+      res.redirect('/cart');
     });
   } else {
     // The user isn't logged in
-    res.redirect('/auth/login')
+    res.redirect('/auth/login');
   }
 });
 

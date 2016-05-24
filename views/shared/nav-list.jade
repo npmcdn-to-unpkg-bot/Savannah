@@ -17,7 +17,7 @@ nav(class="#{(viewsUsingNoImage.indexOf(currentUrlPath) != -1) ? 'pink-to-orange
         a(href="#", class="#{currentUrlPath == '/starred' ? 'current' : ''}") Starred
     li
       if user != undefined
-        button.tan
+        button.lite.tan
           a(href="/auth/logout") Logout
       else
         button.tan
