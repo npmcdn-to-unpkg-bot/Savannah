@@ -68,7 +68,10 @@ block content
     h1.peachy.dark.section-title Share a Review
     form(action="/seminars/review", method="POST")
       h2 You:
+      input(type="hidden", name="id_hash", value=seminar.idHash)
+      input(type="hidden", name="star_count", value="5")
       input(type="text", name="full_name", placeholder="Full Name")
+      input(type="text", name="location", placeholder="Location")
       input(type="text", name="email_address", placeholder="Email Address")
       textarea(name="review_body" rows="20", placeholder="Review")
       div.stars
