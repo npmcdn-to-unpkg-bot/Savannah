@@ -112,14 +112,13 @@ router.get('/', (req, res, next) => {
 
 router.post('/review', (req, res, next) => {
   // Save the review of the seminar
-  console.log(req.body);
   Seminar.update({idHash: req.body.id_hash}, {
     $push: {
       reviews: {
         stars: req.body.star_count,
         body: req.body.review_body,
         author: {
-          name: (req.user && req.user.name) ? req.user.name : req.body.full_name,
+          name: (req.user && req.user.full_name) ? req.user.full_name : req.body.full_name,
           imageFilename: (req.user && req.user.imageFilename) ? req.user.imageFilename : '',
           location: (req.user && req.user.location) ? req.user.location : req.body.location,
           createdAt: new Date()

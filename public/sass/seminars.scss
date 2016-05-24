@@ -213,6 +213,10 @@ aside {
     }
   }
 
+  form input[type="email"] {
+    width: 80%;
+  }
+
   .stars {
     cursor: pointer;
     margin: 7.5% auto;

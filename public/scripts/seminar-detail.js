@@ -5,7 +5,7 @@
 // Stars for Review Submission
 $('form .stars').click(function (e) {
   var clickedStar = $(e.target);
-  $('').val(clickedStar.index());
+  $('input[name="star_count"]').val(clickedStar.index() + 1);
 
   // Hollowize or fill other stars
   clickedStar.siblings().andSelf().each(function (index, siblingStar) {

@@ -14,7 +14,9 @@ module.exports = (passport) => {
   });
 
   // Local strategy configuration
-  passport.use(new LocalStrategy((username, password, done) => {
+  passport.use(new LocalStrategy({
+    passReqToCallback: true
+  }, (req, username, password, done) => {
     User.findOne({
       name: username
     }, (err, existingUser) => {
@@ -24,7 +26,10 @@ module.exports = (passport) => {
         // provided so we'll create one
         var additionalUser = new User({
           name: username,
-          password: password
+          password: password,
+          full_name: req.body.full_name,
+          email_address: req.body.email_address,
+          location: req.body.location
         });
         additionalUser.save((err) => {
           if (err) throw err;

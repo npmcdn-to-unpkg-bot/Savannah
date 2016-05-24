@@ -9,6 +9,6 @@ block content
   
   form(class="login-form", method="POST")
     p.message= message
-    input(type="text", name="username", class="field", placeholder="Username")
-    input(type="password", name="password", class="field", placeholder="Password")
-    input(type="submit", value="Login", class="submission-button")
+    input.field(type="text", name="username", placeholder="Username")
+    input.field(type="password", name="password", placeholder="Password")
+    input.submission-button(type="submit", value="Login")
