@@ -55,7 +55,7 @@ block content
       div.left
         p!= productComments[0].text
       div.right
-        img(src="/images/users/" + productComments[0].author.imageFilename, alt="Photo of the author")
+        img(src="/images/users/" + productComments[0].author.photo, alt="Photo of the author")
         h1= productComments[0].author.name
         p= productComments[0].time
         - i++

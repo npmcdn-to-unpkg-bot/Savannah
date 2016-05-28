@@ -119,7 +119,7 @@ router.post('/review', (req, res, next) => {
         body: req.body.review_body,
         author: {
           name: (req.user && req.user.full_name) ? req.user.full_name : req.body.full_name,
-          imageFilename: (req.user && req.user.imageFilename) ? req.user.imageFilename : '',
+          photo: (req.user && req.user.photo) ? req.user.photo : '',
           location: (req.user && req.user.location) ? req.user.location : req.body.location,
           createdAt: new Date()
         }

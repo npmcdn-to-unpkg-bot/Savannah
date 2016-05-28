@@ -55,7 +55,7 @@ router.get('/products/:asin', (req, res, next) => {
       productComments: [{
         author: {
           name: 'Otis Bryant',
-          imageFilename: 'otis_bryant.jpg'
+          photo: 'otis_bryant.jpg'
         },
         time: 'Monday, 11 April, 2016',
         text: '<p>This product is lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat.</p><p>Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.</p>'

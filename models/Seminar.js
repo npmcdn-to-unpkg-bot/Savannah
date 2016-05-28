@@ -11,14 +11,14 @@ var seminarSchema = new mongoose.Schema({
     body: String,
     author: {
       name: String,
-      imageFilename: String,
+      photo: String,
       location: String,
       createdAt: Date
     },
     comments: [{
       author: {
         name: String,
-        imageFilename: String,
+        photo: String,
         location: String,
         createdAt: Date
       },
