@@ -3,6 +3,26 @@
   "password" : "bU3j25d6lVUm22v2IQRI7XtFa4P2Y5",
   "full_name" : "Alexander Rhett Crammer",
   "email_address" : "Alexander2475914@gmail.com",
+  "location" : "San Francisco, CA",
+  "createdAt" : "2016-05-24T09:45:57.450-04:00",
+  "cart" : [],
+  "photo": "http://lorempixel.com/g/500x500/people",
+  "__v" : 0
+}, {
+  "name" : "Alexander2475914@gmail.com",
+  "password" : "bU3j25d6lVUm22v2IQRI7XtFa4P2Y5",
+  "full_name" : "Alexander Rhett Crammer",
+  "email_address" : "Alexander2475914@gmail.com",
+  "location" : "Los Angeles, CA",
+  "createdAt" : "2016-05-24T09:45:57.450-04:00",
+  "cart" : [],
+  "photo": "http://lorempixel.com/g/500x500/people",
+  "__v" : 0
+}, {
+  "name" : "iAlexander",
+  "password" : "bU3j25d6lVUm22v2IQRI7XtFa4P2Y5",
+  "full_name" : "Alexander Rhett Crammer",
+  "email_address" : "Alexander2475914@gmail.com",
   "location" : "New York, NY",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
   "cart" : [],

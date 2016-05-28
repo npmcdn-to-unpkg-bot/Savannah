@@ -22,6 +22,42 @@
       "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
       "createdAt": "Tuesday, 12 April 2016"
     }]
+  }, {
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
+  }, {
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
   }]
 }, {
   "id": 2,
@@ -30,6 +66,42 @@
   "description": "Authentication scaffolding, implicit model binding, rate limiting, array validation, and more! We’ll be talking about all the differences between Laravel 5.1 and 5.2 this week!",
   "headerImageFilename": "laravel-5.jpg",
   "reviews": [{
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
+  }, {
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
+  }, {
     "stars": 4,
     "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
     "author": {
