@@ -21,6 +21,22 @@
       },
       "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
       "createdAt": "Tuesday, 12 April 2016"
+    }, {
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }, {
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
     }]
   }, {
     "stars": 4,
@@ -75,6 +91,22 @@
       "createdAt": "Monday, 11 April 2016"
     },
     "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }, {
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }, {
       "author": {
         "name": "Alicia Choi",
         "location": "Seattle, WA",

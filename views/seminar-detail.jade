@@ -47,20 +47,18 @@ block content
             - var date = new Date(review.author.createdAt)
             p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
         //- Comments
-        if review_i == 0
-          div.review_comments
-            - var comment_i = 0
-            while comment_i < 3
-              div.review_comment
-                p= review.comments[0].body
-                div.right
-                  img(src='/images/users/' + review.comments[0].author.photo, alt="Photo of " + review.comments[0].author.photo)
-                  div.author_details
-                    p= review.comments[0].author.name
-                    p= review.comments[0].author.location
-                    - var date = new Date(review.comments[0].createdAt)
-                    p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
-              - comment_i++
+        div.review_comments
+          each comment in review.comments
+            div.review_comment
+              p= comment.body
+              div.right
+                img(src='/images/users/' + comment.author.photo, alt="Photo of " + comment.author.photo)
+                div.author_details
+                  p= comment.author.name
+                  p= comment.author.location
+                  - var date = new Date(comment.createdAt)
+                  p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
+            - comment_i++
       - review_i++
     
   //- Review
