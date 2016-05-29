@@ -4,6 +4,7 @@ var express = require('express');
 var router = express.Router();
 var products = require('../data/amazon');
 
+// Routes
 router.get('/', (req, res, next) => {
   products.hardware.then((hardware) => {
     let viewData = {

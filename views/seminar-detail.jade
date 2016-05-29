@@ -10,7 +10,7 @@ block content
   include shared/nav-list
   
   //- CTA-Style Description
-  section.cta(style="background-image: url('/images/cta-headers/laravel-5.jpg')")
+  section.cta(style="background-image: url('/images/cta-headers/#{seminar.headerImageFilename}')")
     section
       h1= seminar.title
       p= seminar.description
