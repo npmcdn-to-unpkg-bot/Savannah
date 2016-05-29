@@ -227,7 +227,7 @@ nav {
   }
 }
 
-nav:not(.pink-to-orange) {
+nav:not(.pink-to-darker-pink) {
   position: absolute;
   top: 0;
   right: 0;
@@ -606,13 +606,13 @@ button {
 }
 
 // Gradients
-.pink-to-orange {
+.pink-to-darker-pink {
   /* Edit and Share: http://colorzilla.com/gradient-editor/#db5178+0,df8b88+100 */
   background: #db5178;
-  background: -moz-linear-gradient(45deg, #db5178 0%, #df8b88 100%);
-  background: -webkit-linear-gradient(45deg, #db5178 0%,#df8b88 100%);
-  background: linear-gradient(45deg, #db5178 0%,#df8b88 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#df8b88',GradientType=1);
+  background: -moz-linear-gradient(45deg, #db5178 0%, #ff6691 100%);
+  background: -webkit-linear-gradient(45deg, #db5178 0%,#ff6691 100%);
+  background: linear-gradient(45deg, #db5178 0%,#ff6691 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#db5178', endColorstr='#ff6691',GradientType=1);
 }
 
 .grey-to-silver {

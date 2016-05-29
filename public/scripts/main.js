@@ -2,7 +2,7 @@
 var pancakes = $('.pancakes');
 var nav = $('nav');
 $(pancakes).click(function () {
-  nav.addClass('pink-to-orange');
+  nav.addClass('pink-to-darker-pink');
   pancakes.children('span').toggleClass('crossed');
   nav.toggleClass('visible');
 });
