@@ -146,7 +146,16 @@ form {
     letter-spacing: 0.0275rem;
     padding: 2.5% 7.5%;
     margin: 3.5% 2.5%;
+    outline: {
+      color: #db5278;
+      width: medium;
+    }
+    transition: background 225ms;
     width: 30%;
+
+    &:focus {
+      background: #f9f9f9;
+    }
   }
 
   textarea {
@@ -566,7 +575,7 @@ button {
     border-color: transparent;
   }
 
-  &:hover {
+  &:hover, &:focus {
     background-color: lighten($neutral-button-color, 5%);
     border-color: lighten($neutral-button-border-color, 5%);
   }

@@ -5,6 +5,10 @@
 @import 'prefs';
 
 // Structure
+body {
+  background: #f5f5f5;
+}
+
 aside p {
   color: $grey;
   line-height: 175%;
@@ -28,26 +32,41 @@ form {
     }
   }
 
-  p {
-    padding: 5% 10%;
+  [name="shipping_address_line_1"],
+  [name="shipping_address_line_2"],
+  [name="card_number"],
+  [name="ZIP"],
+  [name="name_on_the_card"] {
+    width: 80%;
   }
 
-  span {
-    float: left;
-    width: 50%;
+  [name="city"] {
+    width: 45%;
   }
 
-  span:nth-of-type(2n) {
-    text-align: right;
+  [name="state"] {
+    width: 15%;
   }
 
-  &:last-of-type {
-    font-weight: bold;
+  [name="month"],
+  [name="year"],
+  [name="CVV"] {
+    width: 13.25%;
   }
 
   button {
     margin-top: 10%;
   }
+}
+
+// Empty Cart Message
+.empty-cart-message{
+  font: {
+    family: "Georgia", serif;
+    style: italic;
+  }
+  padding: 2.5%;
+  text-align: center;
 }
 
 // Responsiveness
