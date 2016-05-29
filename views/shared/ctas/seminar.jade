@@ -1,7 +1,8 @@
-section.cta(style="background-image: url('/images/cta-headers/red-trains.jpg')")
+section.cta(style="background-image: url('/images/cta-headers/#{seminar_cta.headerImageFilename}')")
   section
-    h1 Getting to Know Ruby on Rails
-    p Get to know other Rubyists this weekend at a hackathon in our Manhattan development facilities. Whether you’re a n00b or a professional Ruby developer, we’d love to meet you!
+    - console.log(seminar_cta);
+    h1= seminar_cta.title
+    p= seminar_cta.description
     button
       a(href="/seminars/book/:seminar_id") Book
     button.yellow

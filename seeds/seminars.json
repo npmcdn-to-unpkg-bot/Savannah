@@ -152,4 +152,81 @@
       "createdAt": "Tuesday, 12 April 2016"
     }]
   }]
+}, {
+  "id": 3,
+  "idHash": "hUmmmGJ7clRMosbgmWVcI55K78rK1NTs2cvGHMaLGKmeUEEAgX",
+  "title": "Introduction to CoreOS 7",
+  "description": "Join us to learn about some of the key concepts of CoreOS — The open source and lightweight operating system based on the Linux cluster and designed for clustered deployments!",
+  "headerImageFilename": "coreos-7.jpg",
+  "reviews": [{
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about CoreOS 7, but I learned quite a few new things about CoreOS that I hadn’t known before! They also mentioned a few tricks you can do with Docker that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }, {
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }, {
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
+  }, {
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
+  }, {
+    "stars": 4,
+    "body": "This seminar was incredible. Not only did we talk about the differences between the versions, but I learned quite a few new things about Laravel that I hadn’t known before! They also mentioned a few tricks you can do with PHP that I hadn’t known about.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN",
+      "createdAt": "Monday, 11 April 2016"
+    },
+    "comments": [{
+      "author": {
+        "name": "Alicia Choi",
+        "location": "Seattle, WA",
+        "photo": "alicia_choi.jpg"
+      },
+      "body": "I learned some new stuff, too! I also highly recommend this seminar. I've learned so many things and I'm ready to use this software to its' greater potential. 10 out of 10. I highly recommend it!",
+      "createdAt": "Tuesday, 12 April 2016"
+    }]
+  }]
 }]

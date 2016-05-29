@@ -4,6 +4,16 @@ var express = require('express');
 var router = express.Router();
 var Seminar = require('../models/Seminar');
 
+// Middleware
+router.use((req, res, next) => {
+  // Choose the seminar detail to show in the CTA
+  Seminar.find({idHash: 'hUmmmGJ7clRMosbgmWVcI55K78rK1NTs2cvGHMaLGKmeUEEAgX'}, (err, seminar) => {
+    res.locals.seminar_cta = seminar[0];
+    next();
+  });
+});
+
+// Routes
 router.get('/:id', (req, res, next) => {
   let viewData = {
     filters: [
