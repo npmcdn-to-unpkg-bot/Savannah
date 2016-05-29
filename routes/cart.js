@@ -27,10 +27,10 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/add/:asin', (req, res) => {
-  req.user.cart = (req.user.cart.length) ? req.user.cart : [];
-  req.user.cart.push(req.params.asin);
   if (req.user) {
     // Remember that the user wants to buy this item
+    req.user.cart = (req.user.cart.length) ? req.user.cart : [];
+    req.user.cart.push(req.params.asin);
     User.findByIdAndUpdate(req.user._id, {$set: {
       cart: req.user.cart
     }}, (err, user) => {
