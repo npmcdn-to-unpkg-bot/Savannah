@@ -46,7 +46,6 @@ $(document).ready(function () {
     }
 
     function trySubmitting () {
-      console.log(!invalidUsername && !invalidFullName && !invalidEmailAddress);
       if (!invalidUsername && !invalidFullName && !invalidEmailAddress) {
         $('.registration-form')[0].submit();
       }

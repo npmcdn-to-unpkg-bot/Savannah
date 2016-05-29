@@ -6,7 +6,7 @@
   "location" : "San Francisco, CA",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
   "cart" : [],
-  "photo": "http://lorempixel.com/g/500x500/people",
+  "photo": "otis_bryant.jpg",
   "__v" : 0
 }, {
   "name" : "Alexander2475914@gmail.com",
@@ -16,7 +16,7 @@
   "location" : "Los Angeles, CA",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
   "cart" : [],
-  "photo": "http://lorempixel.com/g/500x500/people",
+  "photo": "otis_bryant.jpg",
   "__v" : 0
 }, {
   "name" : "iAlexander",
@@ -26,6 +26,6 @@
   "location" : "New York, NY",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
   "cart" : [],
-  "photo": "http://lorempixel.com/g/500x500/people",
+  "photo": "otis_bryant.jpg",
   "__v" : 0
 }]

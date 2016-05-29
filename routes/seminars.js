@@ -118,15 +118,14 @@ router.post('/review', (req, res, next) => {
         stars: req.body.star_count,
         body: req.body.review_body,
         author: {
-          name: (req.user && req.user.full_name) ? req.user.full_name : req.body.full_name,
-          photo: (req.user && req.user.photo) ? req.user.photo : '',
-          location: (req.user && req.user.location) ? req.user.location : req.body.location,
-          createdAt: new Date()
+          name: (req.user) ? req.user.full_name : req.body.full_name,
+          photo: (req.user) ? req.user.photo : '',
+          location: (req.user) ? req.user.location : req.body.location
         }
       }
     }
   }, (err) => {if (err) throw err;});
-  res.send('Done.');
+  res.redirect('/seminars/' + req.body.id_hash);
 });
 
 module.exports = router;

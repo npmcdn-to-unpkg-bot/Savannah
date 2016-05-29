@@ -9,11 +9,14 @@ var seminarSchema = new mongoose.Schema({
   reviews: [{
     stars: Number,
     body: String,
+    createdAt: {
+      type: Date,
+      default: Date.now
+    },
     author: {
       name: String,
       photo: String,
-      location: String,
-      createdAt: Date
+      location: String
     },
     comments: [{
       author: {
@@ -23,7 +26,10 @@ var seminarSchema = new mongoose.Schema({
         createdAt: Date
       },
       body: String,
-      createdAt: Date
+      createdAt: {
+        type: Date,
+        default: Date.now
+      }
     }]
   }]
 }, {

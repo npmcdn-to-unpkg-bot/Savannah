@@ -44,8 +44,8 @@ block content
           div.author
             img(src="/images/users/" + review.author.photo, alt="Photo of " + review.author.name)
             p= review.author.location
-            - var date = new Date(review.author.createdAt)
-            p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
+            - var date = new Date(review.createdAt)
+            p= months[date.getUTCMonth()] + " " + date.getUTCDate() + ", " + date.getUTCFullYear()
         //- Comments
         div.review_comments
           each comment in review.comments
