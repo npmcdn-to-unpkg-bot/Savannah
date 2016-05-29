@@ -556,6 +556,24 @@ button {
     }
   }
 
+  &.red {
+    background-color: #e45c5c;
+    border-color: #ab4747;
+
+    &:hover {
+      background-color: #e45c5c;
+      border-color: #ab4747;
+    }
+
+    &:active {
+      background-color: #9a2b2b;
+
+      a {
+        color: darken($white, 45%);
+      }
+    }
+  }
+
   &.yellow {
     background-color: #ddc458;
     border-color: #b29e47;

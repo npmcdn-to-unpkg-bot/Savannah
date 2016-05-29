@@ -17,12 +17,12 @@ nav(class="#{(viewsUsingNoImage.indexOf(currentUrlPath) != -1) ? 'pink-to-orange
         a(href="#", class="#{currentUrlPath == '/starred' ? 'current' : ''}") Starred
     li
       if user != undefined
-        button.lite.tan
+        button.lite.red
           a(href="/auth/logout") Logout
       else
-        button.tan
+        button.red
           a(href="/auth/login") Login
-        button.lite.tan
+        button.lite.red
           a(href="/auth/register") Sign up
   button.pancakes
     span
