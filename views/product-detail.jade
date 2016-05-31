@@ -24,7 +24,7 @@ block content
       div.mask
         span.helper
         img(src=productImages[0].LargeImage[0].URL, alt="Product Image", class="large-image")
-    
+
   aside.product-detail
     //- Description
     section(class="description")
@@ -63,18 +63,20 @@ block content
             - i++
     
     //- Write a Review
-    aside.right
-      h1.peachy.dark.section-title Share a Review
-      form(action="/products/review", method="POST")
-        input(type="hidden", name="star_count", value="5")
-        textarea(name="review_body" rows="20", placeholder="Review")
-        div.stars
-          img(src="/icons/star.png", alt="Star")
-          img(src="/icons/star.png", alt="Star")
-          img(src="/icons/star.png", alt="Star")
-          img(src="/icons/star.png", alt="Star")
-          img(src="/icons/star.png", alt="Star")
-        button Post
+    if (user)
+      aside.right
+        h1.peachy.dark.section-title Share a Review
+        form(action="/products/review", method="POST")
+          input(type="hidden", name="asin", value=productAsin)
+          input(type="hidden", name="star_count", value="5")
+          textarea(name="review_body" rows="20", placeholder="Review")
+          div.stars
+            img(src="/icons/star.png", alt="Star")
+            img(src="/icons/star.png", alt="Star")
+            img(src="/icons/star.png", alt="Star")
+            img(src="/icons/star.png", alt="Star")
+            img(src="/icons/star.png", alt="Star")
+          button Post
 
 block extra_scripts
   script(src="/scripts/product-detail.js")

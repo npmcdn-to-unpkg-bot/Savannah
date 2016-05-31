@@ -69,9 +69,21 @@ router.get('/products/:asin', (req, res, next) => {
 
 router.post('/products/review', (req, res, next) => {
   // Save the review of the product
-  Product.find({}, (err, product) => {
+  Product.update({asin: req.body.asin}, {
+    $push: {
+      reviews: {
+        stars: req.body.star_count,
+        body: req.body.review_body,
+        author: {
+          name: (req.user) ? req.user.full_name : req.body.full_name,
+          photo: (req.user) ? req.user.photo : '',
+          location: (req.user) ? req.user.location : req.body.location
+        }
+      }
+    }
+  }, {upsert: true}, (err, product) => {
     if (err) throw err;
-    console.log(JSON.stringify(product));
+    res.redirect(req.header('Referer') || '/');
   });
 });
 
