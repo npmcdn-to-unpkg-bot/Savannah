@@ -161,15 +161,21 @@ aside li:not(.indent) {
     }
     color: #ddd;
     clear: both;
+    display: table;
     font-family: "Fira Sans";
     overflow: auto;
     padding: 0.65rem 0;
     position: relative;
 
+    .left, .right {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
     .left {
       margin: 2.5%;
-      float: left;
-      width: 65%;
+      padding-left: 5%;
+      width: 70%;
 
       p {
         font-size: 0.9rem;
@@ -181,15 +187,14 @@ aside li:not(.indent) {
     }
 
     .right {
-      float: left;
       padding: 0 2.5%;
       text-align: center;
-      width: 25%;
+      width: 30%;
 
       img {
         border: 0.235rem solid #504946;
         border-radius: 100rem;
-        margin-top: 25%;
+        margin-bottom: 7.5%;
         width: 65%;
         max-width: 125px;
       }
@@ -230,7 +235,7 @@ aside li:not(.indent) {
     width: 60%;
   }
 
-  .right {
+  aside.right {
     position: absolute;
     top: 0;
     right: 0;
