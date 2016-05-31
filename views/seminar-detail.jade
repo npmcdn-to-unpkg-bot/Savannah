@@ -20,67 +20,65 @@ block content
         button.yellow Star
   
   //- Reviews
-  main.left
-    h1.peachy.dark.section-title.grey-to-silver Reviews
-    - var review_i = 0
-    each review in seminar.reviews
-      section.review
-        div.left
-          div.stars
-            - var star_i = 0
-            while star_i < review.stars
-              img(src="/icons/star.png", alt="Star")
-              - star_i++
-            if review.stars < 5
-              - var unstar_i = 0
-              - var amount_unstarred = 5 - review.stars
-              while unstar_i < amount_unstarred
-                img(src="/icons/unstar.png", alt="Hollow Star")
-                - unstar_i++
-          p= review.body
-          - var comments_word = (review.comments.length > 1) ? "Comments" : "Comment"
-          a(href='#')= review.comments.length + " " + comments_word
-        div.right
-          div.author
-            img(src="/images/users/" + review.author.photo, alt="Photo of " + review.author.name)
-            p= review.author.location
-            - var date = new Date(review.createdAt)
-            p= months[date.getUTCMonth()] + " " + date.getUTCDate() + ", " + date.getUTCFullYear()
-        //- Comments
-        div.review_comments
+  div.main-and-aside
+    main
+      h1.peachy.dark.section-title.grey-to-silver Reviews
+      - var review_i = 0
+      each review in seminar.reviews
+        section.review
+          div.left
+            div.stars
+              - var star_i = 0
+              while star_i < review.stars
+                img(src="/icons/star.png", alt="Star")
+                - star_i++
+              if review.stars < 5
+                - var unstar_i = 0
+                - var amount_unstarred = 5 - review.stars
+                while unstar_i < amount_unstarred
+                  img(src="/icons/unstar.png", alt="Hollow Star")
+                  - unstar_i++
+            p= review.body
+            - var comments_word = (review.comments.length > 1) ? "Comments" : "Comment"
+            a(href='#')= review.comments.length + " " + comments_word
+          div.right
+            div.author
+              img(src="/images/users/" + review.author.photo, alt="Photo of " + review.author.name)
+              p= review.author.location
+              - var date = new Date(review.createdAt)
+              p= months[date.getUTCMonth()] + " " + date.getUTCDate() + ", " + date.getUTCFullYear()
+          //- Comments
           each comment in review.comments
-            div.review_comment
-              p= comment.body
+            div.review-comment
+              div.comments
+                p= comment.body
               div.right
                 img(src='/images/users/' + comment.author.photo, alt="Photo of " + comment.author.photo)
-                div.author_details
-                  p= comment.author.name
-                  p= comment.author.location
-                  - var date = new Date(comment.createdAt)
-                  p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
-            - comment_i++
-      - review_i++
-    
-  //- Review
-  aside.right
-    h1.peachy.dark.section-title Share a Review
-    form(action="/seminars/review", method="POST")
-      if !user
-        h2 You:
-      input(type="hidden", name="id_hash", value=seminar.idHash)
-      input(type="hidden", name="star_count", value="5")
-      if !user
-        input(type="text", name="full_name", placeholder="Full Name")
-        input(type="text", name="location", placeholder="Location")
-        input(type="email", name="email_address", placeholder="Email Address")
-      textarea(name="review_body" rows="20", placeholder="Review")
-      div.stars
-        img(src="/icons/star.png", alt="Star")
-        img(src="/icons/star.png", alt="Star")
-        img(src="/icons/star.png", alt="Star")
-        img(src="/icons/star.png", alt="Star")
-        img(src="/icons/star.png", alt="Star")
-      button Post
+                p= comment.author.name
+                - var date = new Date(comment.createdAt)
+                p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
+        - review_i++
+      
+    //- Review
+    aside
+      h1.peachy.dark.section-title Share a Review
+      form(action="/seminars/review", method="POST")
+        if !user
+          h2 You:
+        input(type="hidden", name="id_hash", value=seminar.idHash)
+        input(type="hidden", name="star_count", value="5")
+        if !user
+          input(type="text", name="full_name", placeholder="Full Name")
+          input(type="text", name="location", placeholder="Location")
+          input(type="email", name="email_address", placeholder="Email Address")
+        textarea(name="review_body" rows="20", placeholder="Review")
+        div.stars
+          img(src="/icons/star.png", alt="Star")
+          img(src="/icons/star.png", alt="Star")
+          img(src="/icons/star.png", alt="Star")
+          img(src="/icons/star.png", alt="Star")
+          img(src="/icons/star.png", alt="Star")
+        button Post
 
 block extra_scripts
   script(src="/scripts/stars.js")

@@ -17,7 +17,7 @@ main, aside {
   float: none;
 }
 
-.seminars-and-filters {
+.main-and-aside {
   display: table;
   width: 100%;
 
@@ -82,37 +82,57 @@ main, aside {
 
 // Reviews
 .review {
-  border: {
-    top: 0.115rem solid #d6d6d6;
-    bottom: 0.115rem solid #d6d6d6;
-  }
+  border-collapse: collapse;
+  display: table;
   overflow: hidden;
-  padding: 5% 0;
+  margin-top: 5%;
 
+  // Structure
+  .left, .right {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .review-comment {
+    background: #6b5e4a;
+
+    background-attachment: fixed;
+    display: table-row;
+
+    > p, .review-comment .right {
+      display: table-cell;
+    }
+  }
+
+  // Contents
   .left {
-    float: left;
-    margin-left: 5%;
-    width: 60%;
+    padding-left: 5%;
+    width: 65%;
 
     .stars img {
       float: left;
       width: 7.5%;
-      max-width: 30px;
+      max-width: 27.5px;
     }
 
     p {
       color: #353535;
       clear: both;
       line-height: 150%;
-      margin: 10% 0;
+      margin-top: 10%;
       max-width: 475px;
     }
 
     a:link, a:visited {
       color: $grey;
+      display: block;
       font: {
         family: "Source Sans Pro";
         style: italic;
+      }
+      margin: {
+        top: 5%;
+        bottom: 7.5%;
       }
       text-decoration: none;
       transition: all 225ms;
@@ -129,81 +149,65 @@ main, aside {
   }
 
   .right {
-    float: right;
-    margin-right: 5%;
     text-align: center;
     line-height: 150%;
     letter-spacing: 0.025rem;
     width: 25%;
 
     p {
-      font-family: "Fira Sans Light";
+      font: {
+        family: "Fira Sans Light";
+        size: 0.825rem;
+      }
     }
 
     img {
       border: 0.235rem solid #e0e0e0;
       border-radius: 100rem;
-      width: 80%;
+      width: 59.71563981%;
       max-width: 150px;
     }
   }
 
   // Comments
-  .review_comments {
-    position: relative;
-    top: 35px;
-  }
-
-  .review_comment {
-    /* Edit and Share: http://colorzilla.com/gradient-editor/#57461b+0,4d4142+100&0.85+0,0.85+100 */
-    background: -moz-linear-gradient(45deg, rgba(87, 70, 27, 0.85) 0%, rgba(77, 65, 66, 0.85) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(87, 70, 27, 0.85) 0%,rgba(77, 65, 66, 0.85) 100%);
-    background: linear-gradient(45deg, rgba(87,70,27,0.85) 0%,rgba(77, 65, 66, 0.85) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f257461b', endColorstr='#f24d4142',GradientType=1);
-
+  .review-comment {
+    border: {
+      top: 0.225rem solid #383024;
+      bottom: 0.225rem solid #383024;
+    }
     clear: both;
     color: $white;
     min-height: 150px;
-    overflow: hidden;
-    position: relative;
 
-    p {
-      float: left;
-      font: {
-        family: "Fira Sans Light";
-        size: 0.9rem;
+    .comments {
+      padding: 2rem 0;
+      padding-left: 7.5%;
+
+      p {
+        font: {
+          family: "Fira Sans Light";
+          size: 0.9rem;
+        }
+        letter-spacing: 0.025rem;
+        line-height: 175%;
+        margin: 5% auto;
       }
-      letter-spacing: 0.025rem;
-      line-height: 175%;
-      padding: 1rem 0;
-      margin-left: 2.5%;
-      width: 60%;
     }
 
     .right {
-      float: left;
       font-size: 0.85rem;
-      margin: 0;
-      padding: 1rem 0;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
+      padding: 2.25rem 0;
       width: 30%;
 
       img {
-        border-color: #868279;
-        border-width: 0.125rem;
-        float: left;
-        width: 40%;
-        max-width: 100px;
+        border: {
+          color: #868279;
+          width: 0.125rem;
+        }
+        width: 50%;
       }
 
-      .author_details {
-        position: absolute;
-        top: 7.5%;
-        right: 7.5%;
-        bottom: 0;
+      .author-details {
         width: 45%;
 
         p {
@@ -211,7 +215,6 @@ main, aside {
           line-height: 135%;
           margin: 5% auto;
           padding: 0;
-          text-align: left;
           width: 100%;
         }
       }
@@ -253,7 +256,7 @@ aside.right {
       text-align: justify;
     }
 
-    .review_comment p {
+    .review-comment p {
       line-height: 135%;
     }
   }
