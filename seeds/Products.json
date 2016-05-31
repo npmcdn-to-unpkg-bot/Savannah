@@ -1,0 +1,30 @@
+[{
+  "idHash": "JImDzZ8y9jilT1Nx7jffBjGyhr9dsDg6PTvGyhGbMJDiS1ZBTM",
+  "asin": "B01CGGOZOM",
+  "reviews": [{
+    "stars": 4,
+    "body": "This is a nice computer!",
+    "author": {
+      "name": "Pocahontas Griffiths",
+      "photo": "pocahontas_griffiths.jpg",
+      "location": "San Jose, CA"
+    },
+    "comments": [{
+      "author": {
+        "name": "Bunny Harper",
+        "photo": "bunny_harper.jpg",
+        "location": "Houston, TX"
+      },
+      "body": "I disagree that this is a nice computer. It was a massive struggle to set up."
+    }]
+  }, {
+    "stars": 2,
+    "body": "This computer has given me some issues at first but it's not that bad. Definitely not my first choice.",
+    "author": {
+      "name": "Bunny Harper",
+      "photo": "bunny_harper.jpg",
+      "location": "Houston, TX"
+    },
+    "comments": []
+  }]
+}]

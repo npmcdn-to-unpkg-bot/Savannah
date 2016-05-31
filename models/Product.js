@@ -1,11 +1,9 @@
 var mongoose = require('mongoose');
 
-var seminarSchema = new mongoose.Schema({
+var productSchema = new mongoose.Schema({
   id: String,
   idHash: String,
-  title: String,
-  description: String,
-  headerImageFilename: String,
+  asin: String,
   reviews: [{
     stars: Number,
     body: String,
@@ -36,9 +34,9 @@ var seminarSchema = new mongoose.Schema({
     }]
   }]
 }, {
-  collection : 'Seminars'
+  collection : 'Products'
 });
 
-var Seminar = mongoose.model('Seminar', seminarSchema);
+var Product = mongoose.model('Product', productSchema);
 
-module.exports = Seminar;
+module.exports = Product;

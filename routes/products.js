@@ -3,6 +3,7 @@
 var express = require('express');
 var router = express.Router();
 var products = require('../data/amazon');
+var Product = require('../models/Product');
 
 // Routes
 router.get('/', (req, res, next) => {
@@ -63,6 +64,14 @@ router.get('/products/:asin', (req, res, next) => {
       }]
     };
     res.render('product-detail', viewData);
+  });
+});
+
+router.post('/products/review', (req, res, next) => {
+  // Save the review of the product
+  Product.find({}, (err, product) => {
+    if (err) throw err;
+    console.log(JSON.stringify(product));
   });
 });
 
