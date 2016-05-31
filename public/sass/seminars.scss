@@ -13,6 +13,20 @@ main h1.peachy {
   margin: 3.5% auto;
 }
 
+main, aside {
+  float: none;
+}
+
+.seminars-and-filters {
+  display: table;
+  width: 100%;
+
+  main, aside {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
 // Seminar List
 .seminar {
   position: relative;

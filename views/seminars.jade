@@ -13,25 +13,26 @@ block content
   include shared/ctas/seminar
 
   //- Seminars
-  main
-    //- Search Bar
-    include shared/search-bar
+  div.seminars-and-filters
+    //- Filters
+    aside
+      h1.peachy Filters
+      ul(class="sidebar-list")
+        each filter in filters
+          li= filter
 
-    - var i = 0
-    while i < 15
-      - var random_i = Math.floor((Math.random() * seminars.length))
-      section.seminar(style="background-image: url('/images/cta-headers/#{seminars[random_i].headerImageFilename}')")
-        h1= seminars[random_i].title
-        p= seminars[random_i].description
-        a(href="/seminars/" + seminars[random_i].idHash)
-          button View
-        a(href="/seminars/star/" + seminars[random_i].idHash)
-          button.yellow Star
-      - i++
+    main
+      //- Search Bar
+      include shared/search-bar
 
-  //- Filters
-  aside
-    h1.peachy Filters
-    ul(class="sidebar-list")
-      each filter in filters
-        li= filter
+      - var i = 0
+      while i < 15
+        - var random_i = Math.floor((Math.random() * seminars.length))
+        section.seminar(style="background-image: url('/images/cta-headers/#{seminars[random_i].headerImageFilename}')")
+          h1= seminars[random_i].title
+          p= seminars[random_i].description
+          a(href="/seminars/" + seminars[random_i].idHash)
+            button View
+          a(href="/seminars/star/" + seminars[random_i].idHash)
+            button.yellow Star
+        - i++
