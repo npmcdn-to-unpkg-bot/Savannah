@@ -47,20 +47,19 @@ block content
       div.mask
         span.helper
         img(src=image.LargeImage[0].URL, alt="Product image")
-  
+
   div.reviews-and-write-a-review
     //- Reviews
     div.reviews
-      - var i = 0
-      while i < 5
+      each review in product.reviews
         section.review
           div.left
-            p!= productComments[0].text
+            p!= review.body
           div.right
-            img(src="/images/users/" + productComments[0].author.photo, alt="Photo of the author")
-            h1= productComments[0].author.name
-            p= productComments[0].time
-            - i++
+            img(src="/images/users/" + review.author.photo, alt="Photo of the author")
+            h1= review.author.name
+            - var date = new Date(review.createdAt)
+            p= months[date.getUTCMonth()] + " " + date.getUTCDate() + ", " + date.getUTCFullYear()
     
     //- Write a Review
     if (user)

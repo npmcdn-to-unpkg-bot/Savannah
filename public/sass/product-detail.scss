@@ -166,6 +166,7 @@ aside li:not(.indent) {
     overflow: auto;
     padding: 0.65rem 0;
     position: relative;
+    width: 100%;
 
     .left, .right {
       display: table-cell;
@@ -178,7 +179,10 @@ aside li:not(.indent) {
       width: 70%;
 
       p {
-        font-size: 0.9rem;
+        font: {
+          family: "Open Sans", "Source Sans Pro", sans-serif;
+          size: 0.9rem;
+        }
         line-height: 175%;
         margin: 2.5% auto;
         width: 95%;
@@ -200,7 +204,10 @@ aside li:not(.indent) {
       }
 
       h1 {
-        font-size: 0.9rem;
+        font: {
+          family: "Open Sans", "Source Sans Pro", sans-serif;
+          size: 0.9rem;
+        }
       }
 
       p {

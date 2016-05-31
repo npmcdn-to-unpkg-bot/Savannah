@@ -7,69 +7,19 @@ var Seminar = require('../models/Seminar');
 // Middleware
 router.use((req, res, next) => {
   // Choose the seminar detail to show in the CTA
-  Seminar.find({idHash: 'hUmmmGJ7clRMosbgmWVcI55K78rK1NTs2cvGHMaLGKmeUEEAgX'}, (err, seminar) => {
-    res.locals.seminar_cta = seminar[0];
+  Seminar.find({idHash: 'hUmmmGJ7clRMosbgmWVcI55K78rK1NTs2cvGHMaLGKmeUEEAgX'}, (err, seminars) => {
+    res.locals.seminar_cta = seminars[0];
     next();
   });
 });
 
 // Routes
 router.get('/:id', (req, res, next) => {
-  let viewData = {
-    filters: [
-      'Upcoming',
-      'Android',
-      'AngularJS',
-      'Backbone',
-      'Back-End',
-      'CoffeeScript',
-      'Django',
-      'Docker',
-      'EmberJS',
-      'ExpressJS',
-      'Far Cry',
-      'Final Fantasy',
-      'Firewatch',
-      'Front-End',
-      'Git',
-      'Grand Theft Auto',
-      'Heroku',
-      'iOS Development',
-      'Laravel',
-      'Less',
-      'Linux',
-      'Minecraft',
-      'Node',
-      'OS X Development',
-      'React',
-      'React Native',
-      'Ruby on Rails',
-      'Task Runners',
-      'tvOS Development',
-      'Ubuntu Server',
-      'Sass',
-      'watchOS Development',
-      'WordPress',
-      'WSGI'
-    ],
-    months: [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ]
-  };
   Seminar.find({idHash: req.params.id}, (err, seminar) => {
-    viewData.seminar = seminar[0];
-    viewData.title = viewData.seminar.title;
+    let viewData = {
+      seminar: seminar[0],
+      title: seminar.title,
+    };
     res.render('seminar-detail', viewData);
   });
 });
@@ -77,42 +27,6 @@ router.get('/:id', (req, res, next) => {
 router.get('/', (req, res, next) => {
   let viewData = {
     title: "Seminars",
-    filters: [
-      'Upcoming',
-      'Android',
-      'AngularJS',
-      'Backbone',
-      'Back-End',
-      'CoffeeScript',
-      'Django',
-      'Docker',
-      'EmberJS',
-      'ExpressJS',
-      'Far Cry',
-      'Final Fantasy',
-      'Firewatch',
-      'Front-End',
-      'Git',
-      'Grand Theft Auto',
-      'Heroku',
-      'iOS Development',
-      'Laravel',
-      'Less',
-      'Linux',
-      'Minecraft',
-      'Node',
-      'OS X Development',
-      'React',
-      'React Native',
-      'Ruby on Rails',
-      'Task Runners',
-      'tvOS Development',
-      'Ubuntu Server',
-      'Sass',
-      'watchOS Development',
-      'WordPress',
-      'WSGI'
-    ]
   };
   Seminar.find({}, (err, seminars) => {
     viewData.seminars = seminars;

@@ -5,6 +5,15 @@ var router = express.Router();
 var products = require('../data/amazon');
 var Product = require('../models/Product');
 
+// Middleware
+router.use('/products/:asin', (req, res, next) => {
+  Product.find({asin: req.params.asin}, (err, products) => {
+    if (err) throw err;
+    res.locals.product = products[0];
+  });
+  next();
+});
+
 // Routes
 router.get('/', (req, res, next) => {
   products.hardware.then((hardware) => {
@@ -53,15 +62,7 @@ router.get('/products/:asin', (req, res, next) => {
       productAsin: result[0].ASIN[0],
       productInfo: result[0].ItemAttributes[0],
       productImages: result[0].ImageSets[0].ImageSet,
-      productListPrice: result[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice,
-      productComments: [{
-        author: {
-          name: 'Otis Bryant',
-          photo: 'otis_bryant.jpg'
-        },
-        time: 'Monday, 11 April, 2016',
-        text: '<p>This product is lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat.</p><p>Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.</p>'
-      }]
+      productListPrice: result[0].Offers[0].Offer[0].OfferListing[0].Price[0].FormattedPrice
     };
     res.render('product-detail', viewData);
   });

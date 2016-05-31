@@ -3,7 +3,7 @@
   "asin": "B01CGGOZOM",
   "reviews": [{
     "stars": 4,
-    "body": "This is a nice computer!",
+    "body": "This is a nice computer! Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
     "author": {
       "name": "Pocahontas Griffiths",
       "photo": "pocahontas_griffiths.jpg",
@@ -15,15 +15,51 @@
         "photo": "bunny_harper.jpg",
         "location": "Houston, TX"
       },
-      "body": "I disagree that this is a nice computer. It was a massive struggle to set up."
+      "body": "I disagree that this is a nice computer. It was a massive struggle to set up. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui."
     }]
   }, {
+    "stars": 5,
+    "body": "This product is lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN"
+    },
+    "comments": []
+  }, {
     "stars": 2,
-    "body": "This computer has given me some issues at first but it's not that bad. Definitely not my first choice.",
+    "body": "This computer has given me some issues at first but it's not that bad. Definitely not my first choice. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
     "author": {
       "name": "Bunny Harper",
       "photo": "bunny_harper.jpg",
       "location": "Houston, TX"
+    },
+    "comments": []
+  }, {
+    "stars": 5,
+    "body": "This product is lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN"
+    },
+    "comments": []
+  }, {
+    "stars": 5,
+    "body": "I highly recommend this computer. It's the perfect machine for Minecrafting and Slithering. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
+    "author": {
+      "name": "Colleen Sings",
+      "photo": "colleen_sings.jpg",
+      "location": "Los Angeles, CA"
+    },
+    "comments": []
+  }, {
+    "stars": 5,
+    "body": "This product is lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
+    "author": {
+      "name": "Otis Bryant",
+      "photo": "otis_bryant.jpg",
+      "location": "Minneapolis, MN"
     },
     "comments": []
   }]

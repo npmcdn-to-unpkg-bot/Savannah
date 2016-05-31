@@ -49,6 +49,56 @@ app.use((req, res, next) => {
 
   // Other stuff
   app.locals.currentUrlPath = req.path;
+  app.locals.months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ];
+  app.locals.filters = [
+    'Upcoming',
+    'Android',
+    'AngularJS',
+    'Backbone',
+    'Back-End',
+    'CoffeeScript',
+    'Django',
+    'Docker',
+    'EmberJS',
+    'ExpressJS',
+    'Far Cry',
+    'Final Fantasy',
+    'Firewatch',
+    'Front-End',
+    'Git',
+    'Grand Theft Auto',
+    'Heroku',
+    'iOS Development',
+    'Laravel',
+    'Less',
+    'Linux',
+    'Minecraft',
+    'Node',
+    'OS X Development',
+    'React',
+    'React Native',
+    'Ruby on Rails',
+    'Task Runners',
+    'tvOS Development',
+    'Ubuntu Server',
+    'Sass',
+    'watchOS Development',
+    'WordPress',
+    'WSGI'
+  ];
   next();
 });
 
