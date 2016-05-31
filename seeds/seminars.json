@@ -156,7 +156,7 @@
   "id": 3,
   "idHash": "hUmmmGJ7clRMosbgmWVcI55K78rK1NTs2cvGHMaLGKmeUEEAgX",
   "title": "Introduction to CoreOS 7",
-  "description": "Join us to learn about some of the key concepts of CoreOS — The open source and lightweight operating system based on the Linux cluster and designed for clustered deployments!",
+  "description": "Join us to learn about some of the key concepts of CoreOS — The open source and lightweight operating system based on the Linux kernel and designed for clustered deployments!",
   "headerImageFilename": "coreos-7.jpg",
   "reviews": [{
     "stars": 4,
