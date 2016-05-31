@@ -153,6 +153,10 @@ aside li:not(.indent) {
   &.empty {
     display: block;
 
+    .reviews {
+      display: none;
+    }
+
     .right {
       position: static;
 
