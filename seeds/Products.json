@@ -9,14 +9,7 @@
       "photo": "pocahontas_griffiths.jpg",
       "location": "San Jose, CA"
     },
-    "comments": [{
-      "author": {
-        "name": "Bunny Harper",
-        "photo": "bunny_harper.jpg",
-        "location": "Houston, TX"
-      },
-      "body": "I disagree that this is a nice computer. It was a massive struggle to set up. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui."
-    }]
+    "comments": []
   }, {
     "stars": 5,
     "body": "This product is lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie elit vitae tortor blandit, tincidunt commodo velit feugiat. Cras eros ligula, consequat at dui vitae, fermentum elementum nisl. Aenean volutpat sagittis nisl efficitur consectetur. Proin nec dignissim massa, a lobortis sapien. Proin pretium rhoncus commodo. Vivamus ipsum enim, pulvinar vel fermentum in, vehicula id dui.",
