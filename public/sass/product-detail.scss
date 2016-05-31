@@ -16,6 +16,17 @@ aside.product-detail {
   border-bottom: 0.125rem solid #d2d2d2;
 }
 
+aside.right {
+  float: left;
+  width: 40%;
+  border: 0;
+}
+
+div.reviews {
+  float: left;
+  width: 60%;
+}
+
 aside li:not(.indent) {
   margin: 2.5% 0;
 }
@@ -151,15 +162,16 @@ aside li:not(.indent) {
   clear: both;
   font-family: "Fira Sans";
   overflow: auto;
+  padding: 0.65rem 0;
 
   .left {
-    padding: 5%;
+    margin: 2.5%;
     float: left;
     width: 65%;
 
     p {
-      font-size: 1.025rem;
-      line-height: 165%;
+      font-size: 0.9rem;
+      line-height: 175%;
       margin: 2.5% auto;
       width: 95%;
       max-width: 700px;
@@ -168,6 +180,7 @@ aside li:not(.indent) {
 
   .right {
     float: left;
+    padding: 2.5%;
     text-align: center;
     width: 25%;
 
@@ -175,11 +188,16 @@ aside li:not(.indent) {
       border: 0.235rem solid #504946;
       border-radius: 100rem;
       margin: 10% 0;
-      width: 50%;
+      width: 65%;
       max-width: 175px;
     }
 
+    h1 {
+      font-size: 0.9rem;
+    }
+
     p {
+      font-size: 0.85rem;
       line-height: 225%;
     }
   }
@@ -198,6 +216,24 @@ aside li:not(.indent) {
     bottom: 0;
     left: 0;
     z-index: -1;
+  }
+}
+
+// Write a Review
+.right {
+  h1.peachy {
+    &::before, &::after {
+      width: 16%;
+    }
+  }
+
+  .stars {
+    margin: 5% auto;
+    width: 40%;
+
+    img {
+      width: 20%;
+    }
   }
 }
 

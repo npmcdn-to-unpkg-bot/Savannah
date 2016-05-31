@@ -72,6 +72,10 @@ aside {
       text-indent: .75rem;
     }
   }
+
+  .stars {
+    cursor: pointer;
+  }
 }
 
 h1.peachy {
@@ -150,6 +154,7 @@ form {
       color: #db5278;
       width: medium;
     }
+    resize: vertical;
     transition: background 225ms;
     width: 30%;
 

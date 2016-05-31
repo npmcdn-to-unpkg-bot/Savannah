@@ -49,16 +49,38 @@ block content
         img(src=image.LargeImage[0].URL, alt="Product image")
   
   //- Reviews
-  - var i = 0
-  while i < 5
-    section.review
-      div.left
-        p!= productComments[0].text
-      div.right
-        img(src="/images/users/" + productComments[0].author.photo, alt="Photo of the author")
-        h1= productComments[0].author.name
-        p= productComments[0].time
-        - i++
+  div.reviews
+    - var i = 0
+    while i < 5
+      section.review
+        div.left
+          p!= productComments[0].text
+        div.right
+          img(src="/images/users/" + productComments[0].author.photo, alt="Photo of the author")
+          h1= productComments[0].author.name
+          p= productComments[0].time
+          - i++
+  
+  //- Write a Review
+  aside.right
+    h1.peachy.dark.section-title Share a Review
+    form(action="/seminars/review", method="POST")
+      if !user
+        h2 You:
+      input(type="hidden", name="star_count", value="5")
+      if !user
+        input(type="text", name="full_name", placeholder="Full Name")
+        input(type="text", name="location", placeholder="Location")
+        input(type="email", name="email_address", placeholder="Email Address")
+      textarea(name="review_body" rows="20", placeholder="Review")
+      div.stars
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+        img(src="/icons/star.png", alt="Star")
+      button Post
 
 block extra_scripts
   script(src="/scripts/product-detail.js")
+  script(src="/scripts/stars.js")

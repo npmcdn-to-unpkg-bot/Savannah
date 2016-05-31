@@ -1,4 +1,4 @@
-// seminar-detail.js
+// stars.js
 // Alexander Rhett Crammer
 // Monday, 2 May, 2016
 
