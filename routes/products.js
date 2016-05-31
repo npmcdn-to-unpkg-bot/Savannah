@@ -7,11 +7,12 @@ var Product = require('../models/Product');
 
 // Middleware
 router.use('/products/:asin', (req, res, next) => {
-  Product.find({asin: req.params.asin}, (err, products) => {
+  // Create and get the product from the database
+  Product.findOrCreate({asin: req.params.asin}, (err, products, wasCreated) => {
     if (err) throw err;
-    res.locals.product = products[0];
+    res.locals.product = products;
+    next();
   });
-  next();
 });
 
 // Routes

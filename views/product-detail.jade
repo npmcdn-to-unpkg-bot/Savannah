@@ -48,7 +48,7 @@ block content
         span.helper
         img(src=image.LargeImage[0].URL, alt="Product image")
 
-  div.reviews-and-write-a-review
+  div(class="reviews-and-write-a-review #{(product.reviews.length == 0) ? 'empty' : ''}")
     //- Reviews
     div.reviews
       each review in product.reviews

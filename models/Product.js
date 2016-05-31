@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var findOrCreate = require('mongoose-findorcreate')
 
 var productSchema = new mongoose.Schema({
   id: String,
@@ -36,6 +37,8 @@ var productSchema = new mongoose.Schema({
 }, {
   collection : 'Products'
 });
+
+productSchema.plugin(findOrCreate);
 
 var Product = mongoose.model('Product', productSchema);
 
