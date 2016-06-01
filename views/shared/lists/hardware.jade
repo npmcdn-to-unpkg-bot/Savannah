@@ -1,0 +1,83 @@
+h1.peachy Categories
+-
+  var computers = [
+    'Desktop',
+    'Laptop',
+    'Ultra-Portable',
+    'Gaming',
+    'Servers',
+    'Wearable'
+  ];
+  var cameras = [
+    'DSLR',
+    'Professional Video'
+  ];
+  var peripherals = [
+    'Keyboards and Mice',
+    'Speakers',
+    'Headphones',
+    'Microphones',
+    'Monitors',
+    'Printers and Scanners',
+    'Projectors',
+    'HDMI Cables',
+    'HDMI Gameplay Recorders'
+  ];
+  var accessories = [
+    'Cases',
+    'Power Banks',
+    'Docks'
+  ];
+  var tablets = [
+    'Microsoft Surface',
+    'Android',
+    'Windows 10',
+    'Apple iPad'
+  ];
+  var smartphones = [
+    'Batteries',
+    'Chargers',
+    'Bluetooth Accessories',
+    'Cases and Protection'
+  ];
+  var appliances = [
+    'Blenders',
+    'Vacuums and Robots',
+    'Coffee Machines',
+    'Espresso Machines',
+    'Refrigerators'
+  ];
+  var sortingOptions = [
+    'Newest',
+    'Most Popular',
+    'Greatest Expense',
+    'Least Expense'
+  ];
+  
+ul
+  li Featured
+  li Computers
+  each thing in computers
+    li(class="indent")= thing
+  li Cameras
+  each thing in cameras
+    li(class="indent")= thing
+  li Peripherals
+  each thing in peripherals
+    li(class="indent")= thing
+  li Accessories
+  each thing in accessories
+    li(class="indent")= thing
+  li Tablets
+  each thing in tablets
+    li(class="indent")= thing
+  li Smartphones
+  each thing in smartphones
+    li(class="indent")= thing
+  li Appliances
+  each thing in appliances
+    li(class="indent")= thing
+h1.peachy Sort
+ul
+  each thing in sortingOptions
+    li(class="indent")= thing

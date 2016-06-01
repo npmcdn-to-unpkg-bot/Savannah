@@ -16,10 +16,7 @@ block content
   div.main-and-aside
     //- Filters
     aside
-      h1.peachy Filters
-      ul(class="sidebar-list")
-        each filter in filters
-          li= filter
+      include shared/lists/filters
 
     main
       //- Search Bar

@@ -1,3 +1,6 @@
+/**
+ * Savannah — Because it's one of my favorite biomes in Minecraft
+ */
 var express = require('express');
 var session = require('cookie-session');
 var path = require('path');
@@ -62,42 +65,6 @@ app.use((req, res, next) => {
     'October',
     'November',
     'December'
-  ];
-  app.locals.filters = [
-    'Upcoming',
-    'Android',
-    'AngularJS',
-    'Backbone',
-    'Back-End',
-    'CoffeeScript',
-    'Django',
-    'Docker',
-    'EmberJS',
-    'ExpressJS',
-    'Far Cry',
-    'Final Fantasy',
-    'Firewatch',
-    'Front-End',
-    'Git',
-    'Grand Theft Auto',
-    'Heroku',
-    'iOS Development',
-    'Laravel',
-    'Less',
-    'Linux',
-    'Minecraft',
-    'Node',
-    'OS X Development',
-    'React',
-    'React Native',
-    'Ruby on Rails',
-    'Task Runners',
-    'tvOS Development',
-    'Ubuntu Server',
-    'Sass',
-    'watchOS Development',
-    'WordPress',
-    'WSGI'
   ];
   next();
 });
