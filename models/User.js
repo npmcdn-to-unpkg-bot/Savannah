@@ -14,6 +14,7 @@ var userSchema = new Schema({
     unique: false
   },
   photo: String,
+  header_photo: String,
   cart: Array,
   createdAt: {
     type: Date,

@@ -15,7 +15,6 @@ var upload = multer({storage: multer.diskStorage({
   destination: function (req, file, done) {
     // Determine which directory to save the file to
     var savePath = projectRootPath + '/public/images';
-
     if (file.fieldname == "profile_photo") {
       // It's a profile photo
       savePath += '/users';
@@ -23,23 +22,42 @@ var upload = multer({storage: multer.diskStorage({
       // It's a header photo
       savePath += '/users/header_photos';
     }
-
     done(null, savePath);
   },
   filename: function (req, file, done) {
+    var user = req.user;
     var filename = req.user.first_name.toLowerCase()
       + "_"
       + req.user.last_name.toLowerCase()
       + '.'
-      + mime.extension(file.mimetype)
-    done(null, filename);
+      + mime.extension(file.mimetype);
+
+    // Store the appropriate filenames in the database
+    if (file.fieldname == "profile_photo") {
+      // It's a profile photo
+      user.photo = filename;
+    } else if (file.fieldname == "profile_header_photo") {
+      // It's a header photo
+      user.header_photo = filename;
+    }
+    req.login(user, (err) => {
+      if (err) throw err;
+      done(null, filename);
+    });
   }
 })});
 
 router.get('/profile', (req, res, next) => {
-  res.render('auth/profile', {
-    title: 'Profile',
-    saved: req.flash('saved')
+  User.find({_id: req.user._id}, (err, user) => {
+    // Make Passport reauthenticate them so we
+    // get the latest data in their session
+    // which is what the view displays
+    req.login(req.user, (err) => {
+      res.render('auth/profile', {
+        title: 'Profile',
+        saved: req.flash('saved')
+      });
+    });
   });
 });
 
@@ -70,7 +88,7 @@ router.post('/profile/update', upload.fields([{
 
       // Make Passport reauthenticate them so
       // we get the new data in their session
-      req.login(user, (err) => {
+      req.login(req.user, (err) => {
         if (err) throw err;
         res.redirect('/auth/profile');
       });
