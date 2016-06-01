@@ -1,8 +1,40 @@
+"use strict";
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var flash = require('connect-flash');
+var projectRootPath = require('app-root-path');
+var multer = require('multer');
+var crypto = require('crypto');
+var mime = require('mime');
 var User = require('../models/User');
+var prettyjson = require('prettyjson');
+
+// Multer doesn't now how to handle filenames >___>
+var upload = multer({storage: multer.diskStorage({
+  destination: function (req, file, done) {
+    // Determine which directory to save the file to
+    var savePath = projectRootPath + '/public/images';
+
+    if (file.fieldname == "profile_photo") {
+      // It's a profile photo
+      savePath += '/users';
+    } else if (file.fieldname == "profile_header_photo") {
+      // It's a header photo
+      savePath += '/users/header_photos';
+    }
+
+    done(null, savePath);
+  },
+  filename: function (req, file, done) {
+    var filename = req.user.first_name.toLowerCase()
+      + "_"
+      + req.user.last_name.toLowerCase()
+      + '.'
+      + mime.extension(file.mimetype)
+    done(null, filename);
+  }
+})});
 
 router.get('/profile', (req, res, next) => {
   res.render('auth/profile', {
@@ -11,7 +43,13 @@ router.get('/profile', (req, res, next) => {
   });
 });
 
-router.post('/profile/update', (req, res, next) => {
+router.post('/profile/update', upload.fields([{
+  name: 'profile_photo',
+  maxCount: 1
+}, {
+  name: 'profile_header_photo',
+  maxCount: 1
+}]), (req, res, next) => {
   User.find({_id: req.user._id}, (err, user) => {
     var user = user[0];
 
