@@ -1,10 +1,43 @@
 var express = require('express');
+var router = express.Router();
 var passport = require('passport');
 var flash = require('connect-flash');
-var router = express.Router();
+var User = require('../models/User');
 
 router.get('/profile', (req, res, next) => {
-  res.render('auth/profile');
+  res.render('auth/profile', {
+    title: 'Profile',
+    saved: req.flash('saved')
+  });
+});
+
+router.post('/profile/update', (req, res, next) => {
+  User.find({_id: req.user._id}, (err, user) => {
+    var user = user[0];
+
+    // Set submitted data if they provided it
+    if (req.body.first_name) {
+      user.full_name = req.body.first_name + " " + req.body.last_name;
+    }
+    user.first_name = req.body.first_name || user.first_name;
+    user.last_name = req.body.last_name || user.last_name;
+    user.email_address = req.body.email_address || user.email_address;
+    user.location = req.body.location || user.location;
+
+    // Save those settings
+    user.save((err) => {
+      if (err) throw err;
+      // Flash the 'Saved' message
+      req.flash('saved', 'Your changes were saved <span>🤓</span>');
+
+      // Make Passport reauthenticate them so
+      // we get the new data in their session
+      req.login(user, (err) => {
+        if (err) throw err;
+        res.redirect('/auth/profile');
+      });
+    });
+  });
 });
 
 router.get('/login', (req, res, next) => {

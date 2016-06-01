@@ -25,28 +25,46 @@ block content
         each navigationItem in navigationItems
           a.form-changer(href="#"): li= navigationItem
 
+    //- Flash the saved message if their changes were saved
+    p.saved-message!= saved
+
     //- Profile Form
-    form.profile-info(action="/auth/profile/update")
-      input(type="text", name="first_name", placeholder="First Name")
-      input(type="text", name="last_name", placeholder="Last Name")
-      input(type="text", name="email_address", placeholder="Email Address")
-      input(type="text", name="location", placeholder="Location")
+    form.profile-info(action="/auth/profile/update", method="POST")
+      div.labels-and-fields
+        label
+          span.title First Name
+          input(type="text", name="first_name", value=user.first_name, placeholder="First Name")
+        label
+          span.title Last Name
+          input(type="text", name="last_name", value=user.last_name, placeholder="Last Name")
+        label
+          span.title Email Address
+          input(type="text", name="email_address", value=user.email_address, placeholder="Email Address")
+        label
+          span.title Location
+          input(type="text", name="location", value=user.location, placeholder="Location")
       button.red Save
 
     //- Profile and Header Photos Form
-    form.profile-info(action="/auth/profile/update", style="display: none")
-      label
-        span.title Profile Photo
-        input.wide(type="file", name="profile_photo")
-      label
-        span.title Header Photo
-        input.wide(type="file", name="profile_header_photo")
+    form.profile-info(action="/auth/profile/update", style="display: none", method="POST")
+      div.labels-and-fields
+        label.wide
+          span.title Profile Photo
+          input(type="file", name="profile_photo")
+        label.wide
+          span.title Header Photo
+          input(type="file", name="profile_header_photo")
       button.red Save
 
     //- Password Change Form
-    form.profile-info(action="/auth/profile/update", style="display: none")
-      input.wide(type="password", name="password", placeholder="Password")
-      input.wide(type="password", name="password_confirmation", placeholder="One More Time")
+    form.profile-info(action="/auth/profile/update", style="display: none", method="POST")
+      div.labels-and-fields
+        label
+          span.title Password
+          input(type="password", name="password", placeholder="Password")
+        label
+          span.title One More Time
+          input(type="password", name="password_confirmation", placeholder="One More Time")
       button.red Save
 
 block extra_scripts

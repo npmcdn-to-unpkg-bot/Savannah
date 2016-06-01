@@ -134,6 +134,22 @@
     }
   }
 
+  // Profile saved message
+  .saved-message {
+    color: $grey;
+    font: $baseFontStack;
+    float: right;
+    margin-top: 5%;
+    text-align: center;
+    width: 75%;
+
+    span {
+      font-size: 1.5rem;
+      margin-left: 0.35%;
+      vertical-align: middle;
+    }
+  }
+
   // Profile form
   .profile-info {
     float: right;
@@ -143,22 +159,40 @@
     }
     width: 60%;
 
+    .labels-and-fields {
+      overflow: auto;
+    }
+
     label {
       color: $grey;
       display: block;
+      float: left;
       margin-top: 2.5%;
+      width: 50%;
+
+      &.wide {
+        width: 100%;
+      }
 
       .title {
+        display: block;
         font: {
           family: $baseFontStack;
           size: 0.95rem;
         }
         margin-left: 1rem;
+        width: 100%;
       }
     }
 
-    input.wide {
+    input {
+      padding: 5% 7.5%;
       width: 80%;
+
+      &[type="file"] {
+        padding: 2.5% 7.5%;
+        margin: 2.5%;
+      }
     }
 
     button {

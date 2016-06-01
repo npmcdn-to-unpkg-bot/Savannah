@@ -45,6 +45,8 @@ $(document).ready(function () {
       trySubmitting();
     }
 
+    $('.submission-button').click(trySubmitting());
+
     function trySubmitting () {
       if (!invalidUsername && !invalidFullName && !invalidEmailAddress) {
         $('.registration-form')[0].submit();

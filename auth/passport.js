@@ -28,7 +28,9 @@ module.exports = (passport) => {
         var additionalUser = new User({
           name: username,
           password: password,
-          full_name: req.body.full_name,
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          full_name: req.body.first_name + " " + req.body.last_name,
           email_address: req.body.email_address,
           location: req.body.location
         });
