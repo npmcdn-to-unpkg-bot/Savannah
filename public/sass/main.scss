@@ -145,7 +145,6 @@ form {
     font: {
       family: "Georgia";
       size: 0.875rem;
-      style: italic;
     }
     letter-spacing: 0.0275rem;
     padding: 2.5% 7.5%;
@@ -160,6 +159,7 @@ form {
 
     &:focus {
       background: #f9f9f9;
+      font-style: italic;
     }
   }
 

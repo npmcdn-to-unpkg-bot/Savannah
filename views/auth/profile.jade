@@ -23,7 +23,7 @@ block content
             'Password'
           ];
         each navigationItem in navigationItems
-          a(href=""): li= navigationItem
+          a.form-changer(href="#"): li= navigationItem
 
     //- Profile Form
     form.profile-info(action="/auth/profile/update")
@@ -31,13 +31,23 @@ block content
       input(type="text", name="last_name", placeholder="Last Name")
       input(type="text", name="email_address", placeholder="Email Address")
       input(type="text", name="location", placeholder="Location")
+      button.red Save
 
     //- Profile and Header Photos Form
-    form.profile-info(action="/auth/profile/update")
-      input(type="file", name="profile_photo")
-      input(type="file", name="profile_header_photo")
+    form.profile-info(action="/auth/profile/update", style="display: none")
+      label
+        span.title Profile Photo
+        input.wide(type="file", name="profile_photo")
+      label
+        span.title Header Photo
+        input.wide(type="file", name="profile_header_photo")
+      button.red Save
 
     //- Password Change Form
-    form.profile-info(action="/auth/profile/update")
-      input(type="password", name="password")
-      input(type="password", name="password_confirmation")
+    form.profile-info(action="/auth/profile/update", style="display: none")
+      input.wide(type="password", name="password", placeholder="Password")
+      input.wide(type="password", name="password_confirmation", placeholder="One More Time")
+      button.red Save
+
+block extra_scripts
+  script(src="/scripts/profile.js")
