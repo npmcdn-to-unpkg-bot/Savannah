@@ -182,7 +182,7 @@ footer {
 }
 
 // Navigation
-nav {
+.top-navigation {
   height: 135px;
   position: relative;
   z-index: 1;
@@ -232,7 +232,7 @@ nav {
   }
 }
 
-nav:not(.pink-to-darker-pink) {
+.top-navigation:not(.pink-to-darker-pink) {
   position: absolute;
   top: 0;
   right: 0;
@@ -240,7 +240,7 @@ nav:not(.pink-to-darker-pink) {
 }
 
 // Navigation and Footer
-nav, footer {
+.top-navigation, footer {
   overflow: auto;
 
   a {
@@ -638,7 +638,7 @@ button {
   }
 
   // Navigation
-  nav {
+  .top-navigation {
     &.visible {
       position: fixed;
       height: 100%;

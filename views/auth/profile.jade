@@ -1,0 +1,42 @@
+extends ../shared/layout
+
+block extra_styles
+  link(rel="stylesheet", href="/stylesheets/auth.css")
+
+block content
+  //- Navigation Bar
+  include ../shared/nav-list
+
+  //- Profile and Header Photos
+  div.profile-header-photo(style="background-image: url('http://lorempixel.com/1920/400')")
+    img(src="http://lorempixel.com/500/500", alt="Profile photo")
+    h1 Alexander Rhett Crammer
+
+  //- Navigation Sidebar
+  nav
+    ul
+      -
+        var navigationItems = [
+          'Profile',
+          'Photos',
+          'Password'
+        ];
+      each navigationItem in navigationItems
+        li= navigationItem
+
+  //- Profile Form
+  form.profile-info(action="/auth/profile/update")
+    input(type="text", name="first_name", placeholder="First Name")
+    input(type="text", name="last_name", placeholder="Last Name")
+    input(type="text", name="email_address", placeholder="Email Address")
+    input(type="text", name="location", placeholder="Location")
+
+  //- Profile and Header Photos Form
+  form.profile-info(action="/auth/profile/update")
+    input(type="file", name="profile_photo")
+    input(type="file", name="profile_header_photo")
+
+  //- Password Change Form
+  form.profile-info(action="/auth/profile/update")
+    input(type="password", name="password")
+    input(type="password", name="password_confirmation")

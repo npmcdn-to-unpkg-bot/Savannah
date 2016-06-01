@@ -3,6 +3,10 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var router = express.Router();
 
+router.get('/profile', (req, res, next) => {
+  res.render('auth/profile');
+});
+
 router.get('/login', (req, res, next) => {
   res.render('auth/login', {
     title: 'Login',

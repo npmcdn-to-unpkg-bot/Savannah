@@ -1,5 +1,11 @@
-- var viewsUsingNoImage = ['/cart', '/auth/register', '/auth/login']
-nav(class="#{(viewsUsingNoImage.indexOf(currentUrlPath) != -1) ? 'pink-to-darker-pink' : ''}")
+-
+  var viewsWhoNeedThinNavBars = [
+    '/cart',
+    '/auth/register',
+    '/auth/login',
+    '/auth/profile'
+  ];
+nav(class="top-navigation", class=(viewsWhoNeedThinNavBars.indexOf(currentUrlPath) != -1) ? 'pink-to-darker-pink' : '')
   a(href="/", class="escape-hatch") Savannah
   ul
     li
@@ -14,7 +20,7 @@ nav(class="#{(viewsUsingNoImage.indexOf(currentUrlPath) != -1) ? 'pink-to-darker
       li
         a(href="/cart", class="#{currentUrlPath == '/cart' ? 'current' : ''}") Cart
       li
-        a(href="#", class="#{currentUrlPath == '/starred' ? 'current' : ''}") Starred
+        a(href="/auth/profile", class="#{currentUrlPath == '/auth/profile' ? 'current' : ''}") Profile
     li
       if user != undefined
         button.lite.red

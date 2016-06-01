@@ -49,3 +49,48 @@
     }
   }
 }
+
+// Profile
+.profile-header-photo {
+  background: {
+    position: center center;
+    repeat: no-repeat;
+    size: cover;
+  }
+  border: {
+    top: 0.25rem solid #963751;
+    bottom: 0.25rem solid #963751;
+  }
+  box-shadow: 0 -5rem 5rem -2.5rem #250b12 inset;
+  box-shadow: 0 -3rem 0rem 0 rgba(14, 14, 14, 0.85) inset;
+  height: 12.5rem;
+  position: relative;
+
+  img {
+    border: 0.175rem solid #bd5873;
+    box-shadow: 0 0 5px 0px #633944;
+    position: absolute;
+    bottom: -20%;
+    left: 10%;
+    width: 15%;
+  }
+
+  h1 {
+    color: #fbfbfb;
+    font: {
+      family: $baseFontStack;
+      size: 1.5rem;
+    }
+    letter-spacing: 0.05rem;
+    position: absolute;
+    bottom: 5%;
+    left: 27.5%;
+    text-shadow: 0 0 5px black;
+  }
+}
+
+// Profile form
+.profile-info {
+  float: right;
+  width: 60%;
+}
