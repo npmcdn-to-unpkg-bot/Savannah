@@ -25,29 +25,39 @@ var upload = multer({storage: multer.diskStorage({
     done(null, savePath);
   },
   filename: function (req, file, done) {
-    var user = req.user;
-    var filename = req.user.first_name.toLowerCase()
-      + "_"
-      + req.user.last_name.toLowerCase()
-      + '.'
-      + mime.extension(file.mimetype);
+    User.update({_id: req.user._id}, {
+      $push: whatToPush
+    });
+    User.find({_id: req.user._id}, (err, user) => {
+      var filename = req.user.first_name.toLowerCase()
+        + "_"
+        + req.user.last_name.toLowerCase()
+        + '.'
+        + mime.extension(file.mimetype);
 
-    // Store the appropriate filenames in the database
-    if (file.fieldname == "profile_photo") {
-      // It's a profile photo
-      user.photo = filename;
-    } else if (file.fieldname == "profile_header_photo") {
-      // It's a header photo
-      user.header_photo = filename;
-    }
-    req.login(user, (err) => {
-      if (err) throw err;
-      done(null, filename);
+      // Store the appropriate filenames in the database
+      if (file.fieldname == "profile_photo") {
+        // It's a profile photo
+        user.photo = filename;
+      } else if (file.fieldname == "profile_header_photo") {
+        // It's a header photo
+        user.header_photo = filename;
+      }
+
+      user.save((err) => {
+        
+        req.login(req.user, (err) => {
+
+          done(null, filename);
+        });
+      });
     });
   }
 })});
 
+// Routes
 router.get('/profile', (req, res, next) => {
+  console.log(prettyjson.render(req.user));
   User.find({_id: req.user._id}, (err, user) => {
     // Make Passport reauthenticate them so we
     // get the latest data in their session
@@ -82,14 +92,14 @@ router.post('/profile/update', upload.fields([{
 
     // Save those settings
     user.save((err) => {
-      if (err) throw err;
+
       // Flash the 'Saved' message
       req.flash('saved', 'Your changes were saved <span>🤓</span>');
 
       // Make Passport reauthenticate them so
       // we get the new data in their session
       req.login(req.user, (err) => {
-        if (err) throw err;
+
         res.redirect('/auth/profile');
       });
     });

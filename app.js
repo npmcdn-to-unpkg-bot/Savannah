@@ -23,7 +23,7 @@ require('./models/User');
 require('./auth/passport')(passport);
 
 // Connect Mongoose to Mongo
-mongoose.connect('mongodb://localhost/Savannah', (err, res) => {if (err) throw err;});
+mongoose.connect('mongodb://localhost/Savannah', (err, res) => {});
 
 var app = express();
 

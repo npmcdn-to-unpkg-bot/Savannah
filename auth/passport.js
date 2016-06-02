@@ -20,7 +20,7 @@ module.exports = (passport) => {
     User.findOne({
       name: req.body.username
     }, (err, existingUser) => {
-      if (err) throw err;
+      
 
       if (req.path == "/register" && !existingUser) {
         // There's no user with the username
@@ -35,7 +35,7 @@ module.exports = (passport) => {
           location: req.body.location
         });
         additionalUser.save((err) => {
-          if (err) throw err;
+          
           console.log('"' + additionalUser.name + '" was created and added to the database.');
         });
         return done(null, additionalUser);

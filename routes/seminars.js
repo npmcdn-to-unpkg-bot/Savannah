@@ -48,7 +48,7 @@ router.post('/review', (req, res, next) => {
         }
       }
     }
-  }, (err) => {if (err) throw err;});
+  }, (err) => {});
   res.redirect('/seminars/' + req.body.id_hash);
 });
 

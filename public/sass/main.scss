@@ -522,7 +522,6 @@ button {
   }
   letter-spacing: 0.035rem;
   margin: 0 10px;
-  outline: none;
   padding: 10px 35px;
   transition: all 225ms;
 
@@ -545,7 +544,7 @@ button {
     background-color: #b29586;
     border-color: #3a332d;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: lighten(#b29586, 5%);
       border-color: lighten(#3a332d, 5%);
     }
@@ -564,7 +563,7 @@ button {
     background-color: #e45c5c;
     border-color: #ab4747;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: #e45c5c;
       border-color: #ab4747;
     }
@@ -582,7 +581,7 @@ button {
     background-color: #ddc458;
     border-color: #b29e47;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: lighten(#ddc458, 10%);
       border-color: lighten(#b29e47, 10%);
     }

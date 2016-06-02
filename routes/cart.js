@@ -34,7 +34,7 @@ router.get('/add/:asin', (req, res) => {
     User.findByIdAndUpdate(req.user._id, {$set: {
       cart: req.user.cart
     }}, (err, user) => {
-      if (err) throw err;
+      
       res.redirect('/cart');
     });
   } else {

@@ -9,7 +9,7 @@ var Product = require('../models/Product');
 router.use('/products/:asin', (req, res, next) => {
   // Create and get the product from the database
   Product.findOrCreate({asin: req.params.asin}, (err, products, wasCreated) => {
-    if (err) throw err;
+    
     res.locals.product = products;
     next();
   });
@@ -84,7 +84,7 @@ router.post('/products/review', (req, res, next) => {
       }
     }
   }, {upsert: true}, (err, product) => {
-    if (err) throw err;
+    
     res.redirect(req.header('Referer') || '/');
   });
 });
