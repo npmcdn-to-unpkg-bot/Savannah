@@ -20,14 +20,11 @@ var upload = multer({storage: multer.diskStorage({
       savePath += '/users';
     } else if (file.fieldname == "profile_header_photo") {
       // It's a header photo
-      savePath += '/users/header_photos';
+      savePath += '/user-headers';
     }
     done(null, savePath);
   },
   filename: function (req, file, done) {
-    User.update({_id: req.user._id}, {
-      $push: whatToPush
-    });
     User.find({_id: req.user._id}, (err, user) => {
       var filename = req.user.first_name.toLowerCase()
         + "_"
@@ -39,17 +36,25 @@ var upload = multer({storage: multer.diskStorage({
       if (file.fieldname == "profile_photo") {
         // It's a profile photo
         user.photo = filename;
+
+        User.update({_id: req.user._id}, {
+          $set: {
+            photo: filename
+          }
+        });
       } else if (file.fieldname == "profile_header_photo") {
         // It's a header photo
         user.header_photo = filename;
+
+        User.update({_id: req.user._id}, {
+          $set: {
+            header_photo: filename
+          }
+        });
       }
 
-      user.save((err) => {
-        
-        req.login(req.user, (err) => {
-
-          done(null, filename);
-        });
+      req.login(req.user, (err) => {
+        done(null, filename);
       });
     });
   }
@@ -57,12 +62,14 @@ var upload = multer({storage: multer.diskStorage({
 
 // Routes
 router.get('/profile', (req, res, next) => {
-  console.log(prettyjson.render(req.user));
   User.find({_id: req.user._id}, (err, user) => {
     // Make Passport reauthenticate them so we
     // get the latest data in their session
     // which is what the view displays
-    req.login(req.user, (err) => {
+    req.login(user[0], (err) => {
+      // Update the user for the whole app
+      req.app.locals.user = req.user;
+
       res.render('auth/profile', {
         title: 'Profile',
         saved: req.flash('saved')
