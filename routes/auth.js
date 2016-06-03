@@ -36,20 +36,22 @@ var upload = multer({storage: multer.diskStorage({
       if (file.fieldname == "profile_photo") {
         // It's a profile photo
         user.photo = filename;
-
         User.update({_id: req.user._id}, {
           $set: {
             photo: filename
           }
+        }, (err) => {
+          if (err) throw err;
         });
       } else if (file.fieldname == "profile_header_photo") {
         // It's a header photo
         user.header_photo = filename;
-
         User.update({_id: req.user._id}, {
           $set: {
             header_photo: filename
           }
+        }, (err) => {
+          if (err) throw err;
         });
       }
 
