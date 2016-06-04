@@ -103,16 +103,20 @@ router.post('/profile/update', upload.fields([{
     user.email_address = req.body.email_address || user.email_address;
     user.location = req.body.location || user.location;
 
-    // Save those settings
-    user.save((err) => {
+    let passwordsMatch = (req.body.password == req.body.password_confirmation);
+    if (req.body.password && passwordsMatch) {
+      // Change the users' password
+      user.password = req.body.password || user.password;
+    }
 
+    // Save those settings
+    user.save(() => {
       // Flash the 'Saved' message
-      req.flash('saved', 'Your changes were saved <span>🤓</span>');
+      req.flash('saved', 'Your changes might have been saved but idk <span>🤓</span>');
 
       // Make Passport reauthenticate them so
       // we get the new data in their session
-      req.login(req.user, (err) => {
-
+      req.login(req.user, () => {
         res.redirect('/auth/profile');
       });
     });
