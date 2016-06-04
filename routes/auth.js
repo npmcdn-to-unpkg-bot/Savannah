@@ -150,7 +150,7 @@ router.post('/register', passport.authenticate('local', {
 
 router.get('/logout', (req, res, next) => {
   if (req.user) {
-    console.log('"' + req.user.name + '" logged out.');
+    console.info('"' + req.user.name + '" logged out.');
     req.logout();
   }
   res.redirect('/');
