@@ -1,8 +1,12 @@
 // Pancake Button
 var pancakes = $('.pancakes');
 var nav = $('nav');
+var navShouldBePink = !$('nav').hasClass('pink-to-darker-pink');
 $(pancakes).click(function () {
-  nav.addClass('pink-to-darker-pink');
+  if (navShouldBePink) {
+    // Get rid of the navigation background
+    nav.toggleClass('pink-to-darker-pink');
+  }
   pancakes.children('span').toggleClass('crossed');
   nav.toggleClass('visible');
 });

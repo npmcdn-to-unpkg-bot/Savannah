@@ -112,11 +112,16 @@ aside li:not(.indent) {
 // Clipping Masks
 .mask {
   background: white;
-  height: 500px;
+  max-height: 500px;
   float: left;
+  margin: 7.5% auto;
   overflow: hidden;
   position: relative;
   text-align: center;
+
+  &:nth-of-type(2n+3) {
+    clear: both;
+  }
 
   img {
     width: 50%;
@@ -135,6 +140,7 @@ aside li:not(.indent) {
 // Half-Width Images
 .half-width-images {
   clear: both;
+  overflow: auto;
 
   .mask {
     width: 50%;
@@ -306,6 +312,11 @@ aside li:not(.indent) {
       position: static;
     }
   }
+
+  // Product Gallery Photos
+  .half-width-images .mask {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -324,7 +335,7 @@ aside li:not(.indent) {
     }
 
     h1, p, ul {
-      width: 65%;
+      width: 100%;
     }
 
     p, ul {
@@ -333,5 +344,4 @@ aside li:not(.indent) {
   }
 }
 
-@media only screen and (max-width: 600px) {
-}
+@media only screen and (max-width: 600px) {}

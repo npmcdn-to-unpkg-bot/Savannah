@@ -26,6 +26,9 @@
   }
 
   .submission-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: #58b150;
     border: 0.215rem solid #D6D6D6;
     border-radius: 0.45rem;
@@ -37,15 +40,16 @@
     transition: background 175ms, border-color 175ms, color 175ms;
     width: 35%;
 
-    &:hover {
+    &:hover, &:focus {
       background: #76CC6E;
       border-color: #F9F9F9;
     }
 
     &:active {
       background: #23661d;
-      border-color: #565656;
+      border-color: #1B4617;
       color: #cdcdcd;
+      font-style: italic;
     }
   }
 }
@@ -198,5 +202,12 @@
     button {
       margin-top: 7.5%;
     }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  // Forms
+  .login-form, .registration-form {
+    width: 65%;
   }
 }

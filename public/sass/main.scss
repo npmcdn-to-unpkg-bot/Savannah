@@ -78,6 +78,21 @@ aside {
   }
 }
 
+button, input[type="submit"], input[type="button"] {
+  // There's a bug in Mobile Safari where
+  // tapping a button will show
+  // the copy, define, speak... menu
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  // Get rid of gray overlay when you click
+  -webkit-tap-highlight-color: transparent;
+}
+
 h1.peachy {
   color: $peach;
   font-style: italic;
@@ -218,12 +233,26 @@ footer {
     li {
       display: inline-block;
       font: {
-        family: "Source Sans Pro";
+        family: "Source Sans Pro Regular";
       }
       letter-spacing: 0.035rem;
       line-height: 135px;
       padding: 0 0.85rem;
       text-align: center;
+
+      &:nth-last-child(2) {
+        margin-left: 2.5%;
+      }
+
+      &:nth-last-child(-1n+2) {
+        // Make the last two thinner
+        // because they contain buttons
+        padding: 0 1%;
+
+        button {
+          margin: 0;
+        }
+      }
     }
   }
 
@@ -517,7 +546,7 @@ button {
   color: $white;
   cursor: pointer;
   font: {
-    family: "Source Sans Pro";
+    family: "Source Sans Pro Regular";
     size: 0.85rem;
   }
   letter-spacing: 0.035rem;
@@ -657,7 +686,7 @@ button {
         display: block;
         margin: auto;
         top: 3.5%;
-        width: 30%;
+        width: 40%;
 
         li {
           float: left;
@@ -734,6 +763,15 @@ button {
       }
     }
   }
+
+  // Footer
+  footer {
+    overflow: hidden;
+
+    .social-links {
+      text-align: center;
+    }
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -765,6 +803,13 @@ button {
   aside {
     clear: both;
     padding: 5% 0;
+  }
+
+  // Navigation Links
+  .top-navigation {
+    .pancakes {
+      right: 10%;
+    }
   }
 }
 

@@ -250,6 +250,13 @@ aside.right {
 
 // Responsiveness
 @media only screen and (max-width: 950px) {
+  // Structure
+  .main-and-aside {
+    main, aside {
+      display: block;
+    }
+  }
+
   // Reviews
   .review {
     .left p {
