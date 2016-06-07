@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var flash = require('connect-flash');
+var bcrypt = require('bcrypt');
 var projectRootPath = require('app-root-path');
 var multer = require('multer');
 var crypto = require('crypto');
@@ -106,20 +107,36 @@ router.post('/profile/update', upload.fields([{
     let passwordsMatch = (req.body.password == req.body.password_confirmation);
     if (req.body.password && passwordsMatch) {
       // Change the users' password
-      user.password = req.body.password || user.password;
+      if (req.body.password) {
+        var hashPassword = new Promise((fulfill, reject) => {
+          bcrypt.hash(req.body.password, 12, (err, hashedPassword) => {
+            if (err) reject(err);
+            fulfill(hashedPassword);
+          });
+        });
+      }
     }
 
     // Save those settings
-    user.save(() => {
-      // Flash the 'Saved' message
-      req.flash('saved', 'Your changes might have been saved but idk <span>🤓</span>');
+    if (hashPassword) {
+      hashPassword.then((hashedPassword) => {
+        user.password = hashedPassword;
+        user.save(() => {
+          // Flash the 'Saved' message
+          req.flash('saved', 'Your changes might have been saved but idk <span>🤓</span>');
 
-      // Make Passport reauthenticate them so
-      // we get the new data in their session
-      req.login(req.user, () => {
-        res.redirect('/auth/profile');
+          // Make Passport reauthenticate them so
+          // we get the new data in their session
+          req.login(req.user, () => {
+            res.redirect('/auth/profile');
+          });
+        });
       });
-    });
+    } else {
+      // The passwords didn't match
+      req.flash('saved', 'Those passwords didn\'t match.');
+      res.redirect('/auth/profile');
+    }
   });
 });
 
