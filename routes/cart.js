@@ -1,19 +1,57 @@
 "use strict";
 
+var _ = require('underscore');
 var express = require('express');
 var router = express.Router();
 var products = require('../data/amazon');
 var User = require('../models/User');
+var prettyjson = require('prettyjson');
 
 router.get('/', (req, res, next) => {
   let viewData = {title: 'Cart'};
   if (req.user) {
     products.with_many_asins(req.user.cart).then((values) => {
+      // Get ready to format some floats to USD
+      var usd = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2
+      });
+
       // Move the product data up a level
       for (var i=0; i<values.length; i++) {
         values[i] = values[i][0];
       }
       viewData.products = values;
+
+      // Figure out the total, subtotal, and tax
+      var subtotal = 0.0;
+      _.each(viewData.products, (product) => {
+        // Convert Amazon's integer format to a
+        // float then add it to 'subtotal' >___>
+        //
+        // 'toFixed()' returns a string which is
+        // why there are 'parseFloat()' calls
+        //
+        subtotal += parseFloat(
+          parseFloat(
+            (product.ItemAttributes[0].ListPrice[0].Amount / 100).toFixed(2)
+          ).toFixed(2)
+        );
+      });
+      viewData.subtotal = usd.format(subtotal);
+
+      // Figure out the tax and total
+      //
+      // I'm not about to actually write a tax
+      // calculator so I'm just going to
+      // multiply it by my states' sales tax
+      //
+      var tax = (subtotal * 0.06).toFixed(2);
+      var total = parseFloat(subtotal) + parseFloat(tax);
+      viewData.tax = usd.format(parseFloat(tax));
+      viewData.total = usd.format(total);
+
       res.render('cart', viewData);
     });
   } else {
@@ -34,7 +72,6 @@ router.get('/add/:asin', (req, res) => {
     User.findByIdAndUpdate(req.user._id, {$set: {
       cart: req.user.cart
     }}, (err, user) => {
-      
       res.redirect('/cart');
     });
   } else {
