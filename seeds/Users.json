@@ -7,7 +7,7 @@
   "email_address" : "Alexander2475914@gmail.com",
   "location" : "San Francisco, CA",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
-  "cart" : [],
+  "cart" : ["B01CGGOZOM", "B01CGGOZOM", "B00UGBMRQ8", "B01EIUP20U"],
   "photo": "otis_bryant.jpg",
   "__v" : 0
 }, {
@@ -19,7 +19,7 @@
   "email_address" : "Alexander2475914@gmail.com",
   "location" : "Los Angeles, CA",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
-  "cart" : [],
+  "cart" : ["B01CGGOZOM", "B01CGGOZOM", "B00UGBMRQ8", "B01EIUP20U"],
   "photo": "otis_bryant.jpg",
   "__v" : 0
 }, {
@@ -31,7 +31,7 @@
   "email_address" : "Alexander2475914@gmail.com",
   "location" : "New York, NY",
   "createdAt" : "2016-05-24T09:45:57.450-04:00",
-  "cart" : [],
+  "cart" : ["B01CGGOZOM", "B01CGGOZOM", "B00UGBMRQ8", "B01EIUP20U"],
   "photo": "otis_bryant.jpg",
   "__v" : 0
 }]

@@ -22,9 +22,10 @@ block content
         p.empty-cart-message It appears as though your cart is empty.
       - var i = 0
       while i < products.length
-        section
+        section.can-delete(data-product-asin=products[i].ASIN[0])
           h1
             a(href="/products/" + products[i].ASIN[0])= products[i].ItemAttributes[0].Brand + " " + products[i].ItemAttributes[0].Model
+            span.delete &times;
           div.image-mask
             img(src=products[i].LargeImage[0].URL[0])
           p= products[i].ItemAttributes[0].Title

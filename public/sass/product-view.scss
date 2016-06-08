@@ -26,6 +26,31 @@
     padding: (5px / 635.328px * 100%) 0 (12.5px / 635.328px * 100%);
     width: 196.776px / 635.328px * 100%;
 
+    &.can-delete {
+      .delete {
+        color: #7C7C7C;
+        cursor: pointer;
+        display: none;
+        font-size: 2.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        width: 22.5%;
+      }
+
+      &:hover {
+        a:link {
+          padding: 0.25rem 1rem;
+          text-align: left;
+        }
+
+        .delete {
+          display: block;
+        }
+      }
+    }
+
     &:nth-of-type(3n+1) {
       clear: both;
     }

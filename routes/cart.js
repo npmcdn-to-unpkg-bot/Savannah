@@ -7,6 +7,16 @@ var products = require('../data/amazon');
 var User = require('../models/User');
 var prettyjson = require('prettyjson');
 
+// Middleware
+router.use((req, res, next) => {
+  // Refresh the users' session data
+  req.login(req.user, (err) => {
+    if (err) throw err;
+    next();
+  });
+});
+
+// Routes
 router.get('/', (req, res, next) => {
   let viewData = {title: 'Cart'};
   if (req.user) {
@@ -62,6 +72,25 @@ router.get('/', (req, res, next) => {
       res.render('cart', viewData);
     });
   }
+});
+
+router.post('/delete', (req, res) => {
+  var updatedCart = req.user.cart;
+
+  // Delete the ASIN of the product they wanted to get rid of
+  updatedCart.splice(updatedCart.indexOf(req.body.asin), 1);
+
+  // Remember the removal of that ASIN in the database
+  User.update({_id: req.user._id}, {
+    $set: {cart: updatedCart}
+  }, (err) => {
+    if (err) {
+      console.error(err.message);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(200);
+    }
+  });
 });
 
 router.get('/add/:asin', (req, res) => {
