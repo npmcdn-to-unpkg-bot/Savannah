@@ -97,7 +97,13 @@ router.get('/add/:asin', (req, res) => {
   if (req.user) {
     // Remember that the user wants to buy this item
     req.user.cart = (req.user.cart.length) ? req.user.cart : [];
-    req.user.cart.push(req.params.asin);
+
+    // Don't add items more than once
+    if (req.user.cart.indexOf(req.params.asin) == -1) {
+      // This ASIN isn't in the cart already; Push it
+      req.user.cart.push(req.params.asin);
+    }
+
     User.findByIdAndUpdate(req.user._id, {$set: {
       cart: req.user.cart
     }}, (err, user) => {
