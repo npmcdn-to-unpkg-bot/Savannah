@@ -56,7 +56,9 @@ block content
           div.left
             p!= review.body
           div.right
-            img(src="/images/users/" + review.author.photo, alt="Photo of the author")
+            - var hasPhoto = (review.author.photo) ? true : false
+            if hasPhoto
+              img(src="/images/users/" + review.author.photo, alt="Photo of the author")
             h1= review.author.name
             - var date = new Date(review.createdAt)
             p= months[date.getUTCMonth()] + " " + date.getUTCDate() + ", " + date.getUTCFullYear()

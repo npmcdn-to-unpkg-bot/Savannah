@@ -43,8 +43,10 @@ block content
             a(href='#')= review.comments.length + " " + comments_word
           div.right
             div.author
-              img(src="/images/users/" + review.author.photo, alt="Photo of " + review.author.name)
-              p= review.author.location
+              - var hasPhoto = (review.author.photo) ? true : false
+              if hasPhoto
+                img(src="/images/users/" + review.author.photo, alt="Photo of " + review.author.name)
+              p= review.author.name
               - var date = new Date(review.createdAt)
               p= months[date.getUTCMonth()] + " " + date.getUTCDate() + ", " + date.getUTCFullYear()
           //- Comments
@@ -53,7 +55,9 @@ block content
               div.comments
                 p= comment.body
               div.right
-                img(src='/images/users/' + comment.author.photo, alt="Photo of " + comment.author.photo)
+                - var hasPhoto = (comment.author.photo) ? true : false
+                if hasPhoto
+                  img(src='/images/users/' + comment.author.photo, alt="Photo of " + comment.author.photo)
                 p= comment.author.name
                 - var date = new Date(comment.createdAt)
                 p= months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear()
